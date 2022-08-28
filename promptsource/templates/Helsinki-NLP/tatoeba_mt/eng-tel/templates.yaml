@@ -1,27 +1,37 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: eng-tel
 templates:
-  1878eeb4-0de8-4817-b144-1a092907c9db: !Template
+  89c76bed-679d-4d38-a5c4-647dcde9cad1: !Template
     answer_choices: null
-    id: 1878eeb4-0de8-4817-b144-1a092907c9db
-    jinja: Translate the following text from Telugu to English {{ targetString }}|||
-      {{ sourceString }}
-    metadata: !TemplateMetadata
-      choices_in_prompt: null
-      languages: null
-      metrics: null
-      original_task: null
-    name: translate-this-tel-eng
-    reference: ''
-  7bd52c18-182c-4c99-9ba7-e723f3cb692a: !Template
-    answer_choices: null
-    id: 7bd52c18-182c-4c99-9ba7-e723f3cb692a
-    jinja: Translate the following text from English to Telugu {{ sourceString }}|||
-      {{ targetString }}
+    id: 89c76bed-679d-4d38-a5c4-647dcde9cad1
+    jinja: 'Translate the following text from English to Telugu.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
       metrics: null
       original_task: null
     name: translate-this-eng-tel
+    reference: ''
+  b8e6f039-528e-4013-9ad6-b1a27ad292e8: !Template
+    answer_choices: null
+    id: b8e6f039-528e-4013-9ad6-b1a27ad292e8
+    jinja: 'Translate the following text from Telugu to English.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: translate-this-tel-eng
     reference: ''

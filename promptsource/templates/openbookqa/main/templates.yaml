@@ -11,7 +11,7 @@ templates:
 
       - {{ answer_choices | join("\n- ") }}
 
-      |||
+      Choice: |||
 
       {{answer_choices[{"A":0,"B":1,"C":2,"D":3}[answerKey]]}}'
     metadata: !TemplateMetadata
@@ -27,11 +27,9 @@ templates:
     answer_choices: '{{choices.text | join("|||")}}'
     id: 0dfe6c27-9716-455d-92a8-63ada1eb949b
     jinja: '{{question_stem}}
-
-
+      - {{ answer_choices | join("\n- ") }}
       Which is the correct answer?
 
-      - {{ answer_choices | join("\n- ") }}
 
       |||
 
@@ -73,15 +71,10 @@ templates:
   96e5065b-2876-4e4f-a33a-bb94c3505bb6: !Template
     answer_choices: '{{choices.text | join("|||")}}'
     id: 96e5065b-2876-4e4f-a33a-bb94c3505bb6
-    jinja: '{{question_stem}}
-
-
-      Choices:
-
+    jinja: 'Choices:
       - {{ answer_choices | join("\n- ") }}
-
+      {{question_stem}}...? 0, 1, 2 or 3?
       |||
-
       {{answer_choices[{"A":0,"B":1,"C":2,"D":3}[answerKey]]}}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -96,11 +89,9 @@ templates:
     answer_choices: '{{choices.text | join("|||")}}'
     id: a4453d77-4cdd-44e5-9901-358f48631944
     jinja: '{{question_stem}}
-
       - {{ answer_choices | join("\n- ") }}
-
+      Answer 0, 1, 2 or 3!
       |||
-
       {{answer_choices[{"A":0,"B":1,"C":2,"D":3}[answerKey]]}}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -115,12 +106,8 @@ templates:
     answer_choices: '{{choices.text | join("|||")}}'
     id: c4814b92-9887-4b08-a4e2-1c7ca44345f7
     jinja: '{{question_stem}}
-
       - {{ answer_choices | join("\n- ") }}
-
-
       Which is the correct answer?
-
       |||
 
       {{answer_choices[{"A":0,"B":1,"C":2,"D":3}[answerKey]]}}'
@@ -138,11 +125,11 @@ templates:
     id: e9ca981e-0bda-4332-a101-41d5947df8f3
     jinja: '{{question_stem}}
 
-
       Pick the right answer from the list:
-
+    
       - {{ answer_choices | join("\n- ") }}
-
+    
+      Right answer:
       |||
 
       {{answer_choices[{"A":0,"B":1,"C":2,"D":3}[answerKey]]}}'

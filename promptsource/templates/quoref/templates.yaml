@@ -3,14 +3,11 @@ templates:
   4120bebc-9c8f-44af-8d1a-a65e443ce010: !Template
     answer_choices: null
     id: 4120bebc-9c8f-44af-8d1a-a65e443ce010
-    jinja: 'The answer to the question: {{question}} is inside the article: {{context}},
-      can you guess it ?
+    jinja: 'The answer to the question: {{question}} is inside the article: "{{context}}"
 
-
+      Can you guess it ?
       |||
-
       {{answers.text | choice}}
-
       '
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -49,7 +46,7 @@ templates:
     answer_choices: null
     id: 9493f80a-daf5-4c30-a9fc-7bc5bc61b5e9
     jinja: "The following article contains an answer for the question: {{question}}\
-      \ , can you please find it? \n\n{{context}}|||\n{{answers.text | choice}}"
+      \ , can you please find it? \n\n{{context}}\n\nAnswer: |||\n{{answers.text | choice}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -62,7 +59,9 @@ templates:
   a3e5e25d-0a87-4cb8-89ab-3539fc4d23cb: !Template
     answer_choices: null
     id: a3e5e25d-0a87-4cb8-89ab-3539fc4d23cb
-    jinja: 'This article: {{context}} contains an answer for the question: {{question}},
+    jinja: 'Theres this article: {{context}} 
+    
+      It contains an answer for the question: {{question}},
       what is it ?
 
       |||
@@ -82,11 +81,12 @@ templates:
     id: aa26aab2-d2e7-4560-b7eb-0cbcff7c0f31
     jinja: '{{question}}
 
-
       Answer the above question based on the context below:
 
-
-      {{context}} |||
+      {{context}} 
+      
+      
+      Write the answer after this. |||
 
       {{answers.text | choice}}'
     metadata: !TemplateMetadata
@@ -105,7 +105,10 @@ templates:
       ?
 
 
-      {{context}}|||
+      {{context}}
+      
+
+      A: |||
 
       {{answers.text | choice}}
 
@@ -122,11 +125,13 @@ templates:
   b3ec0888-dd6f-466a-abd4-b2fbcacfdb8b: !Template
     answer_choices: null
     id: b3ec0888-dd6f-466a-abd4-b2fbcacfdb8b
-    jinja: 'I have a test where I am given the following article, what is an answer
+    jinja: '{{context}}
+      
+      I have a test where I am given the previous article, what is an answer
       for the question: {{question}} ?
 
 
-      {{context}}|||
+      |||
 
       {{answers.text | choice}}'
     metadata: !TemplateMetadata
@@ -166,7 +171,9 @@ templates:
     jinja: 'Found the following article online, use it to answer the question: {{question}}
 
 
-      {{context}}|||
+      {{context}}
+      
+      Your answer: |||
 
       {{answers.text | choice}}
 
@@ -184,8 +191,7 @@ templates:
     answer_choices: null
     id: d1abb8a0-03c4-41ef-865c-aa275278a0e4
     jinja: 'A friend asked me to answer this question: {{question}}, using the article:
-      {{context}}, what would be the answer ?
-
+      <<{{context}}>>, what would be the answer ?
 
       |||
 
@@ -208,7 +214,9 @@ templates:
       {{question}}
 
 
-      {{context}} |||
+      {{context}} 
+      
+      Extracted answer: |||
 
       {{answers.text | choice}}'
     metadata: !TemplateMetadata
@@ -219,4 +227,45 @@ templates:
       - Squad
       original_task: true
     name: 'Read And Extract '
+    reference: ''
+  fcbe1609-06ce-4cbd-91de-adc38966bcac: !Template
+    answer_choices: null
+    id: fcbe1609-06ce-4cbd-91de-adc38966bcac
+    jinja: 'I was wondering: {{question}}
+      Write an article about this answering my question. ||| {{context}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Squad
+      original_task: true
+    name: xp3longwritearticle
+    reference: ''
+  fcbe0709-06ce-4cbd-91de-adc38966bcac: !Template
+    answer_choices: null
+    id: fcbe0709-06ce-4cbd-91de-adc38966bcac
+    jinja: 'Generate a passage from {url}. ||| {{context}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Squad
+      original_task: true
+    name: xp3longurlpassage
+    reference: ''
+  fabe0709-06ce-4cbd-91de-adc38966bcac: !Template
+    answer_choices: null
+    id: fabe0709-06ce-4cbd-91de-adc38966bcac
+    jinja: 'I asked my friend: "{{question}}"...She said "{{answers.text | choice}}".
+    I am not convinced. Can you give me an article that proves her correct?" ||| {{context}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Squad
+      original_task: true
+    name: xp3longprove
     reference: ''

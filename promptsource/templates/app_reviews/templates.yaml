@@ -45,7 +45,7 @@ templates:
       \u2605\u2605 ||| \u2605\u2605\u2605\u2605\u2605"
     id: 9746ce4b-ac58-4dfb-9783-d77c95cb62cf
     jinja: "What would be the \u2605-rating of this review (\u2605 being the lowest\
-      \ and \u2605\u2605\u2605\u2605\u2605 being the highest)? \"{{review}}\"\n|||\n\
+      \ and \u2605\u2605\u2605\u2605\u2605 being the highest)? \"{{review}}\"\n Rating? |||\n\
       {{answer_choices[star-1]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -60,11 +60,10 @@ templates:
   d34e1413-2699-4701-baa2-05d931d012ba: !Template
     answer_choices: null
     id: d34e1413-2699-4701-baa2-05d931d012ba
-    jinja: 'On a scale of 1-5 (with 1 being least favorable and 5 being most favorable),
-      how would you rate this review? "{{review}}"
-
+    jinja: '"{{review}}"
+      On a scale of 1-5 (with 1 being least favorable and 5 being most favorable),
+      how would you rate this review?
       |||
-
       {{star}}'
     metadata: !TemplateMetadata
       choices_in_prompt: false

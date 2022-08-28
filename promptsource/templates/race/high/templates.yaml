@@ -10,7 +10,7 @@ templates:
 
       Question: {{question}}
 
-      Yes or no, is the answer "{{ [options.0,options.1,options.2,options.3][{"A":0,"B":1,"C":2,"D":3}[answer]]
+      Yes or no, is the answer "{{ [options.0,options.1,options.2,options.3][{"A":0,"B":1,"C":2,"D":3}[candidate]]
       }}"?
 
       |||
@@ -36,7 +36,8 @@ templates:
   46b64805-d02c-4aa3-a7c5-34503f3ad56d: !Template
     answer_choices: null
     id: 46b64805-d02c-4aa3-a7c5-34503f3ad56d
-    jinja: "Write a multi-choice question for the following article:\nArticle: {{article}}\n\
+    jinja: "Write a multi-choice question for the following article:\nArticle: {{article}}\n\n
+      Multi-choice question with options and answer:
       |||\nQuestion: \n{{question}}\nOptions:\n{{\"A\"}} {{options.0}}\n{{\"B\"}}\
       \ {{options.1}}\n{{\"C\"}} {{options.2}}\n{{\"D\"}} {{options.3}}\nAnswer:\n\
       {{answer}}"
@@ -68,6 +69,8 @@ templates:
 
       {{"D"}}: {{options.3}}
 
+      A / B / C / D?
+
       |||
 
       {{answer}}'
@@ -96,6 +99,8 @@ templates:
       {{"C"}}: {{options.2}}
 
       {{"D"}}: {{options.3}}
+
+      D, A, C or B?
 
       |||
 
@@ -138,6 +143,8 @@ templates:
 
       - {{answer_choices | join("\n- ")}}
 
+      Best answer:
+
       |||
 
       {{answer_choices[{"A":0,"B":1,"C":2,"D":3}[answer]]}}'
@@ -155,8 +162,6 @@ templates:
     id: c8c9dcfd-69d3-4ccd-8aeb-2bdb98aba261
     jinja: '{{article}}
 
-      {{question}}
-
       {{"A)"}} {{options.0}}
 
       {{"B)"}} {{options.1}}
@@ -164,6 +169,8 @@ templates:
       {{"C)"}} {{options.2}}
 
       {{"D)"}} {{options.3}}
+
+      {{question}}
 
       |||
 
@@ -199,4 +206,35 @@ templates:
       - Accuracy
       original_task: true
     name: Read the article and answer the question (no option)
+    reference: ''
+  e2b9d073-e18e-4940-9868-5b4a35617c35: !Template
+    answer_choices: '{{ options | join("|||") }}'
+    id: e2b9d073-e18e-4940-9868-5b4a35617c35
+    jinja: '
+
+      Options:
+
+      {{"A)"}} {{options.0}}
+
+      {{"B)"}} {{options.1}}
+
+      {{"C)"}} {{options.2}}
+
+      {{"D)"}} {{options.3}}
+
+      {{question}} {{answer}} is correct.
+
+      Write a passage that would answer the question with the answer above.
+
+      |||
+
+      {{article}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: xp3longwritepassage
     reference: ''

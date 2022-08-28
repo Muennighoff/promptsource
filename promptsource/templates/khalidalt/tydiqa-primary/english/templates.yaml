@@ -15,6 +15,8 @@ templates:
 
       Article: {{document_plaintext}}
 
+      Answer:
+
       |||
 
       {{annotations.yes_no_answer[0] | capitalize}}'
@@ -30,9 +32,9 @@ templates:
   297fc59f-bd92-493b-ae61-3c3adcb46eb3: !Template
     answer_choices: Yes ||| No ||| None
     id: 297fc59f-bd92-493b-ae61-3c3adcb46eb3
-    jinja: "\nQuestion: {{question_text}}\nAnswer\
+    jinja: "Answer\
       \ the question with {{\"Yes\"}} or {{\"No\"}}. If it is not possible then answer\
-      \ {{\"None\"}}.\nHint: {{document_plaintext}}\n|||\n{{annotations.yes_no_answer[0]\
+      \ {{\"None\"}}.\nHint: {{document_plaintext}}\nQuestion: {{question_text}}||| {{annotations.yes_no_answer[0]\
       \ | capitalize}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -48,7 +50,7 @@ templates:
     id: 4b21e3be-fba4-49b7-beb1-a61de26eb0ac
     jinja: "\n    {% if annotations.yes_no_answer[0]\
       \ == \"YES\" or annotations.yes_no_answer[0] == \"NO\" %} \nAnswer the question\
-      \ about {{document_title}}. {{question_text}}\n||| \n{{annotations.yes_no_answer[0]\
+      \ about {{document_title}}. {{question_text}} ||| {{annotations.yes_no_answer[0]\
       \ | capitalize}} \n    {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -100,6 +102,8 @@ templates:
 
       Article: {{document_plaintext}}
 
+      Write your answer after this.
+
       |||
 
       {{annotations.yes_no_answer[0] | capitalize}}'
@@ -118,7 +122,7 @@ templates:
     jinja: "{% if annotations.yes_no_answer[0]\
       \ == \"YES\" or annotations.yes_no_answer[0] == \"NO\" %} \nAfter reading the\
       \ following text snippet from Wikipedia, please answer the question: {{question_text}}\
-      \ \n{{document_plaintext}}\n||| \n{{annotations.yes_no_answer[0] | capitalize}}\n\
+      \ \n{{document_plaintext}}\n\nA: ||| \n{{annotations.yes_no_answer[0] | capitalize}}\n\
       \    {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -150,7 +154,7 @@ templates:
     id: e593017f-9bcf-4442-944d-fcdf2edcb4f7
     jinja: "{% if annotations.yes_no_answer[0]\
       \ == \"YES\" or annotations.yes_no_answer[0] == \"NO\" %} \nBased on the following\
-      \ text snippet, {{question_text}} \n{{document_plaintext}}\n||| \n{{annotations.yes_no_answer[0]\
+      \ text snippet, {{question_text}} \n{{document_plaintext}}\n\nSolution: ||| \n{{annotations.yes_no_answer[0]\
       \ | capitalize}}\n    {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -161,3 +165,32 @@ templates:
       original_task: true
     name: en_based_on_the_text
     reference: Binary question without mentioning KB
+  9d42e3fd-d46e-4149-bb60-4b3118104d95: !Template
+    answer_choices: Yes ||| No
+    id: 9d42e3fd-d46e-4149-bb60-4b3118104d95
+    jinja: "I wonder {{question_text}}\n\nCan you get me some context to answer this 
+    (in the same language as my question)? ||| {{document_plaintext[:10000]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: xp3longcontext
+    reference: ''
+  9d43e3fd-d46e-4149-bb60-4b3118104d95: !Template
+    answer_choices: Yes ||| No
+    id: 9d43e3fd-d46e-4149-bb60-4b3118104d95
+    jinja: "Do you remember when we were reading {{document_url}} the other day?
+    It started sth like document_plaintext[:100].. Can you continue it for up to another 1000 characters?
+    ||| {{document_plaintext[100:1100]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: xp3longcontinue
+    reference: ''

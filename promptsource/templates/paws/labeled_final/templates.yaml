@@ -5,7 +5,7 @@ templates:
     answer_choices: No ||| Yes
     id: 0be7cecd-b427-4ec9-9b0e-666d6dae0063
     jinja: "Determine if the following two sentences paraphrase each other or not.\n\
-      Sent 1: {{sentence1}}\nSent 2: {{sentence2}}\n||| \n{{answer_choices[label]}}"
+      Sent 1: {{sentence1}}\nSent 2: {{sentence2}}\n Yes / No? ||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -33,7 +33,7 @@ templates:
     answer_choices: No ||| Yes
     id: 4c8d4e4c-eae4-45f6-bdf0-d132ae198d09
     jinja: "{{sentence1}}\nIs that a paraphrase of the following sentence?\n{{sentence2}}?\n\
-      ||| \n{{answer_choices[label]}}"
+      Answer: ||| \n{{answer_choices[label]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -88,7 +88,8 @@ templates:
   a3ee450f-0d02-47c3-aa0b-00c3f80539e9: !Template
     answer_choices: null
     id: a3ee450f-0d02-47c3-aa0b-00c3f80539e9
-    jinja: "{% if label == 1 %} \nParaphrase the sentence: {{sentence1}} \n||| \n\
+    jinja: "{% if label == 1 %} \nParaphrase the sentence: {{sentence1}}
+    Paraphrase: ||| \n\
       {{sentence2}} \n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false

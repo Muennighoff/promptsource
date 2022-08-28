@@ -1,11 +1,16 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: eng-cmn_Hans
 templates:
-  81c4007c-70ba-4c70-b2e5-ea8c855a1b6e: !Template
+  46f20fdc-cda2-40d5-99c4-d4e3ff60d5fb: !Template
     answer_choices: null
-    id: 81c4007c-70ba-4c70-b2e5-ea8c855a1b6e
-    jinja: Translate the following text from Mandarin Chinese to English {{ targetString
-      }}||| {{ sourceString }}
+    id: 46f20fdc-cda2-40d5-99c4-d4e3ff60d5fb
+    jinja: 'Translate the following text from Mandarin Chinese to English.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
@@ -13,11 +18,16 @@ templates:
       original_task: null
     name: translate-this-cmn_Hans-eng
     reference: ''
-  a7c97c86-6eac-4dd6-969c-3e083851d8f7: !Template
+  7721442d-241e-4956-ac56-ad4af49071ca: !Template
     answer_choices: null
-    id: a7c97c86-6eac-4dd6-969c-3e083851d8f7
-    jinja: Translate the following text from English to Mandarin Chinese {{ sourceString
-      }}||| {{ targetString }}
+    id: 7721442d-241e-4956-ac56-ad4af49071ca
+    jinja: 'Translate the following text from English to Mandarin Chinese.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null

@@ -1,11 +1,16 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: fra-cmn_Hans
 templates:
-  750c5e6a-d7d0-47fe-80c5-3e6a88c83e27: !Template
+  0c1084af-aaa2-422c-a32a-2d4d872bac26: !Template
     answer_choices: null
-    id: 750c5e6a-d7d0-47fe-80c5-3e6a88c83e27
-    jinja: Translate the following text from French to Mandarin Chinese {{ sourceString
-      }}||| {{ targetString }}
+    id: 0c1084af-aaa2-422c-a32a-2d4d872bac26
+    jinja: 'Translate the following text from French to Mandarin Chinese.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
@@ -13,11 +18,16 @@ templates:
       original_task: null
     name: translate-this-fra-cmn_Hans
     reference: ''
-  a2c3b8f1-f269-41d1-bc9a-49e6aa4b066f: !Template
+  c904e800-7d9c-4db1-b4ca-a376ac8dd492: !Template
     answer_choices: null
-    id: a2c3b8f1-f269-41d1-bc9a-49e6aa4b066f
-    jinja: Translate the following text from Mandarin Chinese to French {{ targetString
-      }}||| {{ sourceString }}
+    id: c904e800-7d9c-4db1-b4ca-a376ac8dd492
+    jinja: 'Translate the following text from Mandarin Chinese to French.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null

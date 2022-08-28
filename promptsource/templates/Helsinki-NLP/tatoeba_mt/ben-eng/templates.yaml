@@ -1,27 +1,37 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: ben-eng
 templates:
-  3e6cf1b1-5bdc-4401-a440-670e34f9d7f0: !Template
+  8d75d8c3-8fbb-4e14-882f-55b05f8d4f99: !Template
     answer_choices: null
-    id: 3e6cf1b1-5bdc-4401-a440-670e34f9d7f0
-    jinja: Translate the following text from English to Bengali {{ targetString }}|||
-      {{ sourceString }}
-    metadata: !TemplateMetadata
-      choices_in_prompt: null
-      languages: null
-      metrics: null
-      original_task: null
-    name: translate-this-eng-ben
-    reference: ''
-  c3409e18-3cc6-427a-a31a-a536df9d1d83: !Template
-    answer_choices: null
-    id: c3409e18-3cc6-427a-a31a-a536df9d1d83
-    jinja: Translate the following text from Bengali to English {{ sourceString }}|||
-      {{ targetString }}
+    id: 8d75d8c3-8fbb-4e14-882f-55b05f8d4f99
+    jinja: 'Translate the following text from Bengali to English.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
       metrics: null
       original_task: null
     name: translate-this-ben-eng
+    reference: ''
+  c7e83a01-d36f-4cef-8990-c26271531a3e: !Template
+    answer_choices: null
+    id: c7e83a01-d36f-4cef-8990-c26271531a3e
+    jinja: 'Translate the following text from English to Bengali.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: translate-this-eng-ben
     reference: ''

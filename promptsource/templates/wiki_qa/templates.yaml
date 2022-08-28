@@ -45,7 +45,8 @@ templates:
     id: 3480df1e-88bb-4b3d-90df-3f292463eb76
     jinja: '{% if label == 1 %}
 
-      What is the question to: "{{answer}}"? The topic is {{document_title}}.|||
+      What is the question to: "{{answer}}"? The topic is {{document_title}}.
+      Question: |||
 
       "{{question}}?"
 
@@ -92,7 +93,7 @@ templates:
     jinja: '{% if label == 1 %}
 
       Generate a question about the topic "{{document_title}}" whose answer would
-      be: {{answer}}.|||
+      be: {{answer}}. Question: |||
 
       {{question}}?
 
@@ -165,6 +166,7 @@ templates:
 
       Suggestion: {{answer}}
 
+      Decision:
       |||
 
       {{answer_choices[label]}}'
@@ -180,12 +182,13 @@ templates:
   c802cf19-59a7-4a3e-a6ab-5cbb1f169c70: !Template
     answer_choices: No ||| Yes
     id: c802cf19-59a7-4a3e-a6ab-5cbb1f169c70
-    jinja: 'This is a correct answer to the following question about {{document_title}}.
+    jinja: 'Below is a correct answer to the following question about {{document_title}}.
       Yes or no?
 
       Answer: {{answer}}
 
       Question: {{question}}
+      Yes or no?
 
       |||
 

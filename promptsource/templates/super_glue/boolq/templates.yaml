@@ -107,6 +107,7 @@ templates:
     id: 9a1bf459-8047-437c-9def-f21e960429cc
     jinja: 'Based on the following passage, {{ question }}? {{ passage }}
 
+      Answer: 
 
       |||
 
@@ -187,4 +188,18 @@ templates:
       - Accuracy
       original_task: true
     name: valid_binary
+    reference: ''
+  ec88772c-e81e-4b8a-a77b-b75efd1c212a: !Template
+    answer_choices: False ||| True
+    id: ec88772c-e81e-4b8a-a77b-b75efd1c212a
+    jinja: 'I wonder {{question}}? Provide me a text that answers it (not too long). |||
+        {{passage}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: xp3longprovidetext
     reference: ''

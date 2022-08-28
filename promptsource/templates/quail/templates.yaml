@@ -66,8 +66,6 @@ templates:
 
       Context: {{ context }}
 
-      Question: {{ question }}
-
       Options:
 
       {% for k in range(answers | length) %}
@@ -75,6 +73,8 @@ templates:
       {{''. ''.join([answer_choices[k], answers[k]])}}
 
       {% endfor %}
+
+      Question: {{ question }}
 
       |||
 
@@ -99,6 +99,7 @@ templates:
 
       - {{ answer_choices | join("\n- ") }}
 
+      Correct answer:
       |||
 
       {{ answer_choices[correct_answer_id] }}'
@@ -170,6 +171,8 @@ templates:
 
       {% endfor %}
 
+      Correct pick:
+
       |||
 
       {{ answer_choices[correct_answer_id] }}'
@@ -194,6 +197,8 @@ templates:
       {{''. ''.join([answer_choices[k], answers[k]])}}
 
       {% endfor %}
+
+      Best option:
 
       |||
 
@@ -224,6 +229,8 @@ templates:
       {{''. ''.join([answer_choices[k], answers[k]])}}
 
       {% endfor %}
+
+      whats the correct option??
 
       |||
 
@@ -265,9 +272,9 @@ templates:
     id: cb57451d-2a1c-4db1-a352-9f50d835b327
     jinja: '{{ context }}
 
-      {{ question }}
-
       - {{ answer_choices | join("\n- ") }}
+
+      {{ question }}
 
       |||
 
@@ -289,11 +296,13 @@ templates:
       According to the above context, choose the correct option to answer the following
       question.
 
-      Question: {{ question }}
 
       Options:
-
       - {{ answer_choices | join("\n- ") }}
+
+
+      Question: {{ question }}
+
 
       |||
 
@@ -321,6 +330,8 @@ templates:
 
       - {{ answer_choices | join("\n- ") }}
 
+      Best option:
+
       |||
 
       {{ answer_choices[correct_answer_id] }}'
@@ -332,4 +343,35 @@ templates:
       - Accuracy
       original_task: true
     name: description_context_question_answer_text
+    reference: ''
+  f474c2ca-952a-47ab-8420-cb5fb2c693d9: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: f474c2ca-952a-47ab-8420-cb5fb2c693d9
+    jinja: 'Given the title <<{{metadata["title"]}}>>, write a 300-350 token long passage.
+      |||
+
+      {{ answer_choices[correct_answer_id] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: xp3longtokenpassage
+    reference: ''
+  f444c2ca-952a-47ab-8420-cb5fb2c693d9: !Template
+    answer_choices: '{{answers | join("|||")}}'
+    id: f444c2ca-952a-47ab-8420-cb5fb2c693d9
+    jinja: 'Write a story with reference to the question "{{question}}". 
+    The name of the story should be {{metadata["title"]}}.
+    Story: ||| {{ answer_choices[correct_answer_id] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: true
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: xp3longstory
     reference: ''

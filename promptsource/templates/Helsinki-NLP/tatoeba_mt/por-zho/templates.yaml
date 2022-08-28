@@ -1,11 +1,16 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: por-zho
 templates:
-  31bae7bf-5784-4b48-a60e-9a37e4a71941: !Template
+  7456b0fe-1623-4715-b265-5c3f5181d96f: !Template
     answer_choices: null
-    id: 31bae7bf-5784-4b48-a60e-9a37e4a71941
-    jinja: Translate the following text from Chinese to Portuguese {{ targetString
-      }}||| {{ sourceString }}
+    id: 7456b0fe-1623-4715-b265-5c3f5181d96f
+    jinja: 'Translate the following text from Chinese to Portuguese.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
@@ -13,11 +18,16 @@ templates:
       original_task: null
     name: translate-this-zho-por
     reference: ''
-  f816c2f6-55eb-47ba-9230-0a8949c87217: !Template
+  9e0a664c-73c2-42a0-a13b-5e4671815292: !Template
     answer_choices: null
-    id: f816c2f6-55eb-47ba-9230-0a8949c87217
-    jinja: Translate the following text from Portuguese to Chinese {{ sourceString
-      }}||| {{ targetString }}
+    id: 9e0a664c-73c2-42a0-a13b-5e4671815292
+    jinja: 'Translate the following text from Portuguese to Chinese.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null

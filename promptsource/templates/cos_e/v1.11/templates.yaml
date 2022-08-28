@@ -12,7 +12,7 @@ templates:
 
       - {{ answer_choices | join("\n- ") }}
 
-      |||
+      Choice: |||
 
       {{ answer }}'
     metadata: !TemplateMetadata
@@ -29,7 +29,7 @@ templates:
     id: 046ce4df-c847-4dc2-b53c-9f02d32aff8a
     jinja: "{{ question }}\nChoose the most suitable option to answer the above question.\n\
       Options\uFF1A\n{% for k in range(choices | length) %}\n{{'. '.join([answer_choices[k],\
-      \ choices[k]])}}\n{% endfor %}\n|||\n{{ answer_choices[choices.index(answer)]\
+      \ choices[k]])}}\n{% endfor %}\nWrite your choice here. |||\n{{ answer_choices[choices.index(answer)]\
       \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -98,8 +98,6 @@ templates:
     id: 60354294-f30a-4a5b-be18-372c3c1a3491
     jinja: 'Pick the option in line with common sense to answer the question.
 
-      Question: {{ question }}
-
       Options:
 
       {% for k in range(choices | length) %}
@@ -108,7 +106,7 @@ templates:
 
       {% endfor %}
 
-      |||
+      Question: {{ question }} |||
 
       {{ answer_choices[choices.index(answer)] }}'
     metadata: !TemplateMetadata
@@ -181,7 +179,7 @@ templates:
 
       - {{ answer_choices | join("\n- ") }}
 
-      |||
+      Best answer: |||
 
       {{ answer }}'
     metadata: !TemplateMetadata

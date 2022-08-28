@@ -6,7 +6,7 @@ templates:
     jinja: "Based on the context and the answer, generate a question. \n\nContext:\
       \ {{context}}\n\nAnswer:\n{% if label == 0 %}\n{{answer0}}\n{% elif label ==\
       \ 1 %}\n{{answer1}}\n{% elif label == 2 %}\n{{answer2}}\n{% elif label == 3\
-      \ %}\n{{answer3}}\n{% endif %}\n|||\n{{question}}"
+      \ %}\n{{answer3}}\n{% endif %}\nQuestion: |||\n{{question}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -22,7 +22,7 @@ templates:
     id: 08e20b79-d1c0-4717-b538-f1a313c2b7d2
     jinja: "Read the following context and choose the best option to answer the question.\n\
       Context: {{ context }}\nQuestion: {{ question }}\nOptions: \n- {{ answer_choices\
-      \ | join(\"\\n - \") }}\n|||\n{{ answer_choices[label] }}"
+      \ | join(\"\\n - \") }}\nOption chosen: |||\n{{ answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -60,7 +60,7 @@ templates:
     id: 693c47c6-f17c-417a-af70-bc20e71b4ed4
     jinja: "Read the following context and choose the best option to answer the question.\n\
       Context: {{ context }}\nQuestion: {{ question }}\nOptions: \nA. {{ answer0 }}\n\
-      B. {{ answer1 }}\nC. {{ answer2 }}\nD. {{ answer3 }}\n|||\n{{ answer_choices[label]\
+      B. {{ answer1 }}\nC. {{ answer2 }}\nD. {{ answer3 }}\nBest option: |||\n{{ answer_choices[label]\
       \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -75,16 +75,12 @@ templates:
     answer_choices: '{{answer0}} ||| {{answer1}} ||| {{answer2}} ||| {{answer3}}'
     id: 6b9a24cc-054e-40d6-8abf-261443122f3a
     jinja: '{{ context }}
-
-      According to the above context, choose the best option to answer the following
+      According to the above context, choose the best option to answer the
       question.
-
-      Question: {{ question }}
-
       Options:
-
       - {{answer_choices | join("\n - ")}}
 
+      Question: {{ question }}
       |||
 
       {{answer_choices[label]}}'
@@ -111,6 +107,8 @@ templates:
       C. {{ answer2 }}
 
       D. {{ answer3 }}
+
+      A, B, C or D?
 
       |||
 
@@ -154,6 +152,8 @@ templates:
 
       - {{ answer_choices | join("\n - ") }}
 
+      Correct answer:
+
       |||
 
       {{ answer_choices[label] }}'
@@ -187,6 +187,7 @@ templates:
 
       D. {{ answer3 }}
 
+      D, C, B or A?
       |||
 
       {{ answer_choices[label] }}'
@@ -216,6 +217,7 @@ templates:
 
       D. {{ answer3 }}
 
+      Your pick?
       |||
 
       {{ answer_choices[label] }}'
@@ -236,7 +238,6 @@ templates:
       According to the above context, answer the following question.
 
       {{ question }}
-
       |||
 
       {{answer_choices[label]}}'
@@ -261,6 +262,7 @@ templates:
 
       - {{ answer_choices | join("\n - ") }}
 
+      What is the best?
       |||
 
       {{ answer_choices[label] }}'
@@ -286,3 +288,16 @@ templates:
       original_task: false
     name: only_question_answer
     reference: Template with only question and generates the answer
+  f640e365-091c-491e-a87e-f529514607e5: !Template
+    answer_choices: '{{answer0}} ||| {{answer1}} ||| {{answer2}} ||| {{answer3}}'
+    id: f640e365-091c-491e-a87e-f529514607e5
+    jinja: "<<{{question}}>> What is the context for this question? \n|||\n{{context}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: false
+    name: xp3longcontext
+    reference: ''

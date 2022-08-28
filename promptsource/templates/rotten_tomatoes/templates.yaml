@@ -101,7 +101,7 @@ templates:
   b60cad41-6bca-422a-aef7-cb113fcc32b0: !Template
     answer_choices: negative ||| positive
     id: b60cad41-6bca-422a-aef7-cb113fcc32b0
-    jinja: The following movie review expresses what sentiment? {{text}} ||| {{ answer_choices
+    jinja: The following movie review expresses what sentiment? {{text}}\n\nExpressed sentiment? ||| {{ answer_choices
       [label] }}
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -139,4 +139,18 @@ templates:
       - Accuracy
       original_task: true
     name: Reviewer Sentiment Feeling
+    reference: ''
+  e31970ab-42c0-4e6e-a08f-4940d889ef37: !Template
+    answer_choices: negative ||| amazing
+    id: e31970ab-42c0-4e6e-a08f-4940d889ef37
+    jinja: 'Write a movie review about your {{answer_choices[label]}} 
+    experience with a movie. ||| {{text}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: xp3longreview
     reference: ''

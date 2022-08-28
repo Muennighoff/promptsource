@@ -1,27 +1,37 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: spa-vie
 templates:
-  434ceff9-ea2c-441f-bf24-ad6ded7a6f52: !Template
+  258ecb51-0d3b-47cd-85d4-8f82733aa27a: !Template
     answer_choices: null
-    id: 434ceff9-ea2c-441f-bf24-ad6ded7a6f52
-    jinja: Translate the following text from Spanish to Vietnamese {{ sourceString
-      }}||| {{ targetString }}
-    metadata: !TemplateMetadata
-      choices_in_prompt: null
-      languages: null
-      metrics: null
-      original_task: null
-    name: translate-this-spa-vie
-    reference: ''
-  9c25bf7a-3bb6-4a43-a988-673950501940: !Template
-    answer_choices: null
-    id: 9c25bf7a-3bb6-4a43-a988-673950501940
-    jinja: Translate the following text from Vietnamese to Spanish {{ targetString
-      }}||| {{ sourceString }}
+    id: 258ecb51-0d3b-47cd-85d4-8f82733aa27a
+    jinja: 'Translate the following text from Vietnamese to Spanish.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
       metrics: null
       original_task: null
     name: translate-this-vie-spa
+    reference: ''
+  6249e450-6040-42e9-b5fb-db205ac45fc2: !Template
+    answer_choices: null
+    id: 6249e450-6040-42e9-b5fb-db205ac45fc2
+    jinja: 'Translate the following text from Spanish to Vietnamese.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: translate-this-spa-vie
     reference: ''

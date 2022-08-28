@@ -7,7 +7,7 @@ templates:
       \n{% if '_____' in question %}\n{{ question | trim(\".?!\") | replace(\"_____\"\
       , answer_choices | join(\" or \")) }}{{ \"?\" }} \n{% else %}\n{{ question |\
       \ trim(\".?!\") }} {{ answer_choices | join(\" or \") }}{{ \"?\" }} \n{% endif\
-      \ %}\n\nParagraph :\n\n{{ para }}\n|||\n{{answer_choices[choices.label.index(answerKey)]}}"
+      \ %}\n\nParagraph :\n\n{{ para }}\nSolution: ||| {{answer_choices[choices.label.index(answerKey)]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -57,7 +57,7 @@ templates:
       \ '_____' in question %}\n{{ question | trim(\".?!\") | replace(\"_____\", answer_choices\
       \ | join(\" or \")) }}{{ \"?\" }} \n{% else %}\n{{ question | trim(\".?!\")\
       \ }} {{ answer_choices | join(\" or \") }}{{ \"?\" }} \n{% endif %}\n\nText:\n\
-      \n{{ para }}|||\n{{answer_choices[choices.label.index(answerKey)]}}"
+      \n{{ para }}\n\nAnswer: ||| {{answer_choices[choices.label.index(answerKey)]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -70,11 +70,10 @@ templates:
   397bdb29-03e8-478b-9840-1bfe9d57d6fb: !Template
     answer_choices: '{{choices.text | join("|||")}}'
     id: 397bdb29-03e8-478b-9840-1bfe9d57d6fb
-    jinja: "Answer the question below:\n\n{% if '_____' in question %}\n{{ question\
+    jinja: "Assuming that:\n\n{{ para }}\n\nAnswer the question below:\n\n{% if '_____' in question %}\n{{ question\
       \ | trim(\".?!\") | replace(\"_____\", answer_choices | join(\" or \")) }}{{\
       \ \"?\" }} \n{% else %}\n{{ question | trim(\".?!\") }} {{  answer_choices |\
-      \ join(\" or \") }}{{ \"?\" }} \n{% endif %}\n\nAssuming that:\n\n{{ para }}|||\n\
-      {{answer_choices[choices.label.index(answerKey)]}}"
+      \ join(\" or \") }}{{ \"?\" }}{% endif %} ||| {{answer_choices[choices.label.index(answerKey)]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:

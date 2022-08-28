@@ -1,11 +1,16 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: eng-fra
 templates:
-  115c04c7-43ea-4681-bc52-304495acc3be: !Template
+  915863e2-b4d4-40be-a8b3-ed2fc301e473: !Template
     answer_choices: null
-    id: 115c04c7-43ea-4681-bc52-304495acc3be
-    jinja: Translate the following text from French to English {{ targetString }}|||
-      {{ sourceString }}
+    id: 915863e2-b4d4-40be-a8b3-ed2fc301e473
+    jinja: 'Translate the following text from French to English.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
@@ -13,11 +18,16 @@ templates:
       original_task: null
     name: translate-this-fra-eng
     reference: ''
-  fe9f5bcc-158e-4639-b7c9-b4721d376bc1: !Template
+  a8308c91-bea4-4e7d-8808-aec18695909a: !Template
     answer_choices: null
-    id: fe9f5bcc-158e-4639-b7c9-b4721d376bc1
-    jinja: Translate the following text from English to French {{ sourceString }}|||
-      {{ targetString }}
+    id: a8308c91-bea4-4e7d-8808-aec18695909a
+    jinja: 'Translate the following text from English to French.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null

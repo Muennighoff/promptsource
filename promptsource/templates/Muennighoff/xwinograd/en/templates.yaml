@@ -5,7 +5,7 @@ templates:
     answer_choices: '{{option1}} ||| {{option2}}'
     id: 28d31908-4aee-4545-aff2-7528cbf39197
     jinja: "{{sentence}}\nReplace the _ in the above sentence with the correct option:\
-      \ \n- {{option1}}\n- {{option2}}\n|||\n{% if answer == '1' %} {{option1}} {%\
+      \ \n- {{option1}}\n- {{option2}}\nReplacement: |||\n{% if answer == '1' %} {{option1}} {%\
       \ else %} {{ option2 }} {% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -45,11 +45,11 @@ templates:
   7f0f6d33-25e2-4394-b1f0-49a2a54767aa: !Template
     answer_choices: True ||| False
     id: 7f0f6d33-25e2-4394-b1f0-49a2a54767aa
-    jinja: 'The _ in the sentence below refers to {{option1}}. True or False?
-
-      {{sentence}}|||
-
-      {{answer_choices[answer|int - 1]}}'
+    jinja: '{{sentence}}
+    
+    The _ in the sentence above refers to {{option1}}. True or False? |||
+    
+    {{answer_choices[answer|int - 1]}}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -96,7 +96,9 @@ templates:
     id: ec365d5d-bb5c-488c-93a0-4f90e6011c5d
     jinja: 'In the sentence below, does the _ stand for {{answer_choices[0]}} or {{answer_choices[1]}}?
 
-      {{sentence}}|||
+      {{sentence}}
+      
+      Write out what _ stands for. |||
 
       {{answer_choices[answer | int - 1]}}'
     metadata: !TemplateMetadata

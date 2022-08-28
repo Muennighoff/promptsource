@@ -1,11 +1,16 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: eng-vie
 templates:
-  055b458f-b7b6-433a-ac9d-63a81619a793: !Template
+  8a6ba64c-17b8-4f6e-aaf8-aae612cb55e9: !Template
     answer_choices: null
-    id: 055b458f-b7b6-433a-ac9d-63a81619a793
-    jinja: Translate the following text from English to Vietnamese {{ sourceString
-      }}||| {{ targetString }}
+    id: 8a6ba64c-17b8-4f6e-aaf8-aae612cb55e9
+    jinja: 'Translate the following text from English to Vietnamese.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
@@ -13,11 +18,16 @@ templates:
       original_task: null
     name: translate-this-eng-vie
     reference: ''
-  e53b2889-276f-412b-a242-ecfe2d2d01bc: !Template
+  e1d7c8e7-071f-463d-9ed2-1e6f802faf1c: !Template
     answer_choices: null
-    id: e53b2889-276f-412b-a242-ecfe2d2d01bc
-    jinja: Translate the following text from Vietnamese to English {{ targetString
-      }}||| {{ sourceString }}
+    id: e1d7c8e7-071f-463d-9ed2-1e6f802faf1c
+    jinja: 'Translate the following text from Vietnamese to English.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null

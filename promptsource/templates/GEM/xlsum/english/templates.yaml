@@ -65,11 +65,11 @@ templates:
       - ROUGE
       - BLEU
       original_task: true
-    name: genarticle
+    name: xp3longgenarticle
     reference: ''
-  hc0096ea-e9db-4e96-85b4-0740085fee55: !Template
+  hd0097ea-e9db-4e96-85b4-0740085fee55: !Template
     answer_choices: null
-    id: hc0096ea-e9db-4e96-85b4-0740085fee55
+    id: hd0097ea-e9db-4e96-85b4-0740085fee55
     jinja: 'Title: {{title}}\nGiven the above title of an imaginary article, imagine the article.\n ||| {{text[:7000]}}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -78,5 +78,48 @@ templates:
       - ROUGE
       - BLEU
       original_task: true
-    name: imaginearticle
+    name: xp3longimaginearticle
+    reference: ''
+  hc0099ea-e9db-4e96-85b4-0740085fee55: !Template
+    answer_choices: null
+    id: hc0099ea-e9db-4e96-85b4-0740085fee55
+    jinja: '{{text[:1000]}}... Continue the article for another 4000 characters max: ||| {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages: []
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: xp3longcontinue
+    reference: ''
+  hc0096aa-e9db-4e96-85b4-0740085fee55: !Template
+    answer_choices: null
+    id: hc0096aa-e9db-4e96-85b4-0740085fee55
+    jinja: '{{text[:500]}}... Continue the article for exactly another 5000 characters: |||
+    {% if text|length > 5500 %}
+    {{text[500:5500]}}
+    {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages: []
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: xp3longcontinueexact
+    reference: ''
+  hc0196ea-e9db-4e96-85b4-0740085fee55: !Template
+    answer_choices: null
+    id: hc0196ea-e9db-4e96-85b4-0740085fee55
+    jinja: '...{{text[3000:3500]}}... Write the rest of the article: |||
+    {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages: []
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: xp3longrest
     reference: ''

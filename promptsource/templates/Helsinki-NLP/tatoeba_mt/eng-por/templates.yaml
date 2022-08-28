@@ -1,11 +1,16 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: eng-por
 templates:
-  23971edb-4b12-495c-9a0e-82af196c7de1: !Template
+  1368abaf-5324-44bc-8b69-82c5289f3b43: !Template
     answer_choices: null
-    id: 23971edb-4b12-495c-9a0e-82af196c7de1
-    jinja: Translate the following text from English to Portuguese {{ sourceString
-      }}||| {{ targetString }}
+    id: 1368abaf-5324-44bc-8b69-82c5289f3b43
+    jinja: 'Translate the following text from English to Portuguese.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
@@ -13,11 +18,16 @@ templates:
       original_task: null
     name: translate-this-eng-por
     reference: ''
-  c197c9a0-2046-4b7a-afea-cd1d45eb5cef: !Template
+  d08a1e05-8743-4208-8078-20520a6beb42: !Template
     answer_choices: null
-    id: c197c9a0-2046-4b7a-afea-cd1d45eb5cef
-    jinja: Translate the following text from Portuguese to English {{ targetString
-      }}||| {{ sourceString }}
+    id: d08a1e05-8743-4208-8078-20520a6beb42
+    jinja: 'Translate the following text from Portuguese to English.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null

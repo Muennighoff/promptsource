@@ -20,7 +20,7 @@ templates:
     answer_choices: '{{ entities | join("|||") }}'
     id: 11e27d59-b1f5-43a1-9ccc-17f1c3249173
     jinja: "The following document has been corrupted. Tell me what \"{{\"@placeholder\"\
-      }}\" is referring to.\n\nDocument: {{ passage }} \n{{ query }} \n||| {% if (\
+      }}\" is referring to.\n\nDocument: {{ passage }} \n{{ query }} \nWhat does it refer to?||| {% if (\
       \ answers | length ) > 0 %}{{ answers | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -133,29 +133,6 @@ templates:
       original_task: true
     name: In the question above, the placeholder stands for
     reference: ''
-  94577b75-2eac-4eae-b367-3b413c4188c6: !Template
-    answer_choices: '{% for entity in entities[:-1] %} {{ query | replace("@placeholder",
-      entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
-      }}'
-    id: 94577b75-2eac-4eae-b367-3b413c4188c6
-    jinja: 'After reading the article, write another sentence to add to it.
-
-      {{ passage | replace("@highlight", "\n- ") }}
-
-
-      ||| {% if ( answers | length ) > 0 %}{{ query | replace("@placeholder", answers
-      | choice) }}{% endif %}
-
-      '
-    metadata: !TemplateMetadata
-      choices_in_prompt: false
-      languages:
-      - en
-      metrics:
-      - Accuracy
-      original_task: true
-    name: Add sentence after (continuation choices)
-    reference: ''
   9579b54e-4f0f-4e43-8907-af57112cc857: !Template
     answer_choices: '{% for entity in entities[:-1] %} {{ query | replace("@placeholder",
       entity) }} ||| {% endfor %} {{ query | replace("@placeholder", entities[-1])
@@ -202,6 +179,8 @@ templates:
       Help by choosing an option between:
 
       - {{ entities | join("\n- ") }}
+
+      Choice:
 
       ||| {% if ( answers | length ) > 0 %}
 
@@ -260,6 +239,8 @@ templates:
 
       {{ query }}
 
+      Correct entity:
+
       ||| {% if ( answers | length ) > 0 %}
 
       {{ answers | choice }}
@@ -285,6 +266,8 @@ templates:
       Pick one option, "{{"@placeholder"}}" refers to:
 
       - {{answer_choices | join("\n- ")}}
+
+      Best option:
 
       ||| {% if ( answers | length ) > 0 %}
 

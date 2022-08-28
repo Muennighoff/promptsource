@@ -7,6 +7,7 @@ templates:
     jinja: '{% if no_answer == false%}
 
       Build a movie plot around this: {{ question }} {{answers|choice}}
+      Plot:
 
       |||
 
@@ -35,6 +36,8 @@ templates:
       Movie title: {{title}}
 
       Movie plot: {{plot}}
+
+      Please answer after this sentence.
 
       |||
 
@@ -68,6 +71,7 @@ templates:
 
       Context: {{plot}}
 
+      Answer:
       |||
 
       {% if no_answer %}
@@ -124,7 +128,7 @@ templates:
   842e346b-2d26-43a2-9a3a-9154f04eb76a: !Template
     answer_choices: null
     id: 842e346b-2d26-43a2-9a3a-9154f04eb76a
-    jinja: 'Generate a question about the following movie plot: {{ plot }}
+    jinja: 'Generate a question about the following movie plot: {{ plot }}\nQuestion:
 
       |||
 
@@ -151,6 +155,8 @@ templates:
 
       Movie plot: {{plot}}
 
+      Answer:
+
       |||
 
       {% if no_answer %}
@@ -175,7 +181,7 @@ templates:
     answer_choices: null
     id: a8597645-cfed-4f54-ba0d-c23eaafaa131
     jinja: 'Suggest a movie title for the following movie plot: {{plot}}
-
+      Title:
       |||
 
       {{title}}'
@@ -202,6 +208,8 @@ templates:
 
       Movie plot: {{plot}}
 
+      Your answer:
+
       |||
 
       {% if no_answer %}
@@ -227,7 +235,7 @@ templates:
     id: ce3649d8-fd90-4a77-8819-4eb20b1c83a9
     jinja: "{% if no_answer == false%}\nGenerate a question that has the following\
       \ answer: \n{{answers|choice}} \nfor the following movie plot: \n{{plot}}\n\
-      |||\n{{question}}\n{% endif %}"
+      Question: |||\n{{question}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -239,3 +247,48 @@ templates:
     name: generate_question_by_answer
     reference: Given the passage and the answer, generate a question which has that
       answer.
+  d786ac96-de6b-403a-8628-5adb23252194: !Template
+    answer_choices: null
+    id: d786ac96-de6b-403a-8628-5adb23252194
+    jinja: 'Here is a title for a movie plot: {{title}}. What could the plot be?
+      ||| {{plot}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: xp3longtitleplot
+    reference: ''
+  f586ac96-de6b-403a-8628-5adb23252194: !Template
+    answer_choices: null
+    id: f586ac96-de6b-403a-8628-5adb23252194
+    jinja: 'Given the title <<{{title}}>> and the question <<{{question}}>>, write a movie story:
+      ||| {{plot}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: xp3longwritestory
+    reference: ''
+  f487bc96-de6b-403a-8628-5adb23252194: !Template
+    answer_choices: null
+    id: f487bc96-de6b-403a-8628-5adb23252194
+    jinja: 'Finish the below start of a movie plot!\n{{plot[:10]}}:
+      ||| {{plot[10:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: xp3longfinishplot
+    reference: ''

@@ -1,11 +1,16 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: hin-zho
 templates:
-  f6331633-bf1a-44b6-b284-1d0f47263434: !Template
+  1f9e3b06-afdd-428d-814e-5d57526c1ff3: !Template
     answer_choices: null
-    id: f6331633-bf1a-44b6-b284-1d0f47263434
-    jinja: Translate the following text from Hindi to Chinese {{ sourceString }}|||
-      {{ targetString }}
+    id: 1f9e3b06-afdd-428d-814e-5d57526c1ff3
+    jinja: 'Translate the following text from Hindi to Chinese.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
@@ -13,11 +18,16 @@ templates:
       original_task: null
     name: translate-this-hin-zho
     reference: ''
-  f66a6a46-feb7-4abb-bbf2-33e270438ffd: !Template
+  43360c26-1d3b-47f9-aad8-de4351d9df5d: !Template
     answer_choices: null
-    id: f66a6a46-feb7-4abb-bbf2-33e270438ffd
-    jinja: Translate the following text from Chinese to Hindi {{ targetString }}|||
-      {{ sourceString }}
+    id: 43360c26-1d3b-47f9-aad8-de4351d9df5d
+    jinja: 'Translate the following text from Chinese to Hindi.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null

@@ -82,3 +82,30 @@ templates:
       original_task: true
     name: write_abstract_en
     reference: xsum 'read_below_DOC_write_abstract' template
+  dff7b414-7385-4855-bb90-253073a34fde: !Template
+    answer_choices: null
+    id: dff7b414-7385-4855-bb90-253073a34fde
+    jinja: "{{target}}\n\nGiven the above abstract, write an English article for it. ||| {{source}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages: []
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: xp3longwritearticle
+    reference: ''
+  dff7b415-7385-4855-bb90-253073a34fde: !Template
+    answer_choices: null
+    id: dff7b415-7385-4855-bb90-253073a34fde
+    jinja: "{{target}}\n\nI'm interested in that, but I only have a few mins.
+    Can you give me the first 500 characters of an article about that? ||| {{source[:500]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages: []
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: xp3longchars
+    reference: ''

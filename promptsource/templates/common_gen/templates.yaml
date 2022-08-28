@@ -37,8 +37,8 @@ templates:
   a4991cc7-cc91-4f37-af80-1983a02eb950: !Template
     answer_choices: null
     id: a4991cc7-cc91-4f37-af80-1983a02eb950
-    jinja: "Construct a sentence with the word {{ concepts | choice }}. \n\nHint:\
-      \ Use {{concepts | join(\", \")}} to restrict the output sentence.\n|||\n{{target}}"
+    jinja: "Construct a sentence with the word {{ concepts | choice }}.\n\n(Hint:\
+      \ Use {{concepts | join(\", \")}} to restrict the output sentence.)\n|||\n{{target}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -54,7 +54,7 @@ templates:
     id: b2033df4-7922-45b8-a113-e7784135cea9
     jinja: "{% set seq = [ \n'From the concepts mentioned below, generate a sentence:',\
       \ \n'Convert the concepts to a sentence:', \n'Given the list of concepts, write\
-      \ a sentence:'\n] %} \n{{ seq | choice }}\n{{ concepts | join(\", \") }}\n|||\n\
+      \ a sentence:'\n] %} \n{{ seq | choice }}\n{{ concepts | join(\", \") }}\nSent:|||\n\
       {{target}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -70,7 +70,7 @@ templates:
   b7012213-04c4-424d-85fb-39d63d8a0ca2: !Template
     answer_choices: null
     id: b7012213-04c4-424d-85fb-39d63d8a0ca2
-    jinja: 'What are the topics in the sentence: {{target}}
+    jinja: 'What are the topics in the sentence "{{target}}"?
 
       |||
 
@@ -124,7 +124,7 @@ templates:
     id: fa787974-86dd-4f66-b2d7-6d3523ce00e1
     jinja: "Humans can easily string together abstract concepts to form a coherent\
       \ sentence. \nFor example, with the concepts {{ concepts | join(\", \") }},\
-      \ a simple sentence can be  \n|||\n{{target}}"
+      \ a simple sentence can be \n|||\n{{target}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:

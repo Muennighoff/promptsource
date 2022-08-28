@@ -1,11 +1,16 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: run-spa
 templates:
-  32064d45-2fae-435b-ade5-bc3793844ccc: !Template
+  678b21a3-c97e-4e6e-ad25-7fc108bc3b22: !Template
     answer_choices: null
-    id: 32064d45-2fae-435b-ade5-bc3793844ccc
-    jinja: Translate the following text from Rundi to Spanish {{ sourceString }}|||
-      {{ targetString }}
+    id: 678b21a3-c97e-4e6e-ad25-7fc108bc3b22
+    jinja: 'Translate the following text from Rundi to Spanish.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
@@ -13,11 +18,16 @@ templates:
       original_task: null
     name: translate-this-run-spa
     reference: ''
-  58323021-5c9a-49ce-a329-66b1533c47cf: !Template
+  97938d45-15fb-4b0e-999f-7fca563192c7: !Template
     answer_choices: null
-    id: 58323021-5c9a-49ce-a329-66b1533c47cf
-    jinja: Translate the following text from Spanish to Rundi {{ targetString }}|||
-      {{ sourceString }}
+    id: 97938d45-15fb-4b0e-999f-7fca563192c7
+    jinja: 'Translate the following text from Spanish to Rundi.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null

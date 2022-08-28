@@ -1,11 +1,16 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: fra-zho
 templates:
-  b6e2397f-6170-4a1c-9b9e-4efd970dcefc: !Template
+  b225ea73-f23a-4233-bcc9-f3dc0c5baab2: !Template
     answer_choices: null
-    id: b6e2397f-6170-4a1c-9b9e-4efd970dcefc
-    jinja: Translate the following text from Chinese to French {{ targetString }}|||
-      {{ sourceString }}
+    id: b225ea73-f23a-4233-bcc9-f3dc0c5baab2
+    jinja: 'Translate the following text from Chinese to French.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
@@ -13,11 +18,16 @@ templates:
       original_task: null
     name: translate-this-zho-fra
     reference: ''
-  c1511df9-75e9-4771-9559-f73348d151a3: !Template
+  c924a0d6-1c59-4ef5-add4-c67d7f033628: !Template
     answer_choices: null
-    id: c1511df9-75e9-4771-9559-f73348d151a3
-    jinja: Translate the following text from French to Chinese {{ sourceString }}|||
-      {{ targetString }}
+    id: c924a0d6-1c59-4ef5-add4-c67d7f033628
+    jinja: 'Translate the following text from French to Chinese.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null

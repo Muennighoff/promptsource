@@ -1,11 +1,16 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: cat-eng
 templates:
-  28d68d88-1971-4c2f-bf9f-dacf247964e3: !Template
+  37a12cfd-7b03-416e-b84d-0c17f2502d9d: !Template
     answer_choices: null
-    id: 28d68d88-1971-4c2f-bf9f-dacf247964e3
-    jinja: Translate the following text from English to Catalan {{ targetString }}|||
-      {{ sourceString }}
+    id: 37a12cfd-7b03-416e-b84d-0c17f2502d9d
+    jinja: 'Translate the following text from English to Catalan.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
@@ -13,11 +18,16 @@ templates:
       original_task: null
     name: translate-this-eng-cat
     reference: ''
-  b5fb150a-5b6d-460e-81a3-53ba4627ca9e: !Template
+  627e1712-761d-48fe-af41-f6b7d1282db9: !Template
     answer_choices: null
-    id: b5fb150a-5b6d-460e-81a3-53ba4627ca9e
-    jinja: Translate the following text from Catalan to English {{ sourceString }}|||
-      {{ targetString }}
+    id: 627e1712-761d-48fe-af41-f6b7d1282db9
+    jinja: 'Translate the following text from Catalan to English.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null

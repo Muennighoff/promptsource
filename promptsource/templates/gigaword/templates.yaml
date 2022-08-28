@@ -25,8 +25,7 @@ templates:
     id: 2558932f-894a-41ef-be34-32a5afb1f5d8
     jinja: 'Title: {{summary}}
 
-
-      ||| {{document}}'
+      Short Doc: ||| {{document}}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages:
@@ -40,9 +39,9 @@ templates:
   696e561e-1311-4a3e-9ca1-51d1fd77392b: !Template
     answer_choices: null
     id: 696e561e-1311-4a3e-9ca1-51d1fd77392b
-    jinja: 'Make a title for this article: {{document}} |||
-
-
+    jinja: 'Make a title for this short article: {{document}} 
+    
+      Title: |||
       {{summary}}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
@@ -57,7 +56,7 @@ templates:
   7ad1a48a-195d-4c0c-aea5-df0689589f27: !Template
     answer_choices: null
     id: 7ad1a48a-195d-4c0c-aea5-df0689589f27
-    jinja: 'First sentence of the article: {{document}}
+    jinja: 'Brief article: {{document}}
 
 
       Title: ||| {{summary}}'
@@ -125,7 +124,7 @@ templates:
   ac53a797-4d59-455a-b0e6-0e4d7d85f029: !Template
     answer_choices: null
     id: ac53a797-4d59-455a-b0e6-0e4d7d85f029
-    jinja: '{{document}} In a nutshell, ||| {{summary}}'
+    jinja: '{{document}}\n\nIn a nutshell, ||| {{summary}}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages:

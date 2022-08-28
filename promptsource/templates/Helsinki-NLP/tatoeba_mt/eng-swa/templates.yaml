@@ -1,11 +1,16 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: eng-swa
 templates:
-  91adec8c-c18e-496b-97d6-7a7d1a266860: !Template
+  8078f217-c1e5-46c1-9c81-0f7230718dff: !Template
     answer_choices: null
-    id: 91adec8c-c18e-496b-97d6-7a7d1a266860
-    jinja: Translate the following text from English to Swahili (macrolanguage) {{
-      sourceString }}||| {{ targetString }}
+    id: 8078f217-c1e5-46c1-9c81-0f7230718dff
+    jinja: 'Translate the following text from English to Swahili (macrolanguage).
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
@@ -13,11 +18,16 @@ templates:
       original_task: null
     name: translate-this-eng-swa
     reference: ''
-  b8bd0b4f-cc9e-478b-bd3e-89fe782294bf: !Template
+  e541455c-e9b0-4829-8f1d-1522ec9b1dc7: !Template
     answer_choices: null
-    id: b8bd0b4f-cc9e-478b-bd3e-89fe782294bf
-    jinja: Translate the following text from Swahili (macrolanguage) to English {{
-      targetString }}||| {{ sourceString }}
+    id: e541455c-e9b0-4829-8f1d-1522ec9b1dc7
+    jinja: 'Translate the following text from Swahili (macrolanguage) to English.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null

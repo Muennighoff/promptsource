@@ -1,27 +1,37 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: fra-ind
 templates:
-  295d9417-f892-4c90-ae67-7962ed98299e: !Template
+  90010075-8ba7-4fad-9c2a-b156983d80e7: !Template
     answer_choices: null
-    id: 295d9417-f892-4c90-ae67-7962ed98299e
-    jinja: Translate the following text from French to Indonesian {{ sourceString
-      }}||| {{ targetString }}
-    metadata: !TemplateMetadata
-      choices_in_prompt: null
-      languages: null
-      metrics: null
-      original_task: null
-    name: translate-this-fra-ind
-    reference: ''
-  5b5e9dba-697e-4b52-9da7-aec8866d94bf: !Template
-    answer_choices: null
-    id: 5b5e9dba-697e-4b52-9da7-aec8866d94bf
-    jinja: Translate the following text from Indonesian to French {{ targetString
-      }}||| {{ sourceString }}
+    id: 90010075-8ba7-4fad-9c2a-b156983d80e7
+    jinja: 'Translate the following text from Indonesian to French.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
       metrics: null
       original_task: null
     name: translate-this-ind-fra
+    reference: ''
+  bbbc095c-0a51-475d-bd2d-b72747472cb8: !Template
+    answer_choices: null
+    id: bbbc095c-0a51-475d-bd2d-b72747472cb8
+    jinja: 'Translate the following text from French to Indonesian.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: translate-this-fra-ind
     reference: ''

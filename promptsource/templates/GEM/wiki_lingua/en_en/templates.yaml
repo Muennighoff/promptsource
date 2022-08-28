@@ -22,7 +22,7 @@ templates:
   2038df7b-5420-4a33-87ec-09715419deef: !Template
     answer_choices: null
     id: 2038df7b-5420-4a33-87ec-09715419deef
-    jinja: 'Article in {{source_language_name}}: {{source}}
+    jinja: 'Source in {{source_language_name}}: {{source}}
 
 
       Summary in {{target_language_name}}: ||| {{target}}'
@@ -70,7 +70,7 @@ templates:
   dff7b314-7385-4855-bb90-253073a34fde: !Template
     answer_choices: null
     id: dff7b314-7385-4855-bb90-253073a34fde
-    jinja: "First, read the {{source_language_name}} article below.\n\n{{source}} \n\nNow, please write\
+    jinja: "First, read the {{source_language_name}} text below.\n\n{{source}} \n\nNow, please write\
       \ a short abstract for it in {{target_language_name}}. Abstract: ||| {{target}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -81,3 +81,31 @@ templates:
       original_task: true
     name: write_abstract_en
     reference: xsum 'read_below_DOC_write_abstract' template
+  dfa7b514-7385-4855-bb90-253073a34fde: !Template
+    answer_choices: null
+    id: dfa7b514-7385-4855-bb90-253073a34fde
+    jinja: "{{target}}\n\nGiven the above summary, write a detailed text in {{source_language_name}} for it. ||| {{source}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages: []
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: xp3longwritearticle
+    reference: ''
+  dff8b414-7485-4855-bb90-253073a34fde: !Template
+    answer_choices: null
+    id: dff8b414-7485-4855-bb90-253073a34fde
+    jinja: "{{target}}\n\nI'm interested in that, but I only have a few mins.
+    Can you give me at most the first 500 characters of a detailed explanation
+    in {{source_language_name}} about that? ||| {{source[:500]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages: []
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: xp3longchars
+    reference: ''

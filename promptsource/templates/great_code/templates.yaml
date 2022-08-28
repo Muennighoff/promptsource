@@ -62,7 +62,7 @@ templates:
       \ + fixed_token +  ns.result_lines[ns.buggy_line][ns.bug_location + ns.bug_len:])\
       \ | trim | replace(\" . \", \".\") | replace(\" , \", \", \")  | replace(\"\
       ( \", \"(\") | replace(\" )\", \")\") | replace(\"[ \", \"[\") | replace(\"\
-      \ ]\", \"]\")%}\n\n    Fix the buggy line: {{buggy_line_content}}\n    |||\n\
+      \ ]\", \"]\")%}\n\n    Fix the buggy line: {{buggy_line_content}}\nFix: |||\n\
       \    {{fixed_buggy_line_content}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -150,7 +150,7 @@ templates:
       ) | replace(\" , \", \", \")  | replace(\"( \", \"(\") | replace(\" )\", \"\
       )\") | replace(\"[ \", \"[\") | replace(\" ]\", \"]\")}}\n    \n    Given the\
       \ code above, what is a proper replacement for {{mask}}? Choose among: {{answer_choices\
-      \ | join(\", \")}}\n    |||\n    {{source_tokens[repair_targets[0]]}}\n{% endif\
+      \ | join(\", \")}}\nChoice:    |||\n    {{source_tokens[repair_targets[0]]}}\n{% endif\
       \ %}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

@@ -1,27 +1,37 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: spa-zho
 templates:
-  4bac0f02-dd94-45bf-8f7e-a39a66d1beb6: !Template
+  9be540cd-2b61-457e-a7d3-1c0ba3468bcd: !Template
     answer_choices: null
-    id: 4bac0f02-dd94-45bf-8f7e-a39a66d1beb6
-    jinja: Translate the following text from Spanish to Chinese {{ sourceString }}|||
-      {{ targetString }}
-    metadata: !TemplateMetadata
-      choices_in_prompt: null
-      languages: null
-      metrics: null
-      original_task: null
-    name: translate-this-spa-zho
-    reference: ''
-  a2ad3c1f-f90c-4110-8c17-e0e45f1ed73f: !Template
-    answer_choices: null
-    id: a2ad3c1f-f90c-4110-8c17-e0e45f1ed73f
-    jinja: Translate the following text from Chinese to Spanish {{ targetString }}|||
-      {{ sourceString }}
+    id: 9be540cd-2b61-457e-a7d3-1c0ba3468bcd
+    jinja: 'Translate the following text from Chinese to Spanish.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
       metrics: null
       original_task: null
     name: translate-this-zho-spa
+    reference: ''
+  d3f42783-0031-4a0c-be8e-66ba1ab1af5b: !Template
+    answer_choices: null
+    id: d3f42783-0031-4a0c-be8e-66ba1ab1af5b
+    jinja: 'Translate the following text from Spanish to Chinese.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: translate-this-spa-zho
     reference: ''

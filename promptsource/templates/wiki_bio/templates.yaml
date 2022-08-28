@@ -38,7 +38,7 @@ templates:
       ]}}'s: \n{% for n in range (input_text[\"table\"][\"column_header\"]|length)\
       \ %} {% if input_text[\"table\"][\"column_header\"][n] != \"article_title\"\
       \ %}\n- {{ input_text[\"table\"][\"column_header\"][n].replace(\"_\",\" \")\
-      \ }} \n{% endif %} {% endfor %}\n\nBio: {{target_text}} |||\n{% for n in range\
+      \ }} \n{% endif %} {% endfor %}\n\nBio: {{target_text}}\nDetails:|||{% for n in range\
       \ (input_text[\"table\"][\"column_header\"]|length) %}\n{% if input_text[\"\
       table\"][\"column_header\"][n] != \"article_title\" %}\n- {{ input_text[\"table\"\
       ][\"column_header\"][n].replace(\"_\",\" \") }} is {{ input_text[\"table\"][\"\
@@ -56,7 +56,7 @@ templates:
     answer_choices: null
     id: 788c1adf-bc8e-40ed-a81f-ac6f0dfcb471
     jinja: "What type of details about {{input_text[\"context\"]}} can be gathered\
-      \ from the following bio?\n\nBio: {{target_text}} |||\n{% for n in range (input_text[\"\
+      \ from the following bio?\n\nBio: {{target_text}}\n\nGathered details: |||\n{% for n in range (input_text[\"\
       table\"][\"column_header\"]|length) %}\n{% if input_text[\"table\"][\"column_header\"\
       ][n] != \"article_title\" %}\n- {{ input_text[\"table\"][\"column_header\"][n].replace(\"\
       _\",\" \") }} \n{% endif %}\n{% endfor %}"
@@ -106,7 +106,9 @@ templates:
       the following bio?
 
 
-      Bio: {{target_text}} |||
+      Bio: {{target_text}} 
+      
+      Please write here what you extracted. |||
 
       {% for n in range (input_text["table"]["column_header"]|length) %}
 

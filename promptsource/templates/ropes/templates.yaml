@@ -5,7 +5,7 @@ templates:
     id: 0791ec30-6361-4e62-8dce-ca9cbf997acc
     jinja: "{% if answers.text %}\nPlease answer correctly the following question\
       \ related to the paragraph below. \n\n{{ question }}\n\n{{ situation }}\n\n\
-      Hint: {{ background }}\n|||\n{{ answers.text | choice }}\n{% endif %}"
+      Hint: {{ background }}\n Answer: |||\n{{ answers.text | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -19,7 +19,7 @@ templates:
     answer_choices: null
     id: 0909d72d-50c7-4cbb-bec4-1f891123717c
     jinja: "{% if answers.text %}\n{{ situation }}\n\nGiven the paragraph above, please\
-      \ answer correctly the following question: \n\n{{ question }}\n|||\n{{ answers.text\
+      \ answer correctly the following question: \n\n{{ question }}\nWrite your answer here: |||\n{{ answers.text\
       \ | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -120,6 +120,8 @@ templates:
 
 
       Hint: {{ background }}
+
+      Answer:
 
       |||
 
@@ -242,7 +244,7 @@ templates:
     id: cc8f3c6b-b800-4b47-b6ec-e8febfdaad6f
     jinja: "{% if answers.text %}\n{{ situation }}\n\nGiven the paragraph above, please\
       \ answer correctly the following question: \n\n{{ question }}\n\nHint: {{ background\
-      \ }}\n|||\n{{ answers.text | choice }}\n{% endif %}"
+      \ }}\nYour answer: |||\n{{ answers.text | choice }}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -277,4 +279,31 @@ templates:
       - Squad
       original_task: true
     name: read_background_situation
+    reference: ''
+  f72e0adb-ca74-4280-8ed3-8b53411d87ce: !Template
+    answer_choices: null
+    id: f72e0adb-ca74-4280-8ed3-8b53411d87ce
+    jinja: '{{situation}}\n\n{{question}} I need some useful background to understand the question. 
+    Can you provide me some? ||| {{background}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Squad
+      original_task: true
+    name: xp3longneedbackground
+    reference: ''
+  f73e0adb-ca74-4280-8ed3-8b53411d87ce: !Template
+    answer_choices: null
+    id: f73e0adb-ca74-4280-8ed3-8b53411d87ce
+    jinja: 'In what kind of a situation would you ask this question: "{{question}}"? ||| {{situation}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Squad
+      original_task: true
+    name: xp3longwhatsituation
     reference: ''

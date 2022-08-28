@@ -6,7 +6,8 @@ templates:
     id: 51b3c3fe-2fa2-474a-81f9-5b421c884109
     jinja: "{% for statement in context %} \n{{ statement }}\n{% endfor %}\nGiven\
       \ the dialogue / passage above, use the following options to answer the question\
-      \ \"{{question}}\".\nOptions: \n- {{ answer_choices | join('\\n- ') }}\n|||\n\
+      \ \"{{question}}\".\nOptions: \n- {{ answer_choices | join('\\n- ') }}
+      Answer: |||\n\
       {{ answer }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

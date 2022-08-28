@@ -1,11 +1,16 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: eng-zho
 templates:
-  2330b82e-22ba-4fe0-b344-e07d04c7e3b6: !Template
+  876e55d8-cb51-4864-9d28-9dbb7c722d4d: !Template
     answer_choices: null
-    id: 2330b82e-22ba-4fe0-b344-e07d04c7e3b6
-    jinja: Translate the following text from English to Chinese {{ sourceString }}|||
-      {{ targetString }}
+    id: 876e55d8-cb51-4864-9d28-9dbb7c722d4d
+    jinja: 'Translate the following text from English to Chinese.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
@@ -13,11 +18,16 @@ templates:
       original_task: null
     name: translate-this-eng-zho
     reference: ''
-  780417e5-81ba-4774-97fd-2a93e9621cbf: !Template
+  b40e9312-5457-479d-92fc-b484ef35afcf: !Template
     answer_choices: null
-    id: 780417e5-81ba-4774-97fd-2a93e9621cbf
-    jinja: Translate the following text from Chinese to English {{ targetString }}|||
-      {{ sourceString }}
+    id: b40e9312-5457-479d-92fc-b484ef35afcf
+    jinja: 'Translate the following text from Chinese to English.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null

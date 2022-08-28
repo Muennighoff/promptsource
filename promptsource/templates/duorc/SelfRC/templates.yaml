@@ -6,7 +6,7 @@ templates:
     id: 1f544641-ba15-44ef-bfcd-c951d320eb9a
     jinja: "{% if no_answer == false%}\nGenerate a question that has the following\
       \ answer: \n{{answers|choice}} \nfor the following movie plot: \n{{plot}}\n\
-      |||\n{{question}}\n{% endif %}"
+      Question: |||\n{{question}}\n{% endif %}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -63,6 +63,8 @@ templates:
 
       Movie plot: {{plot}}
 
+      Answer:
+
       |||
 
       {% if no_answer %}
@@ -86,8 +88,7 @@ templates:
   af62f222-a8d2-439f-9586-52e0279d25cc: !Template
     answer_choices: null
     id: af62f222-a8d2-439f-9586-52e0279d25cc
-    jinja: 'Generate a question about the following movie plot: {{ plot }}
-
+    jinja: 'Generate a question about the following movie plot: {{ plot }}\nQuestion:
       |||
 
       {{ question }}'
@@ -113,6 +114,8 @@ templates:
       Movie plot title: {{title}}
 
       Movie plot: {{plot}}
+
+      Your answer:
 
       |||
 
@@ -140,6 +143,7 @@ templates:
     jinja: '{% if no_answer == false%}
 
       Build a movie plot around this: {{ question }} {{answers|choice}}
+      Plot:
 
       |||
 
@@ -168,6 +172,7 @@ templates:
 
       Context: {{plot}}
 
+      Answer:
       |||
 
       {% if no_answer %}
@@ -192,7 +197,7 @@ templates:
     answer_choices: null
     id: d486ac96-de6b-403a-8628-5adb23252194
     jinja: 'Suggest a movie title for the following movie plot: {{plot}}
-
+      Title:
       |||
 
       {{title}}'
@@ -212,12 +217,14 @@ templates:
     jinja: 'I am trying to decide whether it''s worth it to invest in this film proposal.
       Can you help me answer a few questions? If you can''t, please say "{{"No I can''t"}}".
 
-
       Question: {{question}}
 
       Movie title: {{title}}
 
       Movie plot: {{plot}}
+
+
+      Please answer after this sentence.
 
       |||
 
@@ -238,4 +245,49 @@ templates:
       - Squad
       original_task: true
     name: decide_worth_it
+    reference: ''
+  d586ac96-de6b-403a-8628-5adb23252194: !Template
+    answer_choices: null
+    id: d586ac96-de6b-403a-8628-5adb23252194
+    jinja: 'Here is a title for a movie plot: {{title}}. What could the plot be?
+      ||| {{plot}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: xp3longtitleplot
+    reference: ''
+  f486ac96-de6b-403a-8628-5adb23252194: !Template
+    answer_choices: null
+    id: f486ac96-de6b-403a-8628-5adb23252194
+    jinja: 'Given the title <<{{title}}>> and the question <<{{question}}>>, write a movie story:
+      ||| {{plot}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: xp3longwritestory
+    reference: ''
+  f487ac96-de6b-403a-8628-5adb23252194: !Template
+    answer_choices: null
+    id: f487ac96-de6b-403a-8628-5adb23252194
+    jinja: 'Finish the below start of a movie plot!\n{{plot[:10]}}:
+      ||| {{plot[10:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - BLEU
+      - ROUGE
+      original_task: false
+    name: xp3longfinishplot
     reference: ''

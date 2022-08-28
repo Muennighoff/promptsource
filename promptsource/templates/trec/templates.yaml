@@ -1,8 +1,8 @@
 dataset: trec
 templates:
   21d04668-c5b3-4418-bbb6-663f1ffdb97c: !Template
-    answer_choices: Description ||| Entity ||| Abbreviation ||| Person ||| Quantity
-      ||| Location
+    answer_choices: 'Description ||| Entity ||| Abbreviation ||| Person ||| Quantity
+      ||| Location'
     id: 21d04668-c5b3-4418-bbb6-663f1ffdb97c
     jinja: "Categories: {{', '.join(answer_choices)}}\n\nWhat category best describes:\
       \ {{text}} \nAnswer: ||| {{ answer_choices [label_coarse] }}"
@@ -205,11 +205,11 @@ templates:
     name: fine_grained_LOC_context_first
     reference: Fine grained labels with coarse-label `LOC`, context provided first
   7a3ed4dd-af89-493c-8efb-c67622f63034: !Template
-    answer_choices: Description ||| Entity ||| Abbreviation ||| Person ||| Quantity
-      ||| Location
+    answer_choices: 'Description ||| Entity ||| Abbreviation ||| Person ||| Quantity
+      ||| Location'
     id: 7a3ed4dd-af89-493c-8efb-c67622f63034
     jinja: "Which category best describes the following question: {{text}} \n\nChoose\
-      \ from the following list: \n{{', '.join(answer_choices)}}\n ||| {{ answer_choices\
+      \ from the following list: \n{{', '.join(answer_choices)}}\nChoice: ||| {{ answer_choices\
       \ [label_coarse] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true

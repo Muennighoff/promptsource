@@ -1,27 +1,37 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: eng-cmn_Hant
 templates:
-  48d886b8-8476-4d36-b751-b1add1c9b0dd: !Template
+  8fe99aca-60a9-4e44-8bcf-8e91a87a1972: !Template
     answer_choices: null
-    id: 48d886b8-8476-4d36-b751-b1add1c9b0dd
-    jinja: Translate the following text from Mandarin Chinese to English {{ targetString
-      }}||| {{ sourceString }}
-    metadata: !TemplateMetadata
-      choices_in_prompt: null
-      languages: null
-      metrics: null
-      original_task: null
-    name: translate-this-cmn_Hant-eng
-    reference: ''
-  8f6c9133-105d-46b1-810e-3224aac8df83: !Template
-    answer_choices: null
-    id: 8f6c9133-105d-46b1-810e-3224aac8df83
-    jinja: Translate the following text from English to Mandarin Chinese {{ sourceString
-      }}||| {{ targetString }}
+    id: 8fe99aca-60a9-4e44-8bcf-8e91a87a1972
+    jinja: 'Translate the following text from English to Mandarin Chinese.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
       metrics: null
       original_task: null
     name: translate-this-eng-cmn_Hant
+    reference: ''
+  fd3ef0a5-9649-47f4-b3f6-88f211af682d: !Template
+    answer_choices: null
+    id: fd3ef0a5-9649-47f4-b3f6-88f211af682d
+    jinja: 'Translate the following text from Mandarin Chinese to English.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: translate-this-cmn_Hant-eng
     reference: ''

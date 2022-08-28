@@ -42,6 +42,8 @@ templates:
 
       {% endif %}
 
+      Answer:
+
       |||
 
       {{document_title}}'
@@ -63,6 +65,7 @@ templates:
       Could you generate a question whose answer is {{answers.text | choice}} based
       on the following context: {{passage_text}}
 
+      Q:
       |||
 
       {{question_text}}'
@@ -83,9 +86,9 @@ templates:
       I am trying to figure out the answer to the question "{{question_text}}"
 
       I found this text about {{document_title}} on Wikipedia and I think it contains the answer.
-      Can you tell me the answer?
-
       Text: {{passage_text}}
+
+      Can you tell me the answer?
 
       |||
 
@@ -104,7 +107,7 @@ templates:
     id: 696c888c-3419-4e4c-b559-1d9772fa60ab
     jinja: "Extract\
       \ in the passage the answer to the question: {{question_text}}\nPassage about {{document_title}}:\
-      \ {{passage_text}}\n|||\n{{answers.text | choice}}"
+      \ {{passage_text}}\n Extracted answer: ||| {{answers.text | choice}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -121,7 +124,7 @@ templates:
       I am testing my students'' knowledge about {{document_title}}.
 
       Based on the context ({{passage_text}}), here''s the question to answer: {{question_text}}.
-      The answer is in the context.
+      The answer is in the context. What is it?
 
       |||
 
@@ -141,6 +144,8 @@ templates:
     jinja: '
       Could you generate a question about {{document_title}} and whose answer is {{answers.text
       | choice}} based on the following context: {{passage_text}}
+
+      The question, please.
 
       |||
 
@@ -197,3 +202,34 @@ templates:
       original_task: true
     name: en_whats_the_answer
     reference: Ask question with Context
+  fcf0920f-6599-44a6-bf2a-9ef6bbbe1e64: !Template
+    answer_choices: null
+    id: fcf0920f-6599-44a6-bf2a-9ef6bbbe1e64
+    jinja: 'Rumor has it that {{answers.text | choice}} is the answer to {{question_text}}
+
+    I am skeptical... Can you prove the above by writing a Wikipedia-style article of
+    at most 8000 characters in {{language}}? ||| {{passage_text[:8000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Squad
+      original_task: true
+    name: xp3longwiki
+    reference: ''
+  fcf0921f-6599-45a6-bf2a-9ef6bbbe1e64: !Template
+    answer_choices: null
+    id: fcf0921f-6599-45a6-bf2a-9ef6bbbe1e64
+    jinja: 'I want to teach my class about the topic of {{document_title}}.
+    Can you write me an article that I can give them to read as a homework?
+    It should answer {{question_text}}, be in {{language}} and be formal. Please. ||| {{passage_text}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Squad
+      original_task: true
+    name: xp3longarticle
+    reference: ''

@@ -24,7 +24,7 @@ templates:
 
       {{question2}}
 
-      Pick one: These questions are "{{"duplicates"}}" or "{{"not duplicates"}}".
+      Pick one: These questions are "{{"duplicates"}}" or "{{"not duplicates"}}"?
 
       |||
 

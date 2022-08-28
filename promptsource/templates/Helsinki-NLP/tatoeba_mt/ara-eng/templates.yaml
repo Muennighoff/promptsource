@@ -1,11 +1,16 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: ara-eng
 templates:
-  2ca27188-17c3-4e83-884c-90c93f53821a: !Template
+  0c9b14fb-d48a-41fc-a00e-e938c5caed56: !Template
     answer_choices: null
-    id: 2ca27188-17c3-4e83-884c-90c93f53821a
-    jinja: Translate the following text from English to Arabic {{ targetString }}|||
-      {{ sourceString }}
+    id: 0c9b14fb-d48a-41fc-a00e-e938c5caed56
+    jinja: 'Translate the following text from English to Arabic.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
@@ -13,11 +18,16 @@ templates:
       original_task: null
     name: translate-this-eng-ara
     reference: ''
-  3a6ba80f-2b5d-471d-93cc-208a74d09b25: !Template
+  1861ae94-0e76-4713-a0e8-76852b680503: !Template
     answer_choices: null
-    id: 3a6ba80f-2b5d-471d-93cc-208a74d09b25
-    jinja: Translate the following text from Arabic to English {{ sourceString }}|||
-      {{ targetString }}
+    id: 1861ae94-0e76-4713-a0e8-76852b680503
+    jinja: 'Translate the following text from Arabic to English.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null

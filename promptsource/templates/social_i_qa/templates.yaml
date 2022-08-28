@@ -33,6 +33,8 @@ templates:
 
       Possible answers: {{answer_choices | join(", ")}}
 
+      Best one:
+
 
       |||
 
@@ -129,6 +131,8 @@ templates:
 
       C: {{answerC}}
 
+
+      Choose from the above 3.
 
       |||
 

@@ -6,9 +6,7 @@ templates:
     id: 033498ca-3d9a-47e3-b631-d881ab53b5ad
     jinja: 'Pick the most correct option to answer the following question.
 
-
       {{question}}
-
 
       Options:
 
@@ -16,7 +14,8 @@ templates:
 
       - {{letter}}: {{t}}
 
-      {% endfor %} |||
+      {% endfor %} 
+      Most correct: |||
 
       {{answerKey}}'
     metadata: !TemplateMetadata
@@ -32,13 +31,10 @@ templates:
     answer_choices: '{{choices.text | join("|||")}}'
     id: 252aa566-9482-4e81-aad9-664a9bebd8e8
     jinja: '{{question}}
-
-
       Options:
-
-      - {{answer_choices | join("\n- ")}}|||
-
-      {{answer_choices[choices["label"].index(answerKey)]}}'
+      - {{answer_choices | join("\n- ")}}
+      
+      Answer: ||| {{answer_choices[choices["label"].index(answerKey)]}}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -58,9 +54,8 @@ templates:
 
       Possibilities:
 
-      - {{answer_choices | join("\n- ")}}|||
-
-      {{answer_choices[choices["label"].index(answerKey)]}}'
+      - {{answer_choices | join("\n- ")}}
+      Which one? ||| {{answer_choices[choices["label"].index(answerKey)]}}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -98,23 +93,12 @@ templates:
     id: c988ee30-a523-457b-af21-87353349b543
     jinja: 'Pick and copy all the incorrect options for the following question:
 
-
       {{question}}
 
-
-      Options:
-
-      - {{choices["text"] | join("\n- ")}}|||
-
-      {% for i in range(choices["label"]|length) %}
-
-      {% if i != choices["label"].index(answerKey) %}
-
-      - {{choices["text"][i]}}
-
-      {% endif %}
-
-      {% endfor %}'
+      Options: {% for i in range(choices["label"]|length)%}{{choices["text"][i]}},{% endfor %}
+      Incorrect options:
+      |||
+      {% for i in range(choices["label"]|length) %}{% if i != choices["label"].index(answerKey) %}{{choices["text"][i]}}, {% endif %}{% endfor %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -130,7 +114,7 @@ templates:
     id: d90da519-0e2c-4f9b-a546-7cba82824eb2
     jinja: "Here's a problem to solve: {{question}}\n\nAmong the 4 following options,\
       \ which is the correct answer?\n{% for letter, t in zip(answer_choices, choices.text)\
-      \ %}\n- {{letter}}: {{t}}\n {% endfor %}|||{{answerKey}}"
+      \ %}\n- {{letter}}: {{t}}\n {% endfor %}\nCorrect: |||{{answerKey}}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:

@@ -1,11 +1,16 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: ara-fra
 templates:
-  a867b103-a1c4-43b4-ae2e-eddc3cb3b890: !Template
+  8272c544-000f-478c-8b99-0483f2a81114: !Template
     answer_choices: null
-    id: a867b103-a1c4-43b4-ae2e-eddc3cb3b890
-    jinja: Translate the following text from French to Arabic {{ targetString }}|||
-      {{ sourceString }}
+    id: 8272c544-000f-478c-8b99-0483f2a81114
+    jinja: 'Translate the following text from French to Arabic.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
@@ -13,11 +18,16 @@ templates:
       original_task: null
     name: translate-this-fra-ara
     reference: ''
-  e053166a-1a47-42e9-9970-27faad375e2c: !Template
+  f7e171dd-7314-480d-88e1-85541d138616: !Template
     answer_choices: null
-    id: e053166a-1a47-42e9-9970-27faad375e2c
-    jinja: Translate the following text from Arabic to French {{ sourceString }}|||
-      {{ targetString }}
+    id: f7e171dd-7314-480d-88e1-85541d138616
+    jinja: 'Translate the following text from Arabic to French.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null

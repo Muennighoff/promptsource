@@ -3,7 +3,7 @@ templates:
   24e44a81-a18a-42dd-a71c-5b31b2d2cb39: !Template
     answer_choices: World politics ||| Sports ||| Business ||| Science and technology
     id: 24e44a81-a18a-42dd-a71c-5b31b2d2cb39
-    jinja: "What label best describes this news article?\n{{text}} ||| \n{{answer_choices[label]\
+    jinja: "What label best describes this news article?\n{{text}}\nLabel: ||| \n{{answer_choices[label]\
       \ }}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
@@ -17,8 +17,8 @@ templates:
   8fdc1056-1029-41a1-9c67-354fc2b8ceaf: !Template
     answer_choices: World politics ||| Sports ||| Business ||| Science and technology
     id: 8fdc1056-1029-41a1-9c67-354fc2b8ceaf
-    jinja: "Is this a piece of news regarding {{\"world politics, sports, business,\
-      \ or science and technology\"}}?\n{{text}} \n||| \n{{answer_choices[label] }}"
+    jinja: "{{text}}\nIs the previous piece of news regarding {{\"world politics, sports, business,\
+      \ or science and technology\"}}? ||| \n{{answer_choices[label] }}"
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:
@@ -31,14 +31,9 @@ templates:
   918267e0-af68-4117-892d-2dbe66a58ce9: !Template
     answer_choices: Politician ||| Athlete ||| Business executive ||| Scientist
     id: 918267e0-af68-4117-892d-2dbe66a58ce9
-    jinja: 'Would you recommend the following article to a {{"politician"}}, an {{"athlete"}},
+    jinja: '{{ text }}\n\nWould you recommend the above article to a {{"politician"}}, an {{"athlete"}},
       a {{"business executive"}}, or a {{"scientist"}}?
-
-
-      {{ text }}
-
       |||
-
       {{answer_choices[label]}}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
@@ -105,4 +100,31 @@ templates:
       - Accuracy
       original_task: true
     name: classify
+    reference: ''
+  cc355f33-7e8c-4455-a72b-48d315bd4f60: !Template
+    answer_choices: World politics ||| Sports ||| Business ||| Science and technology
+    id: cc355f33-7e8c-4455-a72b-48d315bd4f60
+    jinja: "Generate a news article on the topic of {{answer_choices[label]}}. Article: ||| {{text}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: xp3longgenerate
+    reference: ''
+  cb355f34-7e8c-4455-a72b-48d315bd4f60: !Template
+    answer_choices: Politician ||| Athlete ||| Business executive ||| Scientist
+    id: cb355f34-7e8c-4455-a72b-48d315bd4f60
+    jinja: "Imagine talking to a {{answer_choices[label]}}. 
+    Imagine a news article that would interest them: ||| {{text}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - en
+      metrics:
+      - Accuracy
+      original_task: true
+    name: xp3longimagine
     reference: ''

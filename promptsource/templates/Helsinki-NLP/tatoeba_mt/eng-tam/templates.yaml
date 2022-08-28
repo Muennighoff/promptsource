@@ -1,11 +1,16 @@
 dataset: Helsinki-NLP/tatoeba_mt
 subset: eng-tam
 templates:
-  9e599a25-3e64-46a0-a389-a281cc78f912: !Template
+  20b802cc-67d1-45c0-a8be-56d2485794a1: !Template
     answer_choices: null
-    id: 9e599a25-3e64-46a0-a389-a281cc78f912
-    jinja: Translate the following text from English to Tamil {{ sourceString }}|||
-      {{ targetString }}
+    id: 20b802cc-67d1-45c0-a8be-56d2485794a1
+    jinja: 'Translate the following text from English to Tamil.
+
+
+      Text: {{ sourceString }}
+
+
+      Translation:||| {{ targetString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
@@ -13,11 +18,16 @@ templates:
       original_task: null
     name: translate-this-eng-tam
     reference: ''
-  d9fbfd8e-13bd-4054-857b-6f75c5122b39: !Template
+  6682974b-1749-48ad-ac56-e36ab33e5bf7: !Template
     answer_choices: null
-    id: d9fbfd8e-13bd-4054-857b-6f75c5122b39
-    jinja: Translate the following text from Tamil to English {{ targetString }}|||
-      {{ sourceString }}
+    id: 6682974b-1749-48ad-ac56-e36ab33e5bf7
+    jinja: 'Translate the following text from Tamil to English.
+
+
+      Text: {{ targetString }}
+
+
+      Translation:||| {{ sourceString }}'
     metadata: !TemplateMetadata
       choices_in_prompt: null
       languages: null
