@@ -1,0 +1,108 @@
+dataset: GEM/xlsum
+subset: urdu
+templates:
+  1be0580c-fe87-4957-9a2b-f40b168f2279: !Template
+    answer_choices: ''
+    id: 1be0580c-fe87-4957-9a2b-f40b168f2279
+    jinja: 'عنوان: {{title}}\nایک خیالی مضمون کے اوپر دیئے گئے عنوان کو دیکھتے ہوئے،
+      مضمون کا تصور کریں۔\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: imaginearticle_urmt
+    reference: ''
+  2a6c8bb4-e541-44c3-b058-5b3d0adb2261: !Template
+    answer_choices: ''
+    id: 2a6c8bb4-e541-44c3-b058-5b3d0adb2261
+    jinja: '...{{text[3000:3500]}}... باقی مضمون لکھیں: ||| {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longrest_urmt
+    reference: ''
+  6ff414dd-75d2-443b-ba9f-88d8c3bda26b: !Template
+    answer_choices: ''
+    id: 6ff414dd-75d2-443b-ba9f-88d8c3bda26b
+    jinja: 'نیچے دیئے گئے عنوان اور مضمون کے خلاصے کو دیکھتے ہوئے، ان کے ساتھ جانے
+      کے لیے ایک مختصر مضمون یا ایک طویل مضمون کا آغاز بنائیں۔ عنوان: {{title}}\nخلاصہ:
+      {{target}}\nآرٹیکل (زیادہ سے زیادہ 500 حروف): ||| {{text[:500]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longgenarticle_urmt
+    reference: ''
+  829c1016-01ba-469f-99f8-2fc86ac81b02: !Template
+    answer_choices: ''
+    id: 829c1016-01ba-469f-99f8-2fc86ac81b02
+    jinja: 'مواد: {{text[:7000]}}\nپچھلے مواد کا خلاصہ اس طرح کیا جا سکتا ہے: |||
+      {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: prevcontent_urmt
+    reference: ''
+  a019d986-b0e8-4ed7-85bb-e01c7a94adc1: !Template
+    answer_choices: ''
+    id: a019d986-b0e8-4ed7-85bb-e01c7a94adc1
+    jinja: 'خلاصہ کرنے کے لیے دستاویز: {{text[:8500]}}\nاسی زبان میں خلاصہ جس میں
+      doc: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: docsummary_urmt
+    reference: ''
+  c46c6efa-5554-40cf-82ae-6a3f463533fe: !Template
+    answer_choices: ''
+    id: c46c6efa-5554-40cf-82ae-6a3f463533fe
+    jinja: '{{text[:1000]}}... مزید 4000 حروف کے لیے مضمون جاری رکھیں: ||| {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_urmt
+    reference: ''
+  d851e8f3-3ed7-440b-9f99-8c59631adedc: !Template
+    answer_choices: ''
+    id: d851e8f3-3ed7-440b-9f99-8c59631adedc
+    jinja: '{{title}}\n{{text[:5000]}}\n\ntl;dr: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: tldr_urmt
+    reference: ''
+  f1e26752-3d46-4321-a777-d4e588f5eb36: !Template
+    answer_choices: ''
+    id: f1e26752-3d46-4321-a777-d4e588f5eb36
+    jinja: '{{text}} \n\nمذکورہ مضمون کے لیے مجھے ایک اچھا عنوان دیں۔ ||| {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: goodtitle_urmt
+    reference: ''
+  f5da40d5-1478-4a10-a7b1-761fc6d3b1a7: !Template
+    answer_choices: ''
+    id: f5da40d5-1478-4a10-a7b1-761fc6d3b1a7
+    jinja: 'عنوان: {{title}}\nایک خیالی مضمون کے اوپر دیئے گئے عنوان کو دیکھتے ہوئے،
+      مضمون کا تصور کریں۔\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longimaginearticle_urmt
+    reference: ''

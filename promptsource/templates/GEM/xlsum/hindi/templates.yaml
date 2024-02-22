@@ -1,0 +1,108 @@
+dataset: GEM/xlsum
+subset: hindi
+templates:
+  0e74164d-3367-4202-a557-05993d4e1e79: !Template
+    answer_choices: ''
+    id: 0e74164d-3367-4202-a557-05993d4e1e79
+    jinja: '{{title}}\n{{text[:5000]}}\n\ntl;डॉ: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: tldr_himt
+    reference: ''
+  3317fc17-f2d4-452b-9c58-145ec6eb3e07: !Template
+    answer_choices: ''
+    id: 3317fc17-f2d4-452b-9c58-145ec6eb3e07
+    jinja: 'संक्षेप करने के लिए दस्तावेज़: {{text[:8500]}}\nसंक्षेप उसी भाषा में जिसमें
+      दस्तावेज़ है: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: docsummary_himt
+    reference: ''
+  49a0aad9-1a07-462d-9963-271be7656850: !Template
+    answer_choices: ''
+    id: 49a0aad9-1a07-462d-9963-271be7656850
+    jinja: 'शीर्षक: {{title}}\nएक काल्पनिक लेख के उपरोक्त शीर्षक को देखते हुए, लेख
+      की कल्पना करें।\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longimaginearticle_himt
+    reference: ''
+  77ea5064-9551-4720-af35-dd556f02b238: !Template
+    answer_choices: ''
+    id: 77ea5064-9551-4720-af35-dd556f02b238
+    jinja: '...{{text[3000:3500]}}... शेष लेख लिखें: ||| {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longrest_himt
+    reference: ''
+  8f1332e0-f609-46cd-b453-87b32881b3b5: !Template
+    answer_choices: ''
+    id: 8f1332e0-f609-46cd-b453-87b32881b3b5
+    jinja: '{{text}} \n\nउपरोक्त लेख के लिए मुझे एक अच्छा शीर्षक दें। ||| {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: goodtitle_himt
+    reference: ''
+  aeba7a3e-8ffc-47ed-91aa-5f24c0135cd7: !Template
+    answer_choices: ''
+    id: aeba7a3e-8ffc-47ed-91aa-5f24c0135cd7
+    jinja: 'शीर्षक: {{title}}\nएक काल्पनिक लेख के उपरोक्त शीर्षक को देखते हुए, लेख
+      की कल्पना करें।\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: imaginearticle_himt
+    reference: ''
+  e5613384-e708-4b14-a82f-92e4d4699181: !Template
+    answer_choices: ''
+    id: e5613384-e708-4b14-a82f-92e4d4699181
+    jinja: 'सामग्री: {{text[:7000]}}\nपिछली सामग्री को संक्षेप में निम्नानुसार किया
+      जा सकता है: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: prevcontent_himt
+    reference: ''
+  f0fc3a43-348c-49b8-871d-8819433043d0: !Template
+    answer_choices: ''
+    id: f0fc3a43-348c-49b8-871d-8819433043d0
+    jinja: 'नीचे दिए गए शीर्षक और लेख के सारांश को देखते हुए, उनके साथ जाने के लिए
+      एक छोटा लेख या एक लंबे लेख की शुरुआत करें। शीर्षक: {{title}}\nसारांश: {{target}}\nअनुच्छेद
+      (अधिकतम 500 वर्ण): ||| {{text[:500]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longgenarticle_himt
+    reference: ''
+  f2285753-6ec8-4c16-af85-8fde9f6e4228: !Template
+    answer_choices: ''
+    id: f2285753-6ec8-4c16-af85-8fde9f6e4228
+    jinja: '{{text[:1000]}}... अधिकतम 4000 वर्णों के लिए लेख जारी रखें: ||| {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_himt
+    reference: ''

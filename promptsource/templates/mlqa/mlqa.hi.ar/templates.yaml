@@ -1,0 +1,131 @@
+dataset: mlqa
+subset: mlqa.hi.hi
+templates:
+  111084d3-ab7c-4b67-b6ae-92144c930c2a: !Template
+    answer_choices: ''
+    id: 111084d3-ab7c-4b67-b6ae-92144c930c2a
+    jinja: 'डी: {{context}}
+
+
+      प्रश्न: {{question}}
+
+
+      ए: ||| {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: dqa_himt
+    reference: ''
+  24d361ba-0540-45fd-9b78-b990761b991c: !Template
+    answer_choices: ''
+    id: 24d361ba-0540-45fd-9b78-b990761b991c
+    jinja: 'नीचे दिए गए गद्यांश को देखें और उसके बाद प्रश्न का उत्तर उसी भाषा में
+      दें जिस भाषा में गद्यांश दिया गया है:
+
+
+      पैसेज: {{context}}
+
+
+      प्रश्न: {{question}}
+
+      |||
+
+      {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: refercqa_himt
+    reference: ''
+  3c48dfe1-1b2c-4258-ab56-8943c162ff73: !Template
+    answer_choices: ''
+    id: 3c48dfe1-1b2c-4258-ab56-8943c162ff73
+    jinja: "प्रश्न: {{question}}\n प्रसंग: {{context}}\n संदर्भ से उत्तर: ||| {{answers.text[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: qaanswera_himt
+    reference: ''
+  4adf747d-3d43-48c1-a73d-38d7cb795be1: !Template
+    answer_choices: ''
+    id: 4adf747d-3d43-48c1-a73d-38d7cb795be1
+    jinja: '{{context}}
+
+
+      उपरोक्त संदर्भ के संदर्भ में, {{question}} |||
+
+
+      {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: creferenceqa_himt
+    reference: ''
+  8d39f561-c826-41fc-9742-afb01ff97d34: !Template
+    answer_choices: ''
+    id: 8d39f561-c826-41fc-9742-afb01ff97d34
+    jinja: 'निम्नलिखित गद्यांश को पढ़िए और उसके बाद दिए गए प्रश्न का उत्तर गद्यांश
+      से सही भाग निकालकर दीजिए:
+
+      {{context}}
+
+      {{question}}
+
+      ||| {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: exractingcqa_himt
+    reference: ''
+  bb005512-50f9-420e-9b9e-aa3929451f1d: !Template
+    answer_choices: ''
+    id: bb005512-50f9-420e-9b9e-aa3929451f1d
+    jinja: '{{context}}
+
+      प्रश्न: {{question}}
+
+      उपरोक्त गद्यांश का उल्लेख करते हुए, दिए गए प्रश्न का सही उत्तर गद्यांश की भाषा
+      में है ||| {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: cqreferringa_himt
+    reference: ''
+  bedb4f6f-b1b1-400d-9904-7f8f668d03ec: !Template
+    answer_choices: ''
+    id: bedb4f6f-b1b1-400d-9904-7f8f668d03ec
+    jinja: 'मुझे एक टेक्स्ट मिला जो "{{question}}" का उत्तर {{answers.text[0]}} के
+      साथ देता है। यह "{{ context[:10] }}" से शुरू होता है। क्या आप इसे जारी रख सकते
+      हैं?
+
+      ||| {{ context[10:] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longanswers_himt
+    reference: ''
+  f083da69-ae41-4cf6-9ecf-f3ddab791961: !Template
+    answer_choices: ''
+    id: f083da69-ae41-4cf6-9ecf-f3ddab791961
+    jinja: '{{ context[:answers.answer_start[0]-5]}}... उपरोक्त को जारी रखें, ताकि
+      यह "{{question}}" का उत्तर दे: ||| {{ context[answers.answer_start[0]-5:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_himt
+    reference: ''

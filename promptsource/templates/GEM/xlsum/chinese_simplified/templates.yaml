@@ -1,0 +1,115 @@
+dataset: GEM/xlsum
+subset: chinese_simplified
+templates:
+  0bf9d87c-c6ac-4ff3-a956-e57ec434c4df: !Template
+    answer_choices: ''
+    id: 0bf9d87c-c6ac-4ff3-a956-e57ec434c4df
+    jinja: 标题：{{title}}\n给定上面虚构文章的标题，想象这篇文章。\n ||| {{text[:7000]}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: imaginearticle_zhmt
+    reference: ''
+  70151209-fdd4-4b78-988d-629ff5da1239: !Template
+    answer_choices: ''
+    id: 70151209-fdd4-4b78-988d-629ff5da1239
+    jinja: '{{text[:1000]}}... 继续这篇文章，最多 4000 个字符：||| {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_zhmt
+    reference: ''
+  900008a7-0cde-4f0d-8fd3-2ff9cb5b36f1: !Template
+    answer_choices: ''
+    id: 900008a7-0cde-4f0d-8fd3-2ff9cb5b36f1
+    jinja: 给定以下文章的标题和摘要，生成一篇短篇文章或一篇长篇文章的开头以配合它们。标题：{{title}}\n摘要：{{target}}\n文章（最多
+      500 个字符）：||| {{text[:500]}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longgenarticle_zhmt
+    reference: ''
+  9387daa0-a014-4df0-9d21-ff086dc5df4a: !Template
+    answer_choices: ''
+    id: 9387daa0-a014-4df0-9d21-ff086dc5df4a
+    jinja: 要总结的文档：{{text[:8500]}}\n以与文档相同的语言进行总结：||| {{target}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: docsummary_zhmt
+    reference: ''
+  97e1cdb0-1c5d-4421-a15b-faf02cd812a8: !Template
+    answer_choices: ''
+    id: 97e1cdb0-1c5d-4421-a15b-faf02cd812a8
+    jinja: '{{text}} \n\n给我上面文章的好标题。 ||| {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: goodtitle_zhmt
+    reference: ''
+  9d46d594-7463-4f74-bfd9-b5cbf804e94b: !Template
+    answer_choices: ''
+    id: 9d46d594-7463-4f74-bfd9-b5cbf804e94b
+    jinja: 标题：{{title}}\n给定上面虚构文章的标题，想象这篇文章。\n ||| {{text[:7000]}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longimaginearticle_zhmt
+    reference: ''
+  bfd429f5-d75d-46a2-8224-874d1109c310: !Template
+    answer_choices: ''
+    id: bfd429f5-d75d-46a2-8224-874d1109c310
+    jinja: '{{title}}\n{{text[:5000]}}\n\ntl;博士：||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: tldr_zhmt
+    reference: ''
+  d4f2980a-cb44-4e47-b6c3-3df858c82126: !Template
+    answer_choices: ''
+    id: d4f2980a-cb44-4e47-b6c3-3df858c82126
+    jinja: 给定以下文章的标题和摘要，生成一篇短篇文章或一篇长篇文章的开头以配合它们。标题：{{title}}\n摘要：{{target}}\n文章（最多
+      500 个字符）：||| {{text[:500]}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: genarticle_zhmt
+    reference: ''
+  dca03c69-940f-46b0-acd8-16bbcbd6bec9: !Template
+    answer_choices: ''
+    id: dca03c69-940f-46b0-acd8-16bbcbd6bec9
+    jinja: '...{{text[3000:3500]}}... 写下文章的其余部分：||| {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longrest_zhmt
+    reference: ''
+  ff7e01a6-9c23-4228-85c8-b84432deeb50: !Template
+    answer_choices: ''
+    id: ff7e01a6-9c23-4228-85c8-b84432deeb50
+    jinja: 内容：{{text[:7000]}}\n前面的内容可以总结如下：||| {{target}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: prevcontent_zhmt
+    reference: ''

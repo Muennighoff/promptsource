@@ -1,12 +1,139 @@
 dataset: xquad
 subset: xquad.ar
 templates:
+  187f1ccd-af17-47dd-a411-99f9dbd4df72: !Template
+    answer_choices: ''
+    id: 187f1ccd-af17-47dd-a411-99f9dbd4df72
+    jinja: '{{context}}
+
+
+      س: {{question}}
+
+
+      بالإشارة إلى الفقرة أعلاه ، فإن الإجابة الصحيحة على السؤال المحدد هي ||| {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer_given_context_and_question_armt
+    reference: ''
+  41c2b119-5c40-4a69-91d3-6fd0ce3d1bb8: !Template
+    answer_choices: ''
+    id: 41c2b119-5c40-4a69-91d3-6fd0ce3d1bb8
+    jinja: '{{context}}
+
+
+      س: {{question}}
+
+
+      ج: ||| {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: given_context_answer_question_variation_armt
+    reference: ''
+  51f82d04-4da1-48f8-8adc-3583c54430dd: !Template
+    answer_choices: ''
+    id: 51f82d04-4da1-48f8-8adc-3583c54430dd
+    jinja: 'راجع الفقرة أدناه وأجب عن السؤال التالي:
+
+
+      الممر: {{context}}
+
+
+      السؤال: {{question}}
+
+      |||
+
+      {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer_question_given_context_armt
+    reference: ''
+  5e321bf7-c96b-4a77-8f48-a13a74e62245: !Template
+    answer_choices: ''
+    id: 5e321bf7-c96b-4a77-8f48-a13a74e62245
+    jinja: '{{question}} يبدو أنه {{answers.text[0]}}. هل يمكنك أن تزودني ببعض السياق؟
+      ||| {{context}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontext_armt
+    reference: ''
+  5f0dac03-a93e-4357-bd22-734e029003b6: !Template
+    answer_choices: ''
+    id: 5f0dac03-a93e-4357-bd22-734e029003b6
+    jinja: '{{context}}
+
+
+      بالإشارة إلى السياق أعلاه ، {{question}} |||
+
+
+      {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer_the_question_armt
+    reference: ''
+  67c7ae75-c99e-44cc-9a19-66ba980b6656: !Template
+    answer_choices: ''
+    id: 67c7ae75-c99e-44cc-9a19-66ba980b6656
+    jinja: 'إعطاء الإجابة {{answers.text[0]}} عن {{question}} ، اكتب نصًا يشرح ذلك.
+      يجب أن تبدأ الإجابة برقم الحرف {{answers.answer_start[0]}}. النص: ||| {{context}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longchar_armt
+    reference: ''
+  7a65c947-59f4-4fac-b6de-6407abfec397: !Template
+    answer_choices: ''
+    id: 7a65c947-59f4-4fac-b6de-6407abfec397
+    jinja: 'اقرأ الفقرة التالية وأجب عن السؤال التالي:
+
+      {{context}}
+
+      {{question}}
+
+      ||| {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: read_passage_armt
+    reference: ''
+  86b86b6b-fe20-43cc-87ca-2fb42226575a: !Template
+    answer_choices: ''
+    id: 86b86b6b-fe20-43cc-87ca-2fb42226575a
+    jinja: '{{context}}
+
+
+      من المقطع أعلاه ، سؤال معقول بـ "{{answers["text"][0]}}" حيث ستكون الإجابة:
+      ||| {{question}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: jeopardy_armt
+    reference: ''
   9f65fb49-4dc8-40b8-bd7f-107d78b5c296: !Template
     answer_choices: null
     id: 9f65fb49-4dc8-40b8-bd7f-107d78b5c296
-    jinja: "{{context}}\n\u0628\u0646\u0627\u0621 \u0639\u0644\u0649 \u0645\u0627\
-      \ \u0648\u0631\u062F \u0641\u064A \u0627\u0644\u0633\u064A\u0627\u0642 \u0623\
-      \u0639\u0644\u0627\u0647  {{question}} ||| \n{{answers[\"text\"][0]}}"
+    jinja: "{{context}}\nبناء على ما ورد في السياق أعلاه  {{question}} ||| \n{{answers[\"\
+      text\"][0]}}"
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages: []
@@ -18,10 +145,13 @@ templates:
   a6fcd1c6-766d-4383-bc24-0f027881adb5: !Template
     answer_choices: null
     id: a6fcd1c6-766d-4383-bc24-0f027881adb5
-    jinja: "{{context}}\n\u0633: {{question}}\n\u0627\u0644\u0625\u062C\u0627\u0628\
-      \u0629 \u0627\u0644\u0635\u062D\u064A\u062D\u0629 \u0628\u0646\u0627\u0621 \u0639\
-      \u0644\u0649 \u0645\u0627 \u0648\u0631\u062F \u0641\u064A \u0627\u0644\u0642\
-      \u0637\u0639\u0629 \u0623\u0639\u0644\u0627\u0647.||| {{answers[\"text\"][0]}}\n"
+    jinja: '{{context}}
+
+      س: {{question}}
+
+      الإجابة الصحيحة بناء على ما ورد في القطعة أعلاه.||| {{answers["text"][0]}}
+
+      '
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages: []
@@ -33,9 +163,15 @@ templates:
   b0db8e5c-25c8-4331-bb54-1b95755c8606: !Template
     answer_choices: null
     id: b0db8e5c-25c8-4331-bb54-1b95755c8606
-    jinja: "\u0627\u0642\u0631\u0623 \u0627\u0644\u0642\u0637\u0639\u0629 \u0627\u0644\
-      \u062A\u0627\u0644\u064A\u0629 \u062B\u0645 \u0623\u062C\u0628 \u0639\u0646\
-      \ \u0645\u0627 \u0648\u0631\u062F\n{{context}}\n{{question}} |||\n{{answers.text[0]}}\n"
+    jinja: 'اقرأ القطعة التالية ثم أجب عن ما ورد
+
+      {{context}}
+
+      {{question}} |||
+
+      {{answers.text[0]}}
+
+      '
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages: []
@@ -47,11 +183,15 @@ templates:
   ceb0cb46-bc84-43c3-aa54-b78766180074: !Template
     answer_choices: null
     id: ceb0cb46-bc84-43c3-aa54-b78766180074
-    jinja: "\u0623\u0637\u0644\u0639 \u0639\u0644\u0649 \u0627\u0644\u0646\u0635 \u0627\
-      \u0644\u062A\u0627\u0644\u064A \u062B\u0645 \u0623\u062C\u0628 \u0639\u0646\
-      \ \u0627\u0644\u0633\u0624\u0627\u0644 \u0627\u0644\u0645\u0637\u0631\u0648\u062D\
-      \n\u0627\u0644\u0646\u0635: {{context}}\n\u0633\u0624\u0627\u0644: {{question}}\n\
-      |||\n{{answers[\"text\"][0]}}"
+    jinja: 'أطلع على النص التالي ثم أجب عن السؤال المطروح
+
+      النص: {{context}}
+
+      سؤال: {{question}}
+
+      |||
+
+      {{answers["text"][0]}}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages: []
@@ -60,10 +200,28 @@ templates:
       original_task: true
     name: answer_question_given_context
     reference: ''
+  df2b369b-59a3-48ac-b425-2245ac34ecbb: !Template
+    answer_choices: ''
+    id: df2b369b-59a3-48ac-b425-2245ac34ecbb
+    jinja: '{{context}}
+
+
+      قم بإنشاء سؤال من المقطع أعلاه: ||| {{question}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: given_context_generate_question_armt
+    reference: ''
   e0a38584-49a6-4a07-92e4-c29a2d03a403: !Template
     answer_choices: null
     id: e0a38584-49a6-4a07-92e4-c29a2d03a403
-    jinja: "{{context}}\n\u0633: {{question}}\n\u062C: ||| {{answers[\"text\"][0]}}"
+    jinja: '{{context}}
+
+      س: {{question}}
+
+      ج: ||| {{answers["text"][0]}}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages: []

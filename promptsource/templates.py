@@ -841,6 +841,7 @@ class DatasetTemplates:
                 "Please ignore this warning if you are creating new prompts for this dataset."
             )
             return {}
+        print(self.dataset_name, self.yaml_path)
         yaml_dict = yaml.load(open(self.yaml_path, "r"), Loader=yaml.FullLoader)
         return yaml_dict[self.TEMPLATES_KEY]
 

@@ -1,0 +1,108 @@
+dataset: GEM/xlsum
+subset: punjabi
+templates:
+  05c2fce7-a93c-4370-aac7-77278e999a18: !Template
+    answer_choices: ''
+    id: 05c2fce7-a93c-4370-aac7-77278e999a18
+    jinja: 'ਸਮੱਗਰੀ: {{text[:7000]}}\nਪਿਛਲੀ ਸਮੱਗਰੀ ਨੂੰ ਇਸ ਤਰ੍ਹਾਂ ਸੰਖੇਪ ਕੀਤਾ ਜਾ ਸਕਦਾ
+      ਹੈ: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: prevcontent_pamt
+    reference: ''
+  27d97525-0e2c-4f40-a6eb-0ebdc471b685: !Template
+    answer_choices: ''
+    id: 27d97525-0e2c-4f40-a6eb-0ebdc471b685
+    jinja: '...{{text[3000:3500]}}... ਬਾਕੀ ਲੇਖ ਲਿਖੋ: ||| {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longrest_pamt
+    reference: ''
+  2a52f35a-0eb9-4d12-a668-5b642ce22f37: !Template
+    answer_choices: ''
+    id: 2a52f35a-0eb9-4d12-a668-5b642ce22f37
+    jinja: 'ਸਿਰਲੇਖ: {{title}}\nਇੱਕ ਕਾਲਪਨਿਕ ਲੇਖ ਦੇ ਉੱਪਰ ਦਿੱਤੇ ਸਿਰਲੇਖ ਨੂੰ ਦੇਖਦੇ ਹੋਏ,
+      ਲੇਖ ਦੀ ਕਲਪਨਾ ਕਰੋ।\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: imaginearticle_pamt
+    reference: ''
+  65ddfc9d-7996-4ccc-a48b-ac8aca53c803: !Template
+    answer_choices: ''
+    id: 65ddfc9d-7996-4ccc-a48b-ac8aca53c803
+    jinja: '{{text}} \n\nਉਪਰੋਕਤ ਲੇਖ ਲਈ ਮੈਨੂੰ ਇੱਕ ਵਧੀਆ ਸਿਰਲੇਖ ਦਿਓ। ||| {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: goodtitle_pamt
+    reference: ''
+  69ebfba7-8458-41bc-9697-39299d7f5d2c: !Template
+    answer_choices: ''
+    id: 69ebfba7-8458-41bc-9697-39299d7f5d2c
+    jinja: 'ਕਿਸੇ ਲੇਖ ਦੇ ਹੇਠਾਂ ਦਿੱਤੇ ਸਿਰਲੇਖ ਅਤੇ ਸੰਖੇਪ ਨੂੰ ਦਿੱਤੇ ਗਏ, ਉਹਨਾਂ ਦੇ ਨਾਲ ਜਾਣ
+      ਲਈ ਇੱਕ ਛੋਟਾ ਲੇਖ ਜਾਂ ਇੱਕ ਲੰਬੇ ਲੇਖ ਦੀ ਸ਼ੁਰੂਆਤ ਬਣਾਓ। ਸਿਰਲੇਖ: {{title}}\nਸਾਰਾਂਸ਼:
+      {{target}}\nਲੇਖ (ਵੱਧ ਤੋਂ ਵੱਧ 500 ਅੱਖਰ): ||| {{text[:500]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longgenarticle_pamt
+    reference: ''
+  79c39d75-bed1-4004-8768-4a8b9eac72dc: !Template
+    answer_choices: ''
+    id: 79c39d75-bed1-4004-8768-4a8b9eac72dc
+    jinja: '{{title}}\n{{text[:5000]}}\n\ntl;dr: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: tldr_pamt
+    reference: ''
+  9786146a-a181-484b-82d3-b78e8f56c8ab: !Template
+    answer_choices: ''
+    id: 9786146a-a181-484b-82d3-b78e8f56c8ab
+    jinja: 'ਸੰਖੇਪ ਕਰਨ ਲਈ ਦਸਤਾਵੇਜ਼: {{text[:8500]}}\nਉਸੇ ਭਾਸ਼ਾ ਵਿੱਚ ਸਾਰਾਂਸ਼ ਜਿਵੇਂ doc:
+      ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: docsummary_pamt
+    reference: ''
+  b2c2c8e3-2254-4d74-acc9-df84126ac33d: !Template
+    answer_choices: ''
+    id: b2c2c8e3-2254-4d74-acc9-df84126ac33d
+    jinja: '{{text[:1000]}}... ਅਧਿਕਤਮ 4000 ਅੱਖਰਾਂ ਲਈ ਲੇਖ ਨੂੰ ਜਾਰੀ ਰੱਖੋ: ||| {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_pamt
+    reference: ''
+  c1d77cf8-1db1-49af-a586-0f8cefc29c65: !Template
+    answer_choices: ''
+    id: c1d77cf8-1db1-49af-a586-0f8cefc29c65
+    jinja: 'ਸਿਰਲੇਖ: {{title}}\nਇੱਕ ਕਾਲਪਨਿਕ ਲੇਖ ਦੇ ਉੱਪਰ ਦਿੱਤੇ ਸਿਰਲੇਖ ਨੂੰ ਦੇਖਦੇ ਹੋਏ,
+      ਲੇਖ ਦੀ ਕਲਪਨਾ ਕਰੋ।\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longimaginearticle_pamt
+    reference: ''

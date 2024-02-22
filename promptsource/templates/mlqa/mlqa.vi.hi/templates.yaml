@@ -1,0 +1,131 @@
+dataset: mlqa
+subset: mlqa.vi.vi
+templates:
+  1229df7c-dd56-40bc-934d-6ef82ed88fac: !Template
+    answer_choices: ''
+    id: 1229df7c-dd56-40bc-934d-6ef82ed88fac
+    jinja: '{{ context[:answers.answer_start[0]-5]}} ... Tiếp tục ở trên, sao cho
+      nó trả lời "{{question}}": ||| {{ context[answers.answer_start[0]-5:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_vimt
+    reference: ''
+  574ffeb2-73be-4b5b-b2bf-f453f7ab7fe5: !Template
+    answer_choices: ''
+    id: 574ffeb2-73be-4b5b-b2bf-f453f7ab7fe5
+    jinja: '{{context}}
+
+
+      Với sự tham chiếu đến ngữ cảnh trên, {{question}} |||
+
+
+      {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: creferenceqa_vimt
+    reference: ''
+  606a6a9f-2453-468b-8c2a-d36cec41dd85: !Template
+    answer_choices: ''
+    id: 606a6a9f-2453-468b-8c2a-d36cec41dd85
+    jinja: '{{context}}
+
+      H: {{question}}
+
+      Đề cập đến đoạn văn trên, câu trả lời đúng cho câu hỏi đã cho trong ngôn ngữ
+      của đoạn văn là ||| {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: cqreferringa_vimt
+    reference: ''
+  664a5117-a247-4562-9951-4fbe30210e6a: !Template
+    answer_choices: ''
+    id: 664a5117-a247-4562-9951-4fbe30210e6a
+    jinja: "Câu hỏi: {{question}}\n Ngữ cảnh: {{context}}\n Câu trả lời từ ngữ cảnh:\
+      \ ||| {{answers.text[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: qaanswera_vimt
+    reference: ''
+  809fd603-c336-4f75-99ee-8bc5a1b5cd17: !Template
+    answer_choices: ''
+    id: 809fd603-c336-4f75-99ee-8bc5a1b5cd17
+    jinja: 'Tham khảo đoạn văn dưới đây và sau đó trả lời câu hỏi sau đó bằng ngôn
+      ngữ tương tự như đoạn văn:
+
+
+      Đoạn: {{context}}
+
+
+      Câu hỏi: {{question}}
+
+      |||
+
+      {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: refercqa_vimt
+    reference: ''
+  91123206-878f-45a8-be43-724456d987f6: !Template
+    answer_choices: ''
+    id: 91123206-878f-45a8-be43-724456d987f6
+    jinja: 'Tôi đã tìm thấy một văn bản trả lời "{{question}}" bằng {{answers.text[0]}}.
+      Nó bắt đầu bằng "{{ context[:10] }}". Bạn có thể tiếp tục nó không?
+
+      ||| {{ context[10:] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longanswers_vimt
+    reference: ''
+  d35e797b-1ea6-4eb7-9e1c-26858563e803: !Template
+    answer_choices: ''
+    id: d35e797b-1ea6-4eb7-9e1c-26858563e803
+    jinja: 'Đọc đoạn văn sau và sau đó trả lời câu hỏi tiếp theo bằng cách trích một
+      phần đúng trong đoạn văn:
+
+      {{context}}
+
+      {{question}}
+
+      ||| {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: exractingcqa_vimt
+    reference: ''
+  ebd1b954-7ecf-4c81-802a-68bdc7191dfd: !Template
+    answer_choices: ''
+    id: ebd1b954-7ecf-4c81-802a-68bdc7191dfd
+    jinja: 'D: {{context}}
+
+
+      H: {{question}}
+
+
+      A: ||| {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: dqa_vimt
+    reference: ''

@@ -1,0 +1,109 @@
+dataset: GEM/xlsum
+subset: igbo
+templates:
+  027f78fc-2367-4e1a-ac44-78b8ed30c9cb: !Template
+    answer_choices: ''
+    id: 027f78fc-2367-4e1a-ac44-78b8ed30c9cb
+    jinja: '...{{text[3000:3500]}}... Dee edemede ndị ọzọ: ||| {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longrest_igmt
+    reference: ''
+  14fdfc19-a0e3-42bd-a941-e5673d8fa010: !Template
+    answer_choices: ''
+    id: 14fdfc19-a0e3-42bd-a941-e5673d8fa010
+    jinja: '{{text}} \n\n Nye m aha ọma maka akụkọ dị n''elu. ||| {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: goodtitle_igmt
+    reference: ''
+  1ffeb5f0-117c-4d06-a3ba-4cf363d3fc59: !Template
+    answer_choices: ''
+    id: 1ffeb5f0-117c-4d06-a3ba-4cf363d3fc59
+    jinja: 'Doc iji chịkọta: {{text[:8500]}}\nNchịkọta n''otu asụsụ dị ka doc: |||
+      {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: docsummary_igmt
+    reference: ''
+  233a9feb-a867-4cf0-a621-ee3c3fe2f711: !Template
+    answer_choices: ''
+    id: 233a9feb-a867-4cf0-a621-ee3c3fe2f711
+    jinja: 'Isiokwu: {{title}}\n Nyere aha a dị n''elu nke akụkọ ifo, chegodị akụkọ
+      a.\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: imaginearticle_igmt
+    reference: ''
+  7d302a9a-ca1b-4278-a76b-c41ba0ddd252: !Template
+    answer_choices: ''
+    id: 7d302a9a-ca1b-4278-a76b-c41ba0ddd252
+    jinja: 'Ọdịnaya: {{text[:7000]}}\n Enwere ike ichikota ọdịnaya gara aga dị ka
+      ndị a: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: prevcontent_igmt
+    reference: ''
+  7f372f8a-75a8-475b-a15d-7f0708bb3b90: !Template
+    answer_choices: ''
+    id: 7f372f8a-75a8-475b-a15d-7f0708bb3b90
+    jinja: 'Isiokwu: {{title}}\n Nyere aha a dị n''elu nke akụkọ ifo, chegodị akụkọ
+      a.\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longimaginearticle_igmt
+    reference: ''
+  8db2d00f-ea58-4ab2-8997-51d6db9ee2d9: !Template
+    answer_choices: ''
+    id: 8db2d00f-ea58-4ab2-8997-51d6db9ee2d9
+    jinja: 'N''inye aha dị n''okpuru na nchịkọta akụkọ, mepụta akụkọ dị mkpirikpi
+      ma ọ bụ mmalite nke ogologo akụkọ iji soro ha gaa. Aha: {{title}}\nNchịkọta:
+      {{target}}\nAkụkụ ( mkpụrụedemede 500): ||| {{text[:500]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longgenarticle_igmt
+    reference: ''
+  9c792b5d-ac13-4c6f-9045-18e6faf42b15: !Template
+    answer_choices: ''
+    id: 9c792b5d-ac13-4c6f-9045-18e6faf42b15
+    jinja: '{{title}}\n{{text[:5000]}}\n\ntl;dr: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: tldr_igmt
+    reference: ''
+  bc328c0f-033d-413b-8dc0-1bad4c60c3ba: !Template
+    answer_choices: ''
+    id: bc328c0f-033d-413b-8dc0-1bad4c60c3ba
+    jinja: '{{text[:1000]}}... Gaa n''ihu akụkọ maka mkpụrụedemede 4000 ọzọ max: |||
+      {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_igmt
+    reference: ''

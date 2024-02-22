@@ -1,0 +1,226 @@
+dataset: paws-x
+subset: es
+templates:
+  0a122106-6404-4798-a8fd-016600bb02ee: !Template
+    answer_choices: No ||| Sí
+    id: 0a122106-6404-4798-a8fd-016600bb02ee
+    jinja: 'Oración 1: {{sentence1}}
+
+      Oración 2: {{sentence2}}
+
+      Pregunta: ¿La oración 1 parafrasea la oración 2? ¿Si o no?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Concatenation_esmt
+    reference: ''
+  31d8a7cb-ad57-48b9-924e-7614681855ce: !Template
+    answer_choices: No ||| Sí
+    id: 31d8a7cb-ad57-48b9-924e-7614681855ce
+    jinja: '{{sentence1}} Pregunta: {{sentence2}} ¿Parafrasear o no?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: PAWS-ANLI GPT3-no-label_esmt
+    reference: ''
+  3dda3b37-8960-412b-9561-8cde82344d84: !Template
+    answer_choices: No ||| Sí
+    id: 3dda3b37-8960-412b-9561-8cde82344d84
+    jinja: '{{sentence1}}
+
+      ¿Es una paráfrasis de la siguiente oración?
+
+      {{sentence2}}?
+
+      Si o no.
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: context-question_esmt
+    reference: ''
+  40802ed6-9716-415d-b4a8-48ea8bc5ee40: !Template
+    answer_choices: No ||| Sí
+    id: 40802ed6-9716-415d-b4a8-48ea8bc5ee40
+    jinja: 'Oración 1: {{sentence1}}
+
+      Oración 2: {{sentence2}}
+
+      Pregunta: ¿La Oración 1 y la Oración 2 expresan el mismo significado?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Meaning-no-label_esmt
+    reference: ''
+  5d42e943-64b6-4fd2-8b2d-d2cdcfe1e4b4: !Template
+    answer_choices: ''
+    id: 5d42e943-64b6-4fd2-8b2d-d2cdcfe1e4b4
+    jinja: '{% if label == 1 %}
+
+      Parafrasea la oración: {{sentence1}}
+
+      |||
+
+      {{sentence2}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: paraphrase-task_esmt
+    reference: ''
+  7042814c-a81c-417c-8b75-50784cab0451: !Template
+    answer_choices: Falso ||| Verdadero
+    id: 7042814c-a81c-417c-8b75-50784cab0451
+    jinja: '{{sentence1}} Pregunta: {{sentence2}} ¿Verdadero o falso?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: PAWS-ANLI GPT3_esmt
+    reference: ''
+  737fc747-e049-4265-9fed-3cb31915c759: !Template
+    answer_choices: No ||| Sí
+    id: 737fc747-e049-4265-9fed-3cb31915c759
+    jinja: 'Oración 1: {{sentence1}}
+
+      Oración 2: {{sentence2}}
+
+      Pregunta: ¿La oración 1 parafrasea la oración 2?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Concatenation-no-label_esmt
+    reference: ''
+  756034c7-1972-4567-8284-99a74ee841e6: !Template
+    answer_choices: No ||| Sí
+    id: 756034c7-1972-4567-8284-99a74ee841e6
+    jinja: 'Determina si las siguientes dos oraciones se parafrasean entre sí o no.
+
+      Enviado 1: {{sentence1}}
+
+      Enviado 2: {{sentence2}}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: task_description-no-label_esmt
+    reference: ''
+  90521fcf-441b-4734-bd64-ec7d187c6390: !Template
+    answer_choices: No ||| Sí
+    id: 90521fcf-441b-4734-bd64-ec7d187c6390
+    jinja: 'Oración 1: {{sentence1}}
+
+      Oración 2: {{sentence2}}
+
+      Pregunta: ¿La Oración 1 y la Oración 2 expresan el mismo significado? ¿Si o
+      no?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Meaning_esmt
+    reference: ''
+  a9a564b1-8430-44aa-ad3f-de9dc98a79c1: !Template
+    answer_choices: No ||| Sí
+    id: a9a564b1-8430-44aa-ad3f-de9dc98a79c1
+    jinja: 'Oración 1: {{sentence1}}
+
+      Oración 2: {{sentence2}}
+
+      Pregunta: ¿Podemos reescribir la Oración 1 a la Oración 2? ¿Si o no?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Rewrite_esmt
+    reference: ''
+  ab9ee3e5-b5c9-4545-a98b-78053e9a489c: !Template
+    answer_choices: No ||| Sí
+    id: ab9ee3e5-b5c9-4545-a98b-78053e9a489c
+    jinja: '{{sentence1}}
+
+      ¿Es una paráfrasis de la siguiente oración?
+
+      {{sentence2}}?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: context-question-no-label_esmt
+    reference: ''
+  bc2e96ef-8592-4e73-9641-cce071efa7f7: !Template
+    answer_choices: No ||| Sí
+    id: bc2e96ef-8592-4e73-9641-cce071efa7f7
+    jinja: 'Oración 1: {{sentence1}}
+
+      Oración 2: {{sentence2}}
+
+      Pregunta: ¿Podemos reescribir la Oración 1 a la Oración 2?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Rewrite-no-label_esmt
+    reference: ''

@@ -1,0 +1,41 @@
+dataset: GEM/BiSECT
+subset: fr
+templates:
+  72ade3f4-3abe-4d5d-8a0e-9e7b0c8024cd: !Template
+    answer_choices: ''
+    id: 72ade3f4-3abe-4d5d-8a0e-9e7b0c8024cd
+    jinja: "Divisez et simplifiez la phrase suivante tout en conservant son sens complet :\
+      \ {{source}}\n Version simplifiée : ||| {{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: fullmeaning_frmt
+    reference: ''
+  a244023f-dcec-4352-8026-1404f048eda5: !Template
+    answer_choices: ''
+    id: a244023f-dcec-4352-8026-1404f048eda5
+    jinja: '{{source}}
+
+      La phrase ci-dessus est très compliquée. Veuillez me fournir une version synonyme
+      simplifiée composée de plusieurs phrases : ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: synonymous_frmt
+    reference: ''
+  eea19d70-be10-4cfa-abcf-4dc56753a0aa: !Template
+    answer_choices: ''
+    id: eea19d70-be10-4cfa-abcf-4dc56753a0aa
+    jinja: '{{source}}. Cette phrase est difficile à comprendre. Une version plus
+      simple avec une signification équivalente est la suivante : ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: equimeaning_frmt
+    reference: ''

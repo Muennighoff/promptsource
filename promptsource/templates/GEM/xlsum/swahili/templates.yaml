@@ -1,0 +1,109 @@
+dataset: GEM/xlsum
+subset: swahili
+templates:
+  0ea11bab-d4c6-4a23-b93a-189319516a9a: !Template
+    answer_choices: ''
+    id: 0ea11bab-d4c6-4a23-b93a-189319516a9a
+    jinja: '{{text}} \n\nNipe kichwa kizuri cha makala hapo juu. ||| {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: goodtitle_swmt
+    reference: ''
+  1c6bd4fd-251a-4788-a424-ff346505ae39: !Template
+    answer_choices: ''
+    id: 1c6bd4fd-251a-4788-a424-ff346505ae39
+    jinja: '{{text[:1000]}}... Endelea na makala kwa vibambo vingine 4000 isizidi:
+      ||| {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_swmt
+    reference: ''
+  232854bd-c607-48ab-a9d5-c709866304a8: !Template
+    answer_choices: ''
+    id: 232854bd-c607-48ab-a9d5-c709866304a8
+    jinja: '...{{text[3000:3500]}}... Andika makala iliyosalia: ||| {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longrest_swmt
+    reference: ''
+  2737b356-f6d6-4c65-b9a4-a5c9a90addbd: !Template
+    answer_choices: ''
+    id: 2737b356-f6d6-4c65-b9a4-a5c9a90addbd
+    jinja: 'Kichwa: {{title}}\nKwa kuzingatia jina la hapo juu la makala ya kuwaziwa,
+      fikiria makala.\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longimaginearticle_swmt
+    reference: ''
+  28470272-c370-475c-9163-a3cc1bb15097: !Template
+    answer_choices: ''
+    id: 28470272-c370-475c-9163-a3cc1bb15097
+    jinja: '{{title}}\n{{text[:5000]}}\n\ntl;dr: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: tldr_swmt
+    reference: ''
+  53e322b9-a312-4110-bac4-38fd337d8d33: !Template
+    answer_choices: ''
+    id: 53e322b9-a312-4110-bac4-38fd337d8d33
+    jinja: 'Kichwa: {{title}}\nKwa kuzingatia jina la hapo juu la makala ya kuwaziwa,
+      fikiria makala.\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: imaginearticle_swmt
+    reference: ''
+  ccd8ab1e-1224-4bf5-b3ba-63e058b3877c: !Template
+    answer_choices: ''
+    id: ccd8ab1e-1224-4bf5-b3ba-63e058b3877c
+    jinja: 'Kwa kuzingatia kichwa kilicho hapa chini na muhtasari wa makala, toa makala
+      fupi au mwanzo wa makala marefu ili kuendana nayo. Kichwa: {{title}}\nMuhtasari:
+      {{target}}\nMakala (Isizidi herufi 500): ||| {{text[:500]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longgenarticle_swmt
+    reference: ''
+  fdc01236-e256-4c9b-949a-d1faac2b5d29: !Template
+    answer_choices: ''
+    id: fdc01236-e256-4c9b-949a-d1faac2b5d29
+    jinja: 'Hati ya kufanya muhtasari: {{text[:8500]}}\nMuhtasari katika lugha sawa
+      na hati: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: docsummary_swmt
+    reference: ''
+  ffa8937e-c0a2-40ab-a3c5-1ac6982515a1: !Template
+    answer_choices: ''
+    id: ffa8937e-c0a2-40ab-a3c5-1ac6982515a1
+    jinja: 'Maudhui: {{text[:7000]}}\nMaudhui yaliyotangulia yanaweza kufupishwa kama
+      ifuatavyo: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: prevcontent_swmt
+    reference: ''

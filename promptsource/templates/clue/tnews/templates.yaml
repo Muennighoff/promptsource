@@ -1,6 +1,24 @@
 dataset: clue
 subset: tnews
 templates:
+  0c87f0d8-f102-4084-b75b-d37222d073bb: !Template
+    answer_choices: 故事 ||| 文化 ||| 娱乐 ||| 运动的 ||| 金融 ||| 房地产 ||| 车 ||| 教育 ||| 技术 |||
+      军队 ||| 旅行 ||| 世界新闻 ||| 股票 ||| 农业 ||| 游戏
+    id: 0c87f0d8-f102-4084-b75b-d37222d073bb
+    jinja: '将标题“{{ sentence }}”分为以下主题：
+
+      - {{ answer_choices | join(''\n- '') }}
+
+      主题：|||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: classify_title_zhmt
+    reference: ''
   0c965fcd-d5e9-4e6a-b8ec-13253ed7bf4a: !Template
     answer_choices: story ||| culture ||| entertainment ||| sports ||| finance |||
       real estate ||| car ||| education ||| tech ||| military ||| travel ||| world
@@ -38,6 +56,42 @@ templates:
       - Accuracy
       original_task: true
     name: best_represent
+    reference: ''
+  af75d29d-4dae-43f9-9f24-1919aafd1161: !Template
+    answer_choices: 故事 ||| 文化 ||| 娱乐 ||| 运动的 ||| 金融 ||| 房地产 ||| 车 ||| 教育 ||| 技术 |||
+      军队 ||| 旅行 ||| 世界新闻 ||| 股票 ||| 农业 ||| 游戏
+    id: af75d29d-4dae-43f9-9f24-1919aafd1161
+    jinja: '以下新闻标题“{{ sentence }}”属于什么主题？ {{ answer_choices[0] | capitalize }}, {{
+      answer_choices[1:-1] | join('', '') }} 还是 {{ answer_choices[-1] }}？
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: what_title_zhmt
+    reference: ''
+  b87348c1-f990-4714-9326-4ece9b148777: !Template
+    answer_choices: 故事 ||| 文化 ||| 娱乐 ||| 运动的 ||| 金融 ||| 房地产 ||| 车 ||| 教育 ||| 技术 |||
+      军队 ||| 旅行 ||| 世界新闻 ||| 股票 ||| 农业 ||| 游戏
+    id: b87348c1-f990-4714-9326-4ece9b148777
+    jinja: '鉴于 {{answer_choices[:-1] | join('', '') }} 和 {{ answer_choices[-1] }}，指定它们中的哪一个最能代表以下句子：
+
+      {{ sentence }}
+
+
+      最佳：|||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: best_represent_zhmt
     reference: ''
   c242254c-bf5d-4efb-9dc3-51717bab7f78: !Template
     answer_choices: story ||| culture ||| entertainment ||| sports ||| finance |||

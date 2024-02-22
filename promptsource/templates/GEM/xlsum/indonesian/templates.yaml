@@ -1,0 +1,109 @@
+dataset: GEM/xlsum
+subset: indonesian
+templates:
+  01649b83-57e3-47a5-b623-8a0a63332027: !Template
+    answer_choices: ''
+    id: 01649b83-57e3-47a5-b623-8a0a63332027
+    jinja: 'Konten: {{text[:7000]}}\nKonten sebelumnya dapat diringkas sebagai berikut:
+      ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: prevcontent_idmt
+    reference: ''
+  13abaf4e-863d-43c7-9cb1-ddc8ccb3ea62: !Template
+    answer_choices: ''
+    id: 13abaf4e-863d-43c7-9cb1-ddc8ccb3ea62
+    jinja: 'Mengingat judul dan ringkasan artikel di bawah ini, buat artikel pendek
+      atau awal artikel panjang untuk mengikutinya. Judul: {{title}}\nRingkasan: {{target}}\nArtikel
+      (Maks 500 karakter): ||| {{text[:500]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longgenarticle_idmt
+    reference: ''
+  3fae0bea-1be0-48d9-bd04-7cbea2320eb8: !Template
+    answer_choices: ''
+    id: 3fae0bea-1be0-48d9-bd04-7cbea2320eb8
+    jinja: 'Dokumen untuk meringkas: {{text[:8500]}}\nRingkasan dalam bahasa yang
+      sama dengan dokumen: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: docsummary_idmt
+    reference: ''
+  7430aa7a-026b-413b-80c1-a67b1d00eaa4: !Template
+    answer_choices: ''
+    id: 7430aa7a-026b-413b-80c1-a67b1d00eaa4
+    jinja: '{{text[:1000]}}... Lanjutkan artikel untuk maksimal 4000 karakter: |||
+      {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_idmt
+    reference: ''
+  c87a213b-082c-446a-a833-c194ec82eb9b: !Template
+    answer_choices: ''
+    id: c87a213b-082c-446a-a833-c194ec82eb9b
+    jinja: '...{{text[3000:3500]}}... Tulis artikel selanjutnya: ||| {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longrest_idmt
+    reference: ''
+  dba0924d-e984-4aed-8a5a-8cb317884f69: !Template
+    answer_choices: ''
+    id: dba0924d-e984-4aed-8a5a-8cb317884f69
+    jinja: 'Judul: {{title}}\nMengingat judul artikel imajiner di atas, bayangkan
+      artikel tersebut.\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longimaginearticle_idmt
+    reference: ''
+  dc07cd3d-89d2-4035-b850-55e52e95d248: !Template
+    answer_choices: ''
+    id: dc07cd3d-89d2-4035-b850-55e52e95d248
+    jinja: '{{title}}\n{{text[:5000]}}\n\ntl;dr: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: tldr_idmt
+    reference: ''
+  f148f17f-8093-46ae-a760-7cfc85a836c1: !Template
+    answer_choices: ''
+    id: f148f17f-8093-46ae-a760-7cfc85a836c1
+    jinja: '{{text}} \n\nBeri saya judul yang bagus untuk artikel di atas. ||| {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: goodtitle_idmt
+    reference: ''
+  f7cde29c-2363-44f7-8897-becae900cc7e: !Template
+    answer_choices: ''
+    id: f7cde29c-2363-44f7-8897-becae900cc7e
+    jinja: 'Judul: {{title}}\nMengingat judul artikel imajiner di atas, bayangkan
+      artikel tersebut.\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: imaginearticle_idmt
+    reference: ''

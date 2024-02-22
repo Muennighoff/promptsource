@@ -1,0 +1,108 @@
+dataset: GEM/xlsum
+subset: telugu
+templates:
+  858d5c92-95dd-4f2b-8918-5f66741b17c0: !Template
+    answer_choices: ''
+    id: 858d5c92-95dd-4f2b-8918-5f66741b17c0
+    jinja: 'కంటెంట్: {{text[:7000]}}\nమునుపటి కంటెంట్‌ను ఈ క్రింది విధంగా సంగ్రహించవచ్చు:
+      ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: prevcontent_temt
+    reference: ''
+  8f58e58f-eac4-40bf-acc2-8c4ab92ca56e: !Template
+    answer_choices: ''
+    id: 8f58e58f-eac4-40bf-acc2-8c4ab92ca56e
+    jinja: '{{text[:1000]}}... మరో 4000 అక్షరాల కోసం కథనాన్ని కొనసాగించండి: ||| {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_temt
+    reference: ''
+  9fbd60e0-b623-48fc-9e97-255c0d716d21: !Template
+    answer_choices: ''
+    id: 9fbd60e0-b623-48fc-9e97-255c0d716d21
+    jinja: '{{title}}\n{{text[:5000]}}\n\ntl;dr: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: tldr_temt
+    reference: ''
+  befda66d-4401-4fbe-ad20-3c0a17ead7af: !Template
+    answer_choices: ''
+    id: befda66d-4401-4fbe-ad20-3c0a17ead7af
+    jinja: 'ఒక కథనం యొక్క దిగువ శీర్షిక మరియు సారాంశాన్ని అందించి, వాటితో పాటు వెళ్లడానికి
+      ఒక చిన్న కథనాన్ని లేదా సుదీర్ఘ కథనం యొక్క ప్రారంభాన్ని రూపొందించండి. శీర్షిక:
+      {{title}}\nసారాంశం: {{target}}\nవ్యాసం (గరిష్టంగా 500 అక్షరాలు): ||| {{text[:500]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longgenarticle_temt
+    reference: ''
+  c4329ca5-8f30-42b7-8573-6a2c16834a26: !Template
+    answer_choices: ''
+    id: c4329ca5-8f30-42b7-8573-6a2c16834a26
+    jinja: 'శీర్షిక: {{title}}\nపైన ఊహాత్మక కథనం యొక్క శీర్షికను బట్టి, కథనాన్ని ఊహించండి.\n
+      ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longimaginearticle_temt
+    reference: ''
+  c865f86b-66c3-428c-91ce-9870243e831b: !Template
+    answer_choices: ''
+    id: c865f86b-66c3-428c-91ce-9870243e831b
+    jinja: '...{{text[3000:3500]}}... మిగిలిన వ్యాసాన్ని వ్రాయండి: ||| {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longrest_temt
+    reference: ''
+  e0e63a05-acc2-447e-b29b-ecc13f8c5db8: !Template
+    answer_choices: ''
+    id: e0e63a05-acc2-447e-b29b-ecc13f8c5db8
+    jinja: 'శీర్షిక: {{title}}\nపైన ఊహాత్మక కథనం యొక్క శీర్షికను బట్టి, కథనాన్ని ఊహించండి.\n
+      ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: imaginearticle_temt
+    reference: ''
+  e9c88c82-5e81-4daa-a0ec-1baa58a4cbda: !Template
+    answer_choices: ''
+    id: e9c88c82-5e81-4daa-a0ec-1baa58a4cbda
+    jinja: '{{text}} \n\nపై కథనానికి నాకు మంచి శీర్షిక ఇవ్వండి. ||| {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: goodtitle_temt
+    reference: ''
+  f537f489-77e2-46d3-aad4-689244b2e5d0: !Template
+    answer_choices: ''
+    id: f537f489-77e2-46d3-aad4-689244b2e5d0
+    jinja: 'సంగ్రహించవలసిన పత్రం: {{text[:8500]}}\nపత్రం వలె అదే భాషలో సారాంశం: |||
+      {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: docsummary_temt
+    reference: ''

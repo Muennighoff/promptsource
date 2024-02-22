@@ -1,0 +1,103 @@
+dataset: GEM/xlsum
+subset: chinese_traditional
+templates:
+  0359b55f-6377-412b-b07a-7e43894f1b12: !Template
+    answer_choices: ''
+    id: 0359b55f-6377-412b-b07a-7e43894f1b12
+    jinja: 給定以下文章的標題和摘要，生成一篇短篇文章或一篇長篇文章的開頭以配合它們。標題：{{title}}\n摘要：{{target}}\n文章（最多
+      500 個字符）：||| {{text[:500]}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longgenarticle_zh-Hantmt
+    reference: ''
+  4aa70ff0-4f57-49d7-bb07-21744030595b: !Template
+    answer_choices: ''
+    id: 4aa70ff0-4f57-49d7-bb07-21744030595b
+    jinja: 內容：{{text[:7000]}}\n前面的內容可以總結如下：||| {{target}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: prevcontent_zh-Hantmt
+    reference: ''
+  886f8dd2-c433-48e6-bf07-ce9e62f24e92: !Template
+    answer_choices: ''
+    id: 886f8dd2-c433-48e6-bf07-ce9e62f24e92
+    jinja: 要總結的文檔：{{text[:8500]}}\n以與文檔相同的語言進行總結：||| {{target}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: docsummary_zh-Hantmt
+    reference: ''
+  8d3aa243-e74e-49bf-980e-a5d267b0bcdf: !Template
+    answer_choices: ''
+    id: 8d3aa243-e74e-49bf-980e-a5d267b0bcdf
+    jinja: 標題：{{title}}\n給定上面虛構文章的標題，想像這篇文章。\n ||| {{text[:7000]}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: imaginearticle_zh-Hantmt
+    reference: ''
+  991cb26b-e019-48cc-aa2e-666e760d7c57: !Template
+    answer_choices: ''
+    id: 991cb26b-e019-48cc-aa2e-666e760d7c57
+    jinja: '{{title}}\n{{text[:5000]}}\n\ntl;博士：||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: tldr_zh-Hantmt
+    reference: ''
+  acb6acd4-26eb-4f54-8954-d61cc73584d8: !Template
+    answer_choices: ''
+    id: acb6acd4-26eb-4f54-8954-d61cc73584d8
+    jinja: '...{{text[3000:3500]}}... 寫下文章的其餘部分：||| {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longrest_zh-Hantmt
+    reference: ''
+  b85e0b6d-84ff-43de-8449-d09450692329: !Template
+    answer_choices: ''
+    id: b85e0b6d-84ff-43de-8449-d09450692329
+    jinja: '{{text}} \n\n給我上面文章的好標題。 ||| {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: goodtitle_zh-Hantmt
+    reference: ''
+  c593300c-a4ef-4692-9433-ae225e32e3bc: !Template
+    answer_choices: ''
+    id: c593300c-a4ef-4692-9433-ae225e32e3bc
+    jinja: '{{text[:1000]}}... 繼續這篇文章，最多 4000 個字符：||| {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_zh-Hantmt
+    reference: ''
+  f87a88c1-35ab-461e-bf99-c1f3e7dc3c9f: !Template
+    answer_choices: ''
+    id: f87a88c1-35ab-461e-bf99-c1f3e7dc3c9f
+    jinja: 標題：{{title}}\n給定上面虛構文章的標題，想像這篇文章。\n ||| {{text[:7000]}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longimaginearticle_zh-Hantmt
+    reference: ''

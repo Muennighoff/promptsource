@@ -1,0 +1,110 @@
+dataset: GEM/xlsum
+subset: vietnamese
+templates:
+  054d9722-4d6b-41dd-b3e6-686c2288415e: !Template
+    answer_choices: ''
+    id: 054d9722-4d6b-41dd-b3e6-686c2288415e
+    jinja: 'Tài liệu tóm tắt: {{text[:8500]}} \ n Tóm tắt bằng ngôn ngữ giống như
+      tài liệu: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: docsummary_vimt
+    reference: ''
+  3593f006-3f1f-4be4-bb4b-0ac2f35d1814: !Template
+    answer_choices: ''
+    id: 3593f006-3f1f-4be4-bb4b-0ac2f35d1814
+    jinja: '{{text}} \ n \ n Hãy cho tôi một tiêu đề hay cho bài viết ở trên. |||
+      {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: goodtitle_vimt
+    reference: ''
+  3766e046-9a21-4f72-8a4b-7aa31228da99: !Template
+    answer_choices: ''
+    id: 3766e046-9a21-4f72-8a4b-7aa31228da99
+    jinja: '... {{text[3000:3500]}} ... Viết phần còn lại của bài viết: ||| {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longrest_vimt
+    reference: ''
+  59ee0dad-46af-47c3-a6b8-8ab92f267e1c: !Template
+    answer_choices: ''
+    id: 59ee0dad-46af-47c3-a6b8-8ab92f267e1c
+    jinja: '{{text[:1000]}} ... Tiếp tục bài viết cho tối đa 4000 ký tự khác: |||
+      {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_vimt
+    reference: ''
+  92ce9ff8-014b-4a68-907a-e86f8ae4612a: !Template
+    answer_choices: ''
+    id: 92ce9ff8-014b-4a68-907a-e86f8ae4612a
+    jinja: '{{title}} \ n {{text[:5000]}} \ n \ ntl; dr: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: tldr_vimt
+    reference: ''
+  a65c9451-ae5d-4787-bd2e-c19a21956977: !Template
+    answer_choices: ''
+    id: a65c9451-ae5d-4787-bd2e-c19a21956977
+    jinja: 'Với tiêu đề dưới đây và phần tóm tắt của một bài báo, hãy tạo một bài
+      báo ngắn hoặc phần đầu của một bài báo dài để đi cùng với chúng. Tiêu đề: {{title}}
+      \ n Tóm tắt: {{target}} \ n Bài viết (Tối đa 500 ký tự): ||| {{text[:500]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longgenarticle_vimt
+    reference: ''
+  a748fc39-9e1e-425b-9b78-00820b9b2ebb: !Template
+    answer_choices: ''
+    id: a748fc39-9e1e-425b-9b78-00820b9b2ebb
+    jinja: 'Tiêu đề: {{title}} \ n Mang tiêu đề ở trên của một bài báo tưởng tượng,
+      hãy tưởng tượng bài báo đó. \ N ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: imaginearticle_vimt
+    reference: ''
+  b4738256-1796-4671-be6f-a3e92bbd8ff7: !Template
+    answer_choices: ''
+    id: b4738256-1796-4671-be6f-a3e92bbd8ff7
+    jinja: 'Tiêu đề: {{title}} \ n Mang tiêu đề ở trên của một bài báo tưởng tượng,
+      hãy tưởng tượng bài báo đó. \ N ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longimaginearticle_vimt
+    reference: ''
+  ee6d4643-4bf2-4b6e-9713-e18b8ef281ff: !Template
+    answer_choices: ''
+    id: ee6d4643-4bf2-4b6e-9713-e18b8ef281ff
+    jinja: 'Nội dung: {{text[:7000]}} \ nNội dung trước đó có thể được tóm tắt như
+      sau: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: prevcontent_vimt
+    reference: ''

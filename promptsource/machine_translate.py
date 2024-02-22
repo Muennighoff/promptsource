@@ -3,64 +3,122 @@ import re
 
 from promptsource.templates import Template, TemplateCollection
 
+DS_TO_ENG_PROMPT = {
+    "xcopa": "en",
+    "Muennighoff/xstory_cloze": "en",
+    "Muennighoff/xwinograd": "en",
+    'GEM/wiki_lingua': 'en_en', # Contains correct language names
+    'xnli': 'en',
+    "paws-x": "en",
+    "mlqa": "mlqa.en.en",
+    "xquad": "xquad.en",
+    "khalidalt/tydiqa-primary": "english",
+    "khalidalt/tydiqa-goldp": "english",
+    "pasinit/xlwic": "en",
+    "GEM/xlsum": "english",
+    "GEM/BiSECT": "en",
+}
 
-### XNLI
+### ZH Datasets
 
-PROMPTS = [
-    "GPT-3 style",
-    "can we infer",
-    "justified in saying",
-    "guaranteed/possible/impossible",
-    "MNLI crowdsource",
+"""
+DATASETS = [
+    ('xquad', 'xquad.zh'),
+    # Context & Answer is in ZH
+    ('mlqa', 'mlqa.zh.ar'),
+    ('mlqa', 'mlqa.zh.vi'),
+    ('mlqa', 'mlqa.zh.es'),
+    ('mlqa', 'mlqa.zh.en'),
+    ('mlqa', 'mlqa.zh.hi'),
+    ('paws-x', 'zh'),
+    ('clue', 'c3'),
+    ('clue', 'cmrc2018'),
+    ('clue', 'csl'),
+    ('clue', 'drcd'),
+    ('clue', 'tnews'),
+    ('pasinit/xlwic', "xlwic_en_zh"),
+    ('GEM/xlsum', "chinese_simplified"),
+    # ('GEM/xlsum', "chinese_traditional"),
+    # For WikiLingua there are already ZH prompts (except for xp3long prompts)
+    ("xquad", )
 ]
 
+LANG = "zh"
+"""
+
+### ES Datasets
+
+"""
+DATASETS = [
+    ('xquad', 'xquad.es'),
+    # Context & Answer is in ZH
+    ('mlqa', 'mlqa.es.es'),
+    ('paws-x', 'es'),
+    ('GEM/xlsum', "spanish"),
+    ('GEM/BiSECT', "es"),
+    #('GEM/wiki_lingua', 'es'),
+]
+"""
+
+LANG = "es"
+
+
+### FR Datasets
+
+"""
+DATASETS = [
+    #('xquad', 'xquad.fr'),
+    # Context & Answer is in ZH
+    #('mlqa', 'mlqa.es.es'),
+    ('paws-x', 'fr'),
+    ('GEM/xlsum', "french"),
+    ('GEM/BiSECT', "fr"),
+    #('GEM/wiki_lingua', 'fr'),
+    ('pasinit/xlwic', "xlwic_fr_fr"),
+]
+"""
+
+LANG = "fr"
+
+### VI Datasets
+
+"""
+DATASETS = [
+    ('xquad', 'xquad.vi'),
+    # Context & Answer is in ZH
+    ('mlqa', 'mlqa.vi.vi'),
+    #('paws-x', 'vi'),
+    ('GEM/xlsum', "vietnamese"),
+    #('GEM/wiki_lingua', 'vi'),
 LANGS = [
-    "ar",
-    "es",
-    "fr",
-    "hi",
-    "sw",
-    "ur",
-    "vi",
-    "zh",
+    #"id",
+    #"sw",
+    #"ta",
+    #"vi",
+    #"zh",
+    "tr",
+    "et",
+    "ht",
+    "th",
+    "it",
+    "qu",
 ]
+"""
 
-SOURCE_DATASET = TARGET_DATASET = "xnli"
-SOURCE_LANG = "en"
+LANG = "vi"
 
-
-### XCOPA
-
-PROMPTS = [
-    "best_option",
-    'C1 or C2? premise, so/because…',
-    "i_am_hesitating",
-    "cause_effect",
-    "plausible_alternatives",
+### AR Datasets
+"""
+DATASETS = [
+    ('xquad', 'xquad.ar'),
+    # Context & Answer is in ZH
+    ('mlqa', 'mlqa.ar.ar'),
+    #('paws-x', 'vi'),
+    #('GEM/BiSECT', "fr"),
+    #('GEM/wiki_lingua', 'es'),
+    ('khalidalt/tydiqa-primary', 'arabic'),
+    ('khalidalt/tydiqa-goldp', 'arabic'),
 ]
-
-LANGS = [
-    "id",
-    "sw",
-    "ta",
-    "vi",
-    "zh",
-]
-
-SOURCE_DATASET = "super_glue/copa"
-SOURCE_LANG = None
-TARGET_DATASET = "xcopa"
-
-### XSTORY_CLOZE
-
-PROMPTS = [
-    "Answer Given options",
-    'Choose Story Ending',
-    "Story Continuation and Options",
-    "Generate Ending",
-    "Novel Correct Ending",
-]
-
 LANGS = [
     "ar",
     "es",
@@ -68,13 +126,16 @@ LANGS = [
     "hi",
     "id",
     "zh",
+    "my",
+    "ru",
+    "sw",
+    "te",
 ]
 
 SOURCE_DATASET = TARGET_DATASET = "Muennighoff/xstory_cloze"
 SOURCE_LANG = "en"
 
 ### XWINOGRAD
-
 PROMPTS = [
     "Replace",
     "stand for",
@@ -82,16 +143,14 @@ PROMPTS = [
     "does underscore refer to",
     "underscore refer to",
 ]
+LANG = "ar"
+"""
 
-LANGS = [
-    "fr",
-    "pt",
-    "zh",
-]
 
-SOURCE_DATASET = TARGET_DATASET = "Muennighoff/xwinograd"
-SOURCE_LANG = "en"
+# Choose datasets & lang, e.g.
 
+DATASETS = [('GEM/xlsum', "chinese_traditional"),]
+LANG = "zh-Hant"
 
 
 # Path to key
@@ -147,22 +206,28 @@ def normalize_string(zh_string, en_string):
 
 
 template_collection = TemplateCollection()
-source_templates = template_collection.get_dataset(SOURCE_DATASET, SOURCE_LANG)
 
-for lang in LANGS:
-    target_templates = template_collection.get_dataset(TARGET_DATASET, lang)
+for (ds_name, subset_name) in DATASETS:
+
+    subset_name_eng = subset_name
+    if ds_name in DS_TO_ENG_PROMPT:
+        subset_name_eng = DS_TO_ENG_PROMPT[ds_name]
+
+    source_templates = template_collection.get_dataset(ds_name, subset_name_eng)
+    #for lang in LANGS:
+    target_templates = template_collection.get_dataset(ds_name, subset_name)
     for uid, template in source_templates.templates.items():
-        if template.name.strip() not in PROMPTS:
-            continue
-        print(f"Translating {template.name.strip()} to {lang}")
+        #if not("xp3long" in template.name.strip()):# not in PROMPTS:
+        #    continue
+        print(f"Translating {template.name.strip()} to {LANG}")
         answer_choices = []
         if template.answer_choices is not None:
             choices = template.answer_choices.split("|||")
             for c in choices:
-                answer_choices.append(normalize_string(translate(lang, c.strip()), c.strip()))
+                answer_choices.append(normalize_string(translate(LANG, c.strip()), c.strip()))
         or_jinja = template.jinja.strip()
-        jinja = normalize_string(translate(lang, or_jinja), or_jinja)
-        template_name = template.name.strip() + f"_{lang}mt"
+        jinja = normalize_string(translate(LANG, or_jinja), or_jinja)
+        template_name = template.name.strip() + f"_{LANG}mt"
         target_template = Template(
             template_name, jinja=jinja, reference="", answer_choices=" ||| ".join(answer_choices)
         )

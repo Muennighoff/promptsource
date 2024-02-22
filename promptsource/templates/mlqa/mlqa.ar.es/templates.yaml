@@ -1,0 +1,128 @@
+dataset: mlqa
+subset: mlqa.ar.ar
+templates:
+  29ae5437-87dd-4d1c-b8db-5597182d067c: !Template
+    answer_choices: ''
+    id: 29ae5437-87dd-4d1c-b8db-5597182d067c
+    jinja: "السؤال: {{question}}\n السياق: {{context}}\n إجابة من السياق: ||| {{answers.text[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: qaanswera_armt
+    reference: ''
+  3b5aeb53-55a8-4b97-91de-00c6621400bf: !Template
+    answer_choices: ''
+    id: 3b5aeb53-55a8-4b97-91de-00c6621400bf
+    jinja: '{{context}}
+
+
+      بالإشارة إلى السياق أعلاه ، {{question}} |||
+
+
+      {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: creferenceqa_armt
+    reference: ''
+  558d3761-8ac3-4986-bf5a-446784221a08: !Template
+    answer_choices: ''
+    id: 558d3761-8ac3-4986-bf5a-446784221a08
+    jinja: 'د: {{context}}
+
+
+      س: {{question}}
+
+
+      ج: ||| {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: dqa_armt
+    reference: ''
+  77ab627e-03a5-4740-bb04-f9ee2ddf457d: !Template
+    answer_choices: ''
+    id: 77ab627e-03a5-4740-bb04-f9ee2ddf457d
+    jinja: 'اقرأ المقطع التالي ثم أجب عن السؤال التالي باستخراج الجزء الصحيح من المقطع:
+
+      {{context}}
+
+      {{question}}
+
+      ||| {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: exractingcqa_armt
+    reference: ''
+  92ff6957-254c-427d-9a8b-564a2dfab9d7: !Template
+    answer_choices: ''
+    id: 92ff6957-254c-427d-9a8b-564a2dfab9d7
+    jinja: 'راجع المقطع أدناه ثم أجب على السؤال بعد ذلك بنفس لغة المقطع:
+
+
+      الممر: {{context}}
+
+
+      السؤال: {{question}}
+
+      |||
+
+      {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: refercqa_armt
+    reference: ''
+  cba29cf2-fc46-4fd4-8c1b-b5eed204ecb9: !Template
+    answer_choices: ''
+    id: cba29cf2-fc46-4fd4-8c1b-b5eed204ecb9
+    jinja: '{{ context[:answers.answer_start[0]-5]}} ... تابع ما ورد أعلاه ، بحيث
+      يجيب "{{question}}": ||| {{ context[answers.answer_start[0]-5:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_armt
+    reference: ''
+  d77cf230-0428-4231-8dd4-035aa6f117e8: !Template
+    answer_choices: ''
+    id: d77cf230-0428-4231-8dd4-035aa6f117e8
+    jinja: 'لقد وجدت نصًا يجيب عن "{{question}}" بـ {{answers.text[0]}}. يبدأ بـ "{{
+      context[:10] }}". هل يمكنك الاستمرار في ذلك؟
+
+      ||| {{ context[10:] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longanswers_armt
+    reference: ''
+  fd97cc22-e1b0-4e20-95c8-b09579421ef1: !Template
+    answer_choices: ''
+    id: fd97cc22-e1b0-4e20-95c8-b09579421ef1
+    jinja: '{{context}}
+
+      س: {{question}}
+
+      بالإشارة إلى الفقرة أعلاه ، فإن الإجابة الصحيحة على السؤال المحدد بلغة المقطع
+      هي ||| {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: cqreferringa_armt
+    reference: ''

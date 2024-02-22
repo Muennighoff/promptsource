@@ -1,0 +1,178 @@
+dataset: khalidalt/tydiqa-primary
+subset: bengali
+templates:
+  232c2c09-af06-4100-b4f8-898f3ce8b35a: !Template
+    answer_choices: হ্যাঁ ||| না
+    id: 232c2c09-af06-4100-b4f8-898f3ce8b35a
+    jinja: আপনার কি মনে আছে যখন আমরা অন্য দিন {{document_url}} পড়ছিলাম? এটি ডকুমেন্ট_প্লেইনটেক্সট[:100]
+      এর মতো শুরু হয়েছিল.. আপনি কি এটি আরও 1000 অক্ষর পর্যন্ত চালিয়ে যেতে পারেন?
+      ||| {{document_plaintext[100:1100]}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_bnmt
+    reference: ''
+  3549b005-f604-4c53-82db-9788617c06d3: !Template
+    answer_choices: হ্যাঁ ||| না
+    id: 3549b005-f604-4c53-82db-9788617c06d3
+    jinja: '{{question_text}}
+
+      এটি একটি "হ্যাঁ/না" প্রশ্ন?
+
+      |||
+
+      {% if annotations. yes_no_answer[0] == "NONE" %}
+
+      না
+
+      {% else %}
+
+      হ্যাঁ
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_yes_no_question_bnmt
+    reference: ''
+  540b9d1f-0886-4c10-8354-3345a78f7652: !Template
+    answer_choices: হ্যাঁ ||| না
+    id: 540b9d1f-0886-4c10-8354-3345a78f7652
+    jinja: "{% if annotations.yes_no_answer[0] == \"YES\" or annotations.yes_no_answer[0]\
+      \ == \"NO\" %}\nউইকিপিডিয়া থেকে নিম্নলিখিত টেক্সট স্নিপেট পড়ার পর, অনুগ্রহ\
+      \ করে প্রশ্নের উত্তর দিন: {{question_text}}\n{{document_plaintext}}\n|||\n{{annotations.yes_no_answer[0]\
+      \ | capitalize}}\n    {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_after_reading_the_text_bnmt
+    reference: ''
+  6700a698-2df4-431c-a33e-96e8d7e1ac06: !Template
+    answer_choices: হ্যাঁ ||| না ||| কোনোটিই নয়
+    id: 6700a698-2df4-431c-a33e-96e8d7e1ac06
+    jinja: 'প্রশ্ন: {{question_text}}
+
+      {{"Yes"}} বা {{"No"}} দিয়ে প্রশ্নের উত্তর দিন। যদি সম্ভব না হয় তাহলে {{"None"}}
+      উত্তর দিন।
+
+      ইঙ্গিত: {{document_plaintext}}
+
+      |||
+
+      {{annotations.yes_no_answer[0] | capitalize}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_yes_no_none_bnmt
+    reference: ''
+  9404aaa9-afef-44fd-8cb3-1d67395a9dff: !Template
+    answer_choices: হ্যাঁ ||| না ||| কোনোটিই নয়
+    id: 9404aaa9-afef-44fd-8cb3-1d67395a9dff
+    jinja: '"{{answer_choices[0]}}" অথবা "{{answer_choices[1]}}" অথবা "{{answer_choices[2]}}"
+      দিয়ে নিচের প্রশ্নের উত্তর দিন যদি প্রথম দুটি উত্তরের কোনোটিই প্রযোজ্য না হয়।
+
+      প্রশ্ন: {{question_text}}
+
+      বিষয়: {{document_title}}
+
+      প্রবন্ধ: {{document_plaintext}}
+
+      |||
+
+      {{annotations.yes_no_answer[0] | capitalize}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_read_and_answer_bnmt
+    reference: ''
+  ab8d49a0-8b9e-42e7-b6b4-cf22becb8b93: !Template
+    answer_choices: হ্যাঁ ||| না
+    id: ab8d49a0-8b9e-42e7-b6b4-cf22becb8b93
+    jinja: "{% if annotations.yes_no_answer[0] == \"YES\" or annotations.yes_no_answer[0]\
+      \ == \"NO\" %}\n{{document_title}} সম্পর্কে প্রশ্নের উত্তর দিন। {{question_text}}\n\
+      |||\n{{annotations.yes_no_answer[0] | capitalize}}\n    {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_open_domain_qa_without_choices_bnmt
+    reference: ''
+  ba9edeba-7e8a-4fb5-8d30-e38e661a2d8a: !Template
+    answer_choices: হ্যাঁ ||| না ||| কোনোটিই নয়
+    id: ba9edeba-7e8a-4fb5-8d30-e38e661a2d8a
+    jinja: 'আমি অবাক হই {{question_text}}
+
+      এই প্রশ্নের উত্তর দিতে আমাকে "{{answer_choices[0]}}" বা "{{answer_choices[1]}}"
+      বা "{{answer_choices[2]}}" দিয়ে সাহায্য করুন যদি প্রথম দুটি উত্তরের কোনোটিই
+      প্রযোজ্য না হয়।
+
+      আমি ইন্টারনেটে যা পেয়েছি তা এখানে:
+
+      বিষয়: {{document_title}}
+
+      প্রবন্ধ: {{document_plaintext}}
+
+      |||
+
+      {{annotations.yes_no_answer[0] | capitalize}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_heres_what_I_found_bnmt
+    reference: ''
+  dc88d5ed-c6bd-471a-8e09-9744e4ee33c7: !Template
+    answer_choices: হ্যাঁ ||| না
+    id: dc88d5ed-c6bd-471a-8e09-9744e4ee33c7
+    jinja: "{% if annotations.yes_no_answer[0] == \"YES\" or annotations.yes_no_answer[0]\
+      \ == \"NO\" %}\n{{document_title}} সম্পর্কে প্রশ্নের উত্তর দিন।\nপ্রশ্ন: {{question_text}}।\
+      \ হ্যাঁ বা না?\n|||\n{{annotations.yes_no_answer[0] | capitalize}}\n    {% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_open_domain_qa_bnmt
+    reference: ''
+  e47b0734-2b6e-4e5e-8fb9-3c006d0ac27e: !Template
+    answer_choices: হ্যাঁ ||| না
+    id: e47b0734-2b6e-4e5e-8fb9-3c006d0ac27e
+    jinja: 'আমি ভাবছি {{question_text}}
+
+
+      আপনি কি আমাকে এটির উত্তর দেওয়ার জন্য কিছু প্রসঙ্গ পেতে পারেন (আমার প্রশ্নের
+      মতো একই ভাষায়)? ||| {{document_plaintext[:10000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontext_bnmt
+    reference: ''
+  f7d065e9-aca1-4efc-acc9-1096477d1443: !Template
+    answer_choices: হ্যাঁ ||| না
+    id: f7d065e9-aca1-4efc-acc9-1096477d1443
+    jinja: "{% if annotations.yes_no_answer[0] == \"YES\" or annotations.yes_no_answer[0]\
+      \ == \"NO\" %}\nনিম্নলিখিত পাঠ্য স্নিপেটের উপর ভিত্তি করে, {{question_text}}\n\
+      {{document_plaintext}}\n|||\n{{annotations.yes_no_answer[0] | capitalize}}\n\
+      \    {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_based_on_the_text_bnmt
+    reference: ''

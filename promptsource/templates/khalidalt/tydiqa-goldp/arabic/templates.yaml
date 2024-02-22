@@ -1,0 +1,208 @@
+dataset: khalidalt/tydiqa-goldp
+subset: arabic
+templates:
+  15a6f672-e898-4dc4-b86a-920180a6a1b6: !Template
+    answer_choices: ''
+    id: 15a6f672-e898-4dc4-b86a-920180a6a1b6
+    jinja: 'هل يمكنك توليد سؤال حول {{document_title}} وإجابته {{answers.text | choice}}
+      بناءً على السياق التالي: {{passage_text}}
+
+      |||
+
+      {{question_text}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_end_to_end_question_generation_with_title_armt
+    reference: ''
+  3e657e30-73ea-4043-8e6b-5ce18c61a4f6: !Template
+    answer_choices: ''
+    id: 3e657e30-73ea-4043-8e6b-5ce18c61a4f6
+    jinja: 'أقوم باختبار معرفة طلابي حول {{document_title}}.
+
+      بناءً على السياق ({{passage_text}}) ، إليك السؤال الذي يجب الإجابة عليه: {{question_text}}.
+      الجواب في السياق.
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_testing_students_armt
+    reference: ''
+  4a4c3967-6250-4c40-880c-a2e8f240cdc7: !Template
+    answer_choices: ''
+    id: 4a4c3967-6250-4c40-880c-a2e8f240cdc7
+    jinja: 'هل يمكنك إنشاء سؤال تكون إجابته {{answers.text | choice}} بناءً على السياق
+      التالي: {{passage_text}}
+
+      |||
+
+      {{question_text}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_end_to_end_question_generation_armt
+    reference: ''
+  68844d72-22e9-494e-b299-2014e08db5a6: !Template
+    answer_choices: ''
+    id: 68844d72-22e9-494e-b299-2014e08db5a6
+    jinja: 'تقول الشائعات أن {{answers.text | choice}} هو الجواب على {{question_text}}
+
+      أنا متشكك ... هل يمكنك إثبات ما ورد أعلاه بكتابة مقالة على غرار ويكيبيديا تتكون
+      من 8000 حرف على الأكثر في {{language}}؟ ||| {{passage_text[:8000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longwiki_armt
+    reference: ''
+  a0f6fec6-a98e-4c96-8275-502697e80e37: !Template
+    answer_choices: ''
+    id: a0f6fec6-a98e-4c96-8275-502697e80e37
+    jinja: أريد أن أعلِّم صفي عن موضوع {{document_title}}. هل يمكنك أن تكتب لي مقالاً
+      يمكنني أن أعطيهم لقراءته كواجب منزلي؟ يجب أن تجيب {{question_text}} ، وتكون
+      باللغة {{language}} وتكون رسمية. لو سمحت. ||| {{passage_text}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longarticle_armt
+    reference: ''
+  b74e935c-bfe5-4e80-95bf-7487478ab0ae: !Template
+    answer_choices: ''
+    id: b74e935c-bfe5-4e80-95bf-7487478ab0ae
+    jinja: '{% set _blank2 = ["title", "context", "topic" ] %}
+
+      {% set _blank1 = ["guess", "generate", "determine"] %}
+
+      {% set _blank=["passage", "text", "text snippet", "info"]|random %}
+
+      {% set _position = ["above", "following"] |random %}
+
+      {% if  _position == "above" %}
+
+      {{passage_text}} {{"\n"}}
+
+      {% endif %}
+
+      هل يمكنك {{_blank1|random}} {{_blank2|random}} من المقطع {{_position}}.
+
+      {% if  _position == "following" %}
+
+      {{"\n"}} {{passage_text}}
+
+      {% endif %}
+
+      |||
+
+      {{document_title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_title_generation_armt
+    reference: ''
+  c1181a6a-b348-46b2-9c05-010bdda96506: !Template
+    answer_choices: ''
+    id: c1181a6a-b348-46b2-9c05-010bdda96506
+    jinja: '{{question_text}}
+
+      أجب على السؤال أعلاه.
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_simple_question_odqa_armt
+    reference: ''
+  ca91d6f3-8262-4220-a18d-7019fdc63269: !Template
+    answer_choices: ''
+    id: ca91d6f3-8262-4220-a18d-7019fdc63269
+    jinja: 'أحاول معرفة إجابة السؤال "{{question_text}}"
+
+      لقد وجدت هذا النص حول {{document_title}} على ويكيبيديا وأعتقد أنه يحتوي على
+      الإجابة. هل يمكنك إخباري بالإجابة؟
+
+      نص: {{passage_text}}
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_can_you_tell_me_the_answer_armt
+    reference: ''
+  dae94d5b-89d1-4999-ad19-8c5a95fe5caa: !Template
+    answer_choices: ''
+    id: dae94d5b-89d1-4999-ad19-8c5a95fe5caa
+    jinja: 'لطالما تساءلت: {{question_text}}
+
+      لقد بحثت في Wikipedia ووجدت المقتطف النصي التالي حول {{document_title}}.
+
+      المقتطف: {{passage_text}}
+
+      ماهي الاجابة؟
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_whats_the_answer_armt
+    reference: ''
+  df1ced31-6eb8-4b74-80cc-51d278fbb3ce: !Template
+    answer_choices: ''
+    id: df1ced31-6eb8-4b74-80cc-51d278fbb3ce
+    jinja: 'استخرج في المقطع إجابة السؤال: {{question_text}}
+
+      ممر حول {{document_title}}: {{passage_text}}
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_extract_answer_armt
+    reference: ''
+  e8dd1c10-9dd3-4573-a0c4-27b24908c35f: !Template
+    answer_choices: ''
+    id: e8dd1c10-9dd3-4573-a0c4-27b24908c35f
+    jinja: 'المقتطف: {{passage_text}}
+
+      أعلم أن الإجابة على "{{question_text}}" تظهر في مكان ما في المقتطف النصي حول
+      {{document_title}}. هل تستطيع الاجابة على السؤال؟
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_can_you_answer_the_question_armt
+    reference: ''

@@ -1,0 +1,210 @@
+dataset: khalidalt/tydiqa-goldp
+subset: swahili
+templates:
+  0ccc3a78-efe1-44e6-ab8e-f1a2df54336a: !Template
+    answer_choices: ''
+    id: 0ccc3a78-efe1-44e6-ab8e-f1a2df54336a
+    jinja: Ninataka kufundisha darasa langu kuhusu mada ya {{document_title}}. Je,
+      unaweza kuniandikia makala ambayo ninaweza kuwapa waisome kama kazi ya nyumbani?
+      Inapaswa kujibu {{question_text}}, iwe katika {{language}} na iwe rasmi. Tafadhali.
+      ||| {{passage_text}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longarticle_swmt
+    reference: ''
+  3d5497a0-b931-4a72-9b9d-c91615ea785c: !Template
+    answer_choices: ''
+    id: 3d5497a0-b931-4a72-9b9d-c91615ea785c
+    jinja: 'Ninajaribu maarifa ya wanafunzi wangu kuhusu {{document_title}}.
+
+      Kulingana na muktadha ({{passage_text}}), hili ndilo swali la kujibu: {{question_text}}.
+      Jibu liko katika muktadha.
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_testing_students_swmt
+    reference: ''
+  672ed8d1-a0c4-4f10-82a5-e475388b17d7: !Template
+    answer_choices: ''
+    id: 672ed8d1-a0c4-4f10-82a5-e475388b17d7
+    jinja: 'Unaweza kutoa swali ambalo jibu lake ni {{answers.text | choice}} kulingana
+      na muktadha ufuatao: {{passage_text}}
+
+      |||
+
+      {{question_text}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_end_to_end_question_generation_swmt
+    reference: ''
+  882ea291-d306-4715-af69-62d5a383d949: !Template
+    answer_choices: ''
+    id: 882ea291-d306-4715-af69-62d5a383d949
+    jinja: 'Uvumi una kuwa {{answers.text | choice}} ni jibu la {{question_text}}
+
+      Nina mashaka... Je, unaweza kuthibitisha yaliyo hapo juu kwa kuandika makala
+      ya mtindo wa Wikipedia yenye angalau herufi 8000 katika {{language}}? ||| {{passage_text[:8000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longwiki_swmt
+    reference: ''
+  b06dd7ec-c8fa-4a4a-b840-53d4103780cd: !Template
+    answer_choices: ''
+    id: b06dd7ec-c8fa-4a4a-b840-53d4103780cd
+    jinja: 'Kijisehemu: {{passage_text}}
+
+      Ninajua kuwa jibu la "{{question_text}}" linaonekana mahali fulani katika kijisehemu
+      cha maandishi kuhusu {{document_title}}. Je, unaweza kujibu swali?
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_can_you_answer_the_question_swmt
+    reference: ''
+  bde549ed-87ad-4902-a562-1a509f9e1229: !Template
+    answer_choices: ''
+    id: bde549ed-87ad-4902-a562-1a509f9e1229
+    jinja: '{{question_text}}
+
+      Jibu swali hapo juu.
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_simple_question_odqa_swmt
+    reference: ''
+  c4407c57-f67a-4581-a909-b7f3b9d087b4: !Template
+    answer_choices: ''
+    id: c4407c57-f67a-4581-a909-b7f3b9d087b4
+    jinja: 'Unaweza kuzalisha swali kuhusu {{document_title}} na ambalo jibu lake
+      ni {{answers.text | choice}} kulingana na muktadha ufuatao: {{passage_text}}
+
+      |||
+
+      {{question_text}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_end_to_end_question_generation_with_title_swmt
+    reference: ''
+  dcd5e0f7-9eab-484c-bed7-725dd7ea5e94: !Template
+    answer_choices: ''
+    id: dcd5e0f7-9eab-484c-bed7-725dd7ea5e94
+    jinja: 'Nimekuwa nikijiuliza: {{question_text}}
+
+      Nilitafuta Wikipedia na nikapata kijisehemu kifuatacho cha maandishi kuhusu
+      {{document_title}}.
+
+      Kijisehemu: {{passage_text}}
+
+      Jibu ni nini?
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_whats_the_answer_swmt
+    reference: ''
+  ef2222fd-410e-4d4e-aade-0549357c1b70: !Template
+    answer_choices: ''
+    id: ef2222fd-410e-4d4e-aade-0549357c1b70
+    jinja: '{% set _blank2 = ["title", "context", "topic" ] %}
+
+      {% set _blank1 = ["guess", "generate", "determine"] %}
+
+      {% set _blank=["passage", "text", "text snippet", "info"]|random %}
+
+      {% set _position = ["above", "following"] |random %}
+
+      {% if  _position == "above" %}
+
+      {{passage_text}}{{"\n"}}
+
+      {% endif %}
+
+      Unaweza {{_blank1|random}} {{_blank2|random}} ya kifungu cha {{_position}}.
+
+      {% if  _position == "following" %}
+
+      {{"\n"}}{{passage_text}}
+
+      {% endif %}
+
+      |||
+
+      {{document_title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_title_generation_swmt
+    reference: ''
+  fae7ffa4-7c56-4418-8651-a5cdbaee2a73: !Template
+    answer_choices: ''
+    id: fae7ffa4-7c56-4418-8651-a5cdbaee2a73
+    jinja: 'Toa katika kifungu jibu la swali: {{question_text}}
+
+      Kifungu kuhusu {{document_title}}: {{passage_text}}
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_extract_answer_swmt
+    reference: ''
+  fee38532-014b-482d-9d8b-82f914dba1f5: !Template
+    answer_choices: ''
+    id: fee38532-014b-482d-9d8b-82f914dba1f5
+    jinja: 'Ninajaribu kutafuta jibu la swali "{{question_text}}"
+
+      Nilipata maandishi haya kuhusu {{document_title}} kwenye Wikipedia na nadhani
+      yana jibu. Unaweza kuniambia jibu?
+
+      Maandishi: {{passage_text}}
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_can_you_tell_me_the_answer_swmt
+    reference: ''

@@ -1,0 +1,219 @@
+dataset: pasinit/xlwic
+subset: xlwic_en_zh
+templates:
+  09504d75-457e-4a54-8ad1-7ca3b2104fe7: !Template
+    answer_choices: 不 ||| 是的
+    id: 09504d75-457e-4a54-8ad1-7ca3b2104fe7
+    jinja: '第 1 句：{{context_1}}
+
+      句子 2：{{context_2}}
+
+
+      确定单词“{{target_word}}”在两个句子中的使用是否相同。是还是不是？
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: same_sense_zhmt
+    reference: ''
+  123f732d-44a2-4215-87cd-f21ad10ca905: !Template
+    answer_choices: 不 ||| 是的
+    id: 123f732d-44a2-4215-87cd-f21ad10ca905
+    jinja: '家庭作业
+
+
+      判断“{{target_word}}”这个词在以下两个句子中的含义是否相同。回答是或否。
+
+      {{context_1}}
+
+      {{context_2}}
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: grammar_homework_zhmt
+    reference: ''
+  687e7297-1f5e-47b6-8e5a-51667f3033f4: !Template
+    answer_choices: 不 ||| 是的
+    id: 687e7297-1f5e-47b6-8e5a-51667f3033f4
+    jinja: '{{context_1}}
+
+      {{context_2}}
+
+      {{target_word}} 的类似意义？
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: similar-sense_zhmt
+    reference: ''
+  6e431c33-dfde-4f76-83bc-a44e6cf14b69: !Template
+    answer_choices: 不 ||| 是的
+    id: 6e431c33-dfde-4f76-83bc-a44e6cf14b69
+    jinja: '“{{target_word}}”这个词有多种含义。第 1 句和第 2 句的意思相同吗？是还是不是？
+
+
+      第 1 句：{{context_1}}
+
+      句子 2：{{context_2}}
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: polysemous_zhmt
+    reference: ''
+  73aa2454-4356-40ef-b846-fa4d854b814f: !Template
+    answer_choices: 不 ||| 是的
+    id: 73aa2454-4356-40ef-b846-fa4d854b814f
+    jinja: '确定以下两个句子中是否以相同的方式使用了单词“{{target_word}}”。
+
+      {{context_1}}
+
+      {{context_2}}
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: question-context_zhmt
+    reference: ''
+  9fe902a6-744f-414b-91ce-50178f5c9be8: !Template
+    answer_choices: 不 ||| 是的
+    id: 9fe902a6-744f-414b-91ce-50178f5c9be8
+    jinja: '{{context_1}}
+
+      {{context_2}}
+
+      问题：“{{target_word}}”这个词在上面两个句子中的含义是否相同？
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: GPT-3-prompt_zhmt
+    reference: ''
+  a866bce3-7166-477a-b0b6-9302fdfbe561: !Template
+    answer_choices: 不 ||| 是的
+    id: a866bce3-7166-477a-b0b6-9302fdfbe561
+    jinja: '“{{target_word}}”这个词在这两个句子中是否具有相同的含义？是的，不是吗？
+
+      {{context_1}}
+
+      {{context_2}}
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: question-context-meaning-with-label_zhmt
+    reference: ''
+  cff7bb69-4f52-4148-8a1c-f901e4e8bf11: !Template
+    answer_choices: 不 ||| 是的
+    id: cff7bb69-4f52-4148-8a1c-f901e4e8bf11
+    jinja: '“{{target_word}}”这个词在这两个句子中是否具有相同的含义？
+
+      {{context_1}}
+
+      {{context_2}}
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: question-context-meaning_zhmt
+    reference: ''
+  d1938fc0-7719-4066-9cb6-9036505fadb0: !Template
+    answer_choices: 错误的 ||| 真的
+    id: d1938fc0-7719-4066-9cb6-9036505fadb0
+    jinja: '句子 A：{{context_1}}
+
+      句子 B：{{context_2}}
+
+
+      “{{target_word}}”在句子 A 和 B 中具有相似的含义。对还是错？
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: affirmation_true_or_false_zhmt
+    reference: ''
+  d1aa5411-d568-4fa9-b787-e5829bf9b463: !Template
+    answer_choices: 不 ||| 是的
+    id: d1aa5411-d568-4fa9-b787-e5829bf9b463
+    jinja: '{{context_1}}
+
+      {{context_2}}
+
+      问题：“{{target_word}}”这个词在上面两个句子中的含义是否相同？是的，不是吗？
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: GPT-3-prompt-with-label_zhmt
+    reference: ''

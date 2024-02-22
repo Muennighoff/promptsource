@@ -1,0 +1,227 @@
+dataset: pasinit/xlwic
+subset: xlwic_fr_fr
+templates:
+  04522368-0552-4aa5-9866-3fab59db7a51: !Template
+    answer_choices: Non ||| Oui
+    id: 04522368-0552-4aa5-9866-3fab59db7a51
+    jinja: '{{context_1}}
+
+      {{context_2}}
+
+      Sens similaire de {{target_word}} ?
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: similar-sense_frmt
+    reference: ''
+  1600d6e0-8a32-443c-b4c7-e6d98b6bb297: !Template
+    answer_choices: Non ||| Oui
+    id: 1600d6e0-8a32-443c-b4c7-e6d98b6bb297
+    jinja: 'Devoirs
+
+
+      Décidez si le mot "{{target_word}}" est utilisé avec le même sens dans les deux
+      phrases suivantes. Répondez par oui ou non.
+
+      {{context_1}}
+
+      {{context_2}}
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: grammar_homework_frmt
+    reference: ''
+  23237e14-304a-4cd9-87e2-0feae2c2af1c: !Template
+    answer_choices: Non ||| Oui
+    id: 23237e14-304a-4cd9-87e2-0feae2c2af1c
+    jinja: 'Le mot "{{target_word}}" a-t-il le même sens dans ces deux phrases ? Oui
+      Non?
+
+      {{context_1}}
+
+      {{context_2}}
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: question-context-meaning-with-label_frmt
+    reference: ''
+  3c0bd2f3-62a2-42ae-9a89-a98393c1aee3: !Template
+    answer_choices: Non ||| Oui
+    id: 3c0bd2f3-62a2-42ae-9a89-a98393c1aee3
+    jinja: '{{context_1}}
+
+      {{context_2}}
+
+      Question : Le mot ''{{target_word}}'' est-il utilisé dans le même sens dans
+      les deux phrases ci-dessus ? Oui Non?
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: GPT-3-prompt-with-label_frmt
+    reference: ''
+  3ddbfa6b-603b-478e-98a0-ff71a5e39d0a: !Template
+    answer_choices: Non ||| Oui
+    id: 3ddbfa6b-603b-478e-98a0-ff71a5e39d0a
+    jinja: 'Le mot "{{target_word}}" a plusieurs significations. A-t-il le même sens
+      dans les phrases 1 et 2 ? Oui ou non?
+
+
+      Phrase 1 : {{context_1}}
+
+      Phrase 2 : {{context_2}}
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: polysemous_frmt
+    reference: ''
+  57471fc4-0326-442f-a464-6d90f4658a11: !Template
+    answer_choices: Non ||| Oui
+    id: 57471fc4-0326-442f-a464-6d90f4658a11
+    jinja: 'Phrase 1 : {{context_1}}
+
+      Phrase 2 : {{context_2}}
+
+
+      Déterminez si le mot "{{target_word}}" est utilisé dans le même sens dans les
+      deux phrases. Oui ou non?
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: same_sense_frmt
+    reference: ''
+  5b856ac0-24a6-41ae-a767-78573a0e56dc: !Template
+    answer_choices: Non ||| Oui
+    id: 5b856ac0-24a6-41ae-a767-78573a0e56dc
+    jinja: 'Le mot "{{target_word}}" a-t-il le même sens dans ces deux phrases ?
+
+      {{context_1}}
+
+      {{context_2}}
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: question-context-meaning_frmt
+    reference: ''
+  68877a29-d08b-45e2-8a41-64f076901452: !Template
+    answer_choices: Faux ||| Vrai
+    id: 68877a29-d08b-45e2-8a41-64f076901452
+    jinja: 'Phrase A : {{context_1}}
+
+      Phrase B : {{context_2}}
+
+
+      "{{target_word}}" a une signification similaire dans les phrases A et B. Vrai
+      ou faux ?
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: affirmation_true_or_false_frmt
+    reference: ''
+  6bf786ed-570b-4f60-9478-ffbaf9eff1f1: !Template
+    answer_choices: Non ||| Oui
+    id: 6bf786ed-570b-4f60-9478-ffbaf9eff1f1
+    jinja: 'Déterminez si le mot ''{{target_word}}'' est utilisé de la même manière
+      dans les deux phrases ci-dessous.
+
+      {{context_1}}
+
+      {{context_2}}
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: question-context_frmt
+    reference: ''
+  f3018e7d-f330-4263-b777-380eb14a5f05: !Template
+    answer_choices: Non ||| Oui
+    id: f3018e7d-f330-4263-b777-380eb14a5f05
+    jinja: '{{context_1}}
+
+      {{context_2}}
+
+      Question : Le mot ''{{target_word}}'' est-il utilisé dans le même sens dans
+      les deux phrases ci-dessus ?
+
+      ||| {% if label != -1%}
+
+      {{answer_choices[label]}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: GPT-3-prompt_frmt
+    reference: ''

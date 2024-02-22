@@ -1,0 +1,109 @@
+dataset: GEM/xlsum
+subset: tamil
+templates:
+  22e593b5-1c08-4482-bfb6-bf901ef82860: !Template
+    answer_choices: ''
+    id: 22e593b5-1c08-4482-bfb6-bf901ef82860
+    jinja: 'கீழே உள்ள தலைப்பு மற்றும் கட்டுரையின் சுருக்கம் கொடுக்கப்பட்டால், ஒரு
+      சிறு கட்டுரையை அல்லது நீண்ட கட்டுரையின் தொடக்கத்தை உருவாக்கவும். தலைப்பு: {{title}}\nசுருக்கம்:
+      {{target}}\nகட்டுரை (அதிகபட்சம் 500 எழுத்துகள்): ||| {{text[:500]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longgenarticle_tamt
+    reference: ''
+  3eb6147f-7937-4daa-bab4-6cb3f457b764: !Template
+    answer_choices: ''
+    id: 3eb6147f-7937-4daa-bab4-6cb3f457b764
+    jinja: 'தலைப்பு: {{title}}\nமேலே உள்ள ஒரு கற்பனைக் கட்டுரையின் தலைப்பைக் கொண்டு,
+      அந்தக் கட்டுரையை கற்பனை செய்து பாருங்கள்.\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longimaginearticle_tamt
+    reference: ''
+  3f2e32e3-232e-4b66-97f0-0b4ac46ef043: !Template
+    answer_choices: ''
+    id: 3f2e32e3-232e-4b66-97f0-0b4ac46ef043
+    jinja: '{{text}} \n\nமேலே உள்ள கட்டுரைக்கு நல்ல தலைப்பைக் கொடுங்கள். ||| {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: goodtitle_tamt
+    reference: ''
+  55cc37f5-cdcd-4bf1-bb6a-d09aeb8d2f67: !Template
+    answer_choices: ''
+    id: 55cc37f5-cdcd-4bf1-bb6a-d09aeb8d2f67
+    jinja: 'தலைப்பு: {{title}}\nமேலே உள்ள ஒரு கற்பனைக் கட்டுரையின் தலைப்பைக் கொண்டு,
+      அந்தக் கட்டுரையை கற்பனை செய்து பாருங்கள்.\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: imaginearticle_tamt
+    reference: ''
+  a3b8b4d0-4547-4568-9357-529477e03217: !Template
+    answer_choices: ''
+    id: a3b8b4d0-4547-4568-9357-529477e03217
+    jinja: '{{title}}\n{{text[:5000]}}\n\ntl;dr: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: tldr_tamt
+    reference: ''
+  accd6814-5a89-4d11-87ad-cfb9bd3cd0c7: !Template
+    answer_choices: ''
+    id: accd6814-5a89-4d11-87ad-cfb9bd3cd0c7
+    jinja: '{{text[:1000]}}... மேலும் 4000 எழுத்துகளுக்கு கட்டுரையைத் தொடரவும்: |||
+      {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_tamt
+    reference: ''
+  f0b48af7-242e-4804-8967-8c1f86d39af7: !Template
+    answer_choices: ''
+    id: f0b48af7-242e-4804-8967-8c1f86d39af7
+    jinja: 'சுருக்கமாகச் சொல்ல வேண்டிய ஆவணம்: {{text[:8500]}}\nஆவணத்தின் அதே மொழியில்
+      சுருக்கம்: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: docsummary_tamt
+    reference: ''
+  f6d12bad-436c-4363-900f-7ff7764303e2: !Template
+    answer_choices: ''
+    id: f6d12bad-436c-4363-900f-7ff7764303e2
+    jinja: 'உள்ளடக்கம்: {{text[:7000]}}\nமுந்தைய உள்ளடக்கத்தை பின்வருமாறு சுருக்கமாகக்
+      கூறலாம்: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: prevcontent_tamt
+    reference: ''
+  f7818755-8dab-4553-98a1-160fd94fb5d2: !Template
+    answer_choices: ''
+    id: f7818755-8dab-4553-98a1-160fd94fb5d2
+    jinja: '...{{text[3000:3500]}}... மீதமுள்ள கட்டுரையை எழுதவும்: ||| {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longrest_tamt
+    reference: ''

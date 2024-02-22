@@ -1,0 +1,109 @@
+dataset: GEM/xlsum
+subset: portuguese
+templates:
+  0dde3126-1475-4808-8185-709beee3fa54: !Template
+    answer_choices: ''
+    id: 0dde3126-1475-4808-8185-709beee3fa54
+    jinja: '{{text}} \n\nDê-me um bom título para o artigo acima. ||| {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: goodtitle_ptmt
+    reference: ''
+  284b84ee-96c6-4ab8-a519-0fcdeeb36a3e: !Template
+    answer_choices: ''
+    id: 284b84ee-96c6-4ab8-a519-0fcdeeb36a3e
+    jinja: '{{title}}\n{{text[:5000]}}\n\ntl;dr: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: tldr_ptmt
+    reference: ''
+  2cc35e9a-7659-40d9-a908-fb080c03d808: !Template
+    answer_choices: ''
+    id: 2cc35e9a-7659-40d9-a908-fb080c03d808
+    jinja: 'Título: {{title}}\nDado o título acima de um artigo imaginário, imagine
+      o artigo.\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longimaginearticle_ptmt
+    reference: ''
+  3820fad3-52e6-45b1-b29c-48d3139e759e: !Template
+    answer_choices: ''
+    id: 3820fad3-52e6-45b1-b29c-48d3139e759e
+    jinja: 'Dado o título e o resumo de um artigo abaixo, gere um artigo curto ou
+      o início de um artigo longo para acompanhá-los. Título: {{title}}\nResumo: {{target}}\nArtigo
+      (máximo de 500 caracteres): ||| {{text[:500]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longgenarticle_ptmt
+    reference: ''
+  3b24c414-714f-44a5-921f-5ec393f9d75a: !Template
+    answer_choices: ''
+    id: 3b24c414-714f-44a5-921f-5ec393f9d75a
+    jinja: '{{text[:1000]}}... Continue o artigo para mais 4000 caracteres no máximo:
+      ||| {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_ptmt
+    reference: ''
+  7bd68929-3e06-4cc5-be1a-4857083706c1: !Template
+    answer_choices: ''
+    id: 7bd68929-3e06-4cc5-be1a-4857083706c1
+    jinja: 'Conteúdo: {{text[:7000]}}\nO conteúdo anterior pode ser resumido da seguinte
+      forma: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: prevcontent_ptmt
+    reference: ''
+  b6d45041-ddae-4952-a467-b6db464c8d57: !Template
+    answer_choices: ''
+    id: b6d45041-ddae-4952-a467-b6db464c8d57
+    jinja: '...{{text[3000:3500]}}... Escreva o resto do artigo: ||| {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longrest_ptmt
+    reference: ''
+  de863ce5-c3f4-4921-bbea-5408c1ebb130: !Template
+    answer_choices: ''
+    id: de863ce5-c3f4-4921-bbea-5408c1ebb130
+    jinja: 'Título: {{title}}\nDado o título acima de um artigo imaginário, imagine
+      o artigo.\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: imaginearticle_ptmt
+    reference: ''
+  fe305ae2-ff9a-44b5-babd-fbfcd5f36507: !Template
+    answer_choices: ''
+    id: fe305ae2-ff9a-44b5-babd-fbfcd5f36507
+    jinja: 'Documento para resumir: {{text[:8500]}}\nResumo no mesmo idioma do documento:
+      ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: docsummary_ptmt
+    reference: ''

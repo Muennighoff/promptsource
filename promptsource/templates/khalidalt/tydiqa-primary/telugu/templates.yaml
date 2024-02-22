@@ -1,0 +1,175 @@
+dataset: khalidalt/tydiqa-primary
+subset: telugu
+templates:
+  11b13a68-a182-4890-822a-ef8b5a709640: !Template
+    answer_choices: అవును ||| సంఖ్య ||| ఏదీ లేదు
+    id: 11b13a68-a182-4890-822a-ef8b5a709640
+    jinja: 'నేను {{question_text}} ఆశ్చర్యపోతున్నాను.
+
+      మొదటి రెండు సమాధానాలలో ఏదీ వర్తించకపోతే "{{answer_choices[0]}}" లేదా "{{answer_choices[1]}}"
+      లేదా "{{answer_choices[2]}}"తో ఈ ప్రశ్నకు సమాధానం ఇవ్వడానికి నాకు సహాయం చేయండి.
+
+      నేను ఇంటర్నెట్‌లో కనుగొన్నది ఇక్కడ ఉంది:
+
+      అంశం: {{document_title}}
+
+      వ్యాసం: {{document_plaintext}}
+
+      |||
+
+      {{annotations.yes_no_answer[0] | capitalize}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_heres_what_I_found_temt
+    reference: ''
+  12f2defb-ad78-4636-9031-b4dd7c18c2e3: !Template
+    answer_choices: అవును ||| నం
+    id: 12f2defb-ad78-4636-9031-b4dd7c18c2e3
+    jinja: "{% if annotations.yes_no_answer[0] == \"YES\" or annotations.yes_no_answer[0]\
+      \ == \"NO\" %}\nకింది వచన స్నిప్పెట్ ఆధారంగా, {{question_text}}\n{{document_plaintext}}\n\
+      |||\n{{annotations.yes_no_answer[0] | capitalize}}\n    {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_based_on_the_text_temt
+    reference: ''
+  1ef8a355-29ef-45f3-9b1a-f5376a4c7214: !Template
+    answer_choices: అవును ||| నం
+    id: 1ef8a355-29ef-45f3-9b1a-f5376a4c7214
+    jinja: "{% if annotations.yes_no_answer[0] == \"YES\" or annotations.yes_no_answer[0]\
+      \ == \"NO\" %}\n{{document_title}} గురించిన ప్రశ్నకు సమాధానం ఇవ్వండి. {{question_text}}\n\
+      |||\n{{annotations.yes_no_answer[0] | capitalize}}\n    {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_open_domain_qa_without_choices_temt
+    reference: ''
+  27b7dffe-fbb5-467c-ae36-1759291625cb: !Template
+    answer_choices: అవును ||| నం ||| ఏదీ లేదు
+    id: 27b7dffe-fbb5-467c-ae36-1759291625cb
+    jinja: 'మొదటి రెండు సమాధానాలలో ఏదీ వర్తించకపోతే "{{answer_choices[0]}}" లేదా "{{answer_choices[1]}}"
+      లేదా "{{answer_choices[2]}}"తో క్రింది ప్రశ్నకు సమాధానం ఇవ్వండి.
+
+      ప్రశ్న: {{question_text}}
+
+      అంశం: {{document_title}}
+
+      వ్యాసం: {{document_plaintext}}
+
+      |||
+
+      {{annotations.yes_no_answer[0] | capitalize}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_read_and_answer_temt
+    reference: ''
+  30b36649-de11-4862-a9ea-6c8293244702: !Template
+    answer_choices: అవును ||| సంఖ్య
+    id: 30b36649-de11-4862-a9ea-6c8293244702
+    jinja: "{% if annotations.yes_no_answer[0] == \"YES\" or annotations.yes_no_answer[0]\
+      \ == \"NO\" %}\n{{document_title}} గురించిన ప్రశ్నకు సమాధానం ఇవ్వండి.\nప్రశ్న:\
+      \ {{question_text}}. అవును లేదా కాదు?\n|||\n{{annotations.yes_no_answer[0] |\
+      \ capitalize}}\n    {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_open_domain_qa_temt
+    reference: ''
+  70d4f606-e601-498a-99b6-5d8aaa15b4e0: !Template
+    answer_choices: అవును ||| నం ||| ఏదీ లేదు
+    id: 70d4f606-e601-498a-99b6-5d8aaa15b4e0
+    jinja: 'ప్రశ్న: {{question_text}}
+
+      ప్రశ్నకు {{"Yes"}} లేదా {{"No"}}తో సమాధానం ఇవ్వండి. అది సాధ్యం కాకపోతే {{"No"}}
+      అని సమాధానం ఇవ్వండి.
+
+      సూచన: {{document_plaintext}}
+
+      |||
+
+      {{annotations.yes_no_answer[0] | capitalize}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_yes_no_none_temt
+    reference: ''
+  7d8a5d3f-3fd8-465b-ac84-2ceeb587bfe9: !Template
+    answer_choices: అవును ||| సంఖ్య
+    id: 7d8a5d3f-3fd8-465b-ac84-2ceeb587bfe9
+    jinja: "{% if annotations.yes_no_answer[0] == \"YES\" or annotations.yes_no_answer[0]\
+      \ == \"NO\" %}\nవికీపీడియా నుండి క్రింది టెక్స్ట్ స్నిప్పెట్ చదివిన తర్వాత,\
+      \ దయచేసి ప్రశ్నకు సమాధానం ఇవ్వండి: {{question_text}}\n{{document_plaintext}}\n\
+      |||\n{{annotations.yes_no_answer[0] | capitalize}}\n    {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_after_reading_the_text_temt
+    reference: ''
+  87f9c2ad-20a2-4e4d-8657-e587ffbac1db: !Template
+    answer_choices: అవును ||| నం
+    id: 87f9c2ad-20a2-4e4d-8657-e587ffbac1db
+    jinja: '{{question_text}}
+
+      ఇది "అవును/కాదు" ప్రశ్నా?
+
+      |||
+
+      ఉల్లేఖనాలు ఉంటే {% if annotations. yes_no_answer[0] == "NONE" %}
+
+      నం
+
+      {% else %}
+
+      అవును
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_yes_no_question_temt
+    reference: ''
+  c4bc4369-59ba-4f75-952d-667a4909de3f: !Template
+    answer_choices: అవును ||| సంఖ్య
+    id: c4bc4369-59ba-4f75-952d-667a4909de3f
+    jinja: మేము మరుసటి రోజు {{document_url}} చదివినప్పుడు మీకు గుర్తుందా? ఇది document_plaintext[:100]
+      లాగా ప్రారంభమైంది.. మీరు దీన్ని మరో 1000 అక్షరాల వరకు కొనసాగించగలరా? ||| {{document_plaintext[100:1100]}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_temt
+    reference: ''
+  c4c1d642-3761-42d9-b4f6-f4c2ab232104: !Template
+    answer_choices: అవును ||| నం
+    id: c4c1d642-3761-42d9-b4f6-f4c2ab232104
+    jinja: 'నేను ఆశ్చర్యపోతున్నాను {{question_text}}
+
+
+      దీనికి (నా ప్రశ్న ఉన్న భాషలోనే) సమాధానం ఇవ్వడానికి మీరు నాకు కొంత సందర్భాన్ని
+      అందించగలరా? ||| {{document_plaintext[:10000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontext_temt
+    reference: ''

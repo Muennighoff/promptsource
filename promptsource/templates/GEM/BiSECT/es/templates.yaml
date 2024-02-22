@@ -1,0 +1,41 @@
+dataset: GEM/BiSECT
+subset: es
+templates:
+  5c715c55-e860-4cd3-b6cc-f2466a79690a: !Template
+    answer_choices: ''
+    id: 5c715c55-e860-4cd3-b6cc-f2466a79690a
+    jinja: '{{source}}. Esta frase es difícil de entender. Una versión más simple
+      con significado equivalente es la siguiente: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: equimeaning_esmt
+    reference: ''
+  97498532-926b-4adf-b08b-f8f2d57028b6: !Template
+    answer_choices: ''
+    id: 97498532-926b-4adf-b08b-f8f2d57028b6
+    jinja: "Divida y simplifique la siguiente oración conservando su significado completo:\
+      \ {{source}}\n Versión simplificada: ||| {{target}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: fullmeaning_esmt
+    reference: ''
+  d2f29ff0-4bfd-458d-91f3-92a5c1b8c1cd: !Template
+    answer_choices: ''
+    id: d2f29ff0-4bfd-458d-91f3-92a5c1b8c1cd
+    jinja: '{{source}}
+
+      La frase anterior es muy complicada. Por favor, proporcione una versión sinónima
+      simplificada que consta de varias oraciones: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: synonymous_esmt
+    reference: ''

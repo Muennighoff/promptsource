@@ -1,0 +1,226 @@
+dataset: paws-x
+subset: fr
+templates:
+  09d17cc8-3627-48b6-971b-d15a379bce0f: !Template
+    answer_choices: Faux ||| Vrai
+    id: 09d17cc8-3627-48b6-971b-d15a379bce0f
+    jinja: '{{sentence1}} Question : {{sentence2}} Vrai ou Faux ?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: PAWS-ANLI GPT3_frmt
+    reference: ''
+  20b6c71b-c9b7-4a7d-a7d0-ef2459f94793: !Template
+    answer_choices: Non ||| Oui
+    id: 20b6c71b-c9b7-4a7d-a7d0-ef2459f94793
+    jinja: 'Phrase 1 : {{sentence1}}
+
+      Phrase 2 : {{sentence2}}
+
+      Question : La phrase 1 et la phrase 2 expriment-elles le même sens ? Oui ou
+      non?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Meaning_frmt
+    reference: ''
+  39e6d398-4baa-48b9-a947-55b3aa601d53: !Template
+    answer_choices: Non ||| Oui
+    id: 39e6d398-4baa-48b9-a947-55b3aa601d53
+    jinja: 'Phrase 1 : {{sentence1}}
+
+      Phrase 2 : {{sentence2}}
+
+      Question : Peut-on réécrire la Phrase 1 en Phrase 2 ?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Rewrite-no-label_frmt
+    reference: ''
+  62c3ac6c-6b48-451b-814b-a9479883f8f1: !Template
+    answer_choices: Non ||| Oui
+    id: 62c3ac6c-6b48-451b-814b-a9479883f8f1
+    jinja: 'Phrase 1 : {{sentence1}}
+
+      Phrase 2 : {{sentence2}}
+
+      Question : Est-ce que la phrase 1 paraphrase la phrase 2 ?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Concatenation-no-label_frmt
+    reference: ''
+  72adf23d-d1ba-4632-bae3-5f37a27bba25: !Template
+    answer_choices: ''
+    id: 72adf23d-d1ba-4632-bae3-5f37a27bba25
+    jinja: '{% if label == 1 %}
+
+      Paraphrasez la phrase : {{sentence1}}
+
+      |||
+
+      {{sentence2}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: paraphrase-task_frmt
+    reference: ''
+  767fcbbb-c40b-4861-94a8-da7b728e8198: !Template
+    answer_choices: Non ||| Oui
+    id: 767fcbbb-c40b-4861-94a8-da7b728e8198
+    jinja: '{{sentence1}}
+
+      Est-ce une paraphrase de la phrase suivante ?
+
+      {{sentence2}} ?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: context-question-no-label_frmt
+    reference: ''
+  93689a37-8113-4120-8e73-84f109ea7324: !Template
+    answer_choices: Non ||| Oui
+    id: 93689a37-8113-4120-8e73-84f109ea7324
+    jinja: 'Phrase 1 : {{sentence1}}
+
+      Phrase 2 : {{sentence2}}
+
+      Question : Est-ce que la phrase 1 paraphrase la phrase 2 ? Oui ou non?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Concatenation_frmt
+    reference: ''
+  94dde34a-e50d-466c-86a0-dbbe8e9aa7e7: !Template
+    answer_choices: Non ||| Oui
+    id: 94dde34a-e50d-466c-86a0-dbbe8e9aa7e7
+    jinja: 'Phrase 1 : {{sentence1}}
+
+      Phrase 2 : {{sentence2}}
+
+      Question : La phrase 1 et la phrase 2 expriment-elles le même sens ?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Meaning-no-label_frmt
+    reference: ''
+  ce953c47-bd2d-4e7e-8f24-e1fdaea6bcb5: !Template
+    answer_choices: Non ||| Oui
+    id: ce953c47-bd2d-4e7e-8f24-e1fdaea6bcb5
+    jinja: '{{sentence1}} Question : {{sentence2}} Paraphrase ou pas ?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: PAWS-ANLI GPT3-no-label_frmt
+    reference: ''
+  ea0dde04-e357-45e9-86b6-a40dc083571d: !Template
+    answer_choices: Non ||| Oui
+    id: ea0dde04-e357-45e9-86b6-a40dc083571d
+    jinja: '{{sentence1}}
+
+      Est-ce une paraphrase de la phrase suivante ?
+
+      {{sentence2}} ?
+
+      Oui ou non.
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: context-question_frmt
+    reference: ''
+  f10a89dc-744a-4a03-8c39-7c19a864bc16: !Template
+    answer_choices: Non ||| Oui
+    id: f10a89dc-744a-4a03-8c39-7c19a864bc16
+    jinja: 'Déterminez si les deux phrases suivantes se paraphrasent ou non.
+
+      Envoyé 1 : {{sentence1}}
+
+      Envoyé 2 : {{sentence2}}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: task_description-no-label_frmt
+    reference: ''
+  fadc29e4-5cd7-4502-ae97-816ef77dbbeb: !Template
+    answer_choices: Non ||| Oui
+    id: fadc29e4-5cd7-4502-ae97-816ef77dbbeb
+    jinja: 'Phrase 1 : {{sentence1}}
+
+      Phrase 2 : {{sentence2}}
+
+      Question : Peut-on réécrire la Phrase 1 en Phrase 2 ? Oui ou non?
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Rewrite_frmt
+    reference: ''

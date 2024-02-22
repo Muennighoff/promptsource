@@ -1,0 +1,209 @@
+dataset: khalidalt/tydiqa-goldp
+subset: bengali
+templates:
+  258b1aa5-c630-4c70-a822-9c7f63b43830: !Template
+    answer_choices: ''
+    id: 258b1aa5-c630-4c70-a822-9c7f63b43830
+    jinja: '{{question_text}}
+
+      উপরের প্রশ্নের উত্তর দাও।
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_simple_question_odqa_bnmt
+    reference: ''
+  387fc3ed-46ea-4093-92e6-2c46a8e21a4e: !Template
+    answer_choices: ''
+    id: 387fc3ed-46ea-4093-92e6-2c46a8e21a4e
+    jinja: আমি আমার ক্লাসে {{document_title}} বিষয় সম্পর্কে শেখাতে চাই। আপনি কি আমাকে
+      একটি নিবন্ধ লিখতে পারেন যা আমি তাদের হোমওয়ার্ক হিসাবে পড়তে দিতে পারি? এটি
+      {{question_text}} উত্তর, {{language}} এবং আনুষ্ঠানিক হতে হবে। অনুগ্রহ. ||| {{passage_text}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longarticle_bnmt
+    reference: ''
+  3c0e6532-ebc5-4783-b821-c264f0f6dcb9: !Template
+    answer_choices: ''
+    id: 3c0e6532-ebc5-4783-b821-c264f0f6dcb9
+    jinja: 'আমি "{{question_text}}" প্রশ্নের উত্তর বের করার চেষ্টা করছি
+
+      আমি উইকিপিডিয়াতে {{document_title}} সম্পর্কে এই লেখাটি পেয়েছি এবং আমার মনে
+      হয় এতে উত্তর রয়েছে। আপনি আমাকে উত্তর বলতে পারেন?
+
+      পাঠ্য: {{passage_text}}
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_can_you_tell_me_the_answer_bnmt
+    reference: ''
+  6fd56a41-c8f1-4d6e-b775-bad62e889773: !Template
+    answer_choices: ''
+    id: 6fd56a41-c8f1-4d6e-b775-bad62e889773
+    jinja: 'আপনি কি একটি প্রশ্ন তৈরি করতে পারেন যার উত্তর হল {{answers.text | choice}}
+      নিম্নলিখিত প্রসঙ্গের উপর ভিত্তি করে: {{passage_text}}
+
+      |||
+
+      {{question_text}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_end_to_end_question_generation_bnmt
+    reference: ''
+  74dce5ca-6e1d-4756-99c0-01eb0d6798b5: !Template
+    answer_choices: ''
+    id: 74dce5ca-6e1d-4756-99c0-01eb0d6798b5
+    jinja: '{% set _blank2 = ["title", "context", "topic" ] %}
+
+      {% set _blank1 = ["guess", "generate", "determine"] %}
+
+      {% set _blank=["passage", "text", "text snippet", "info"]|random %}
+
+      {% set _position = ["above", "following"] |random %}
+
+      {% if  _position == "above" %}
+
+      {{passage_text}}{{"\n"}}
+
+      {% endif %}
+
+      আপনি কি {{_position}} প্যাসেজের {{_blank2|random}} {{_position}} করতে পারেন।
+
+      {% if  _position == "following" %}
+
+      {{"\n"}}{{passage_text}}
+
+      {% endif %}
+
+      |||
+
+      {{document_title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_title_generation_bnmt
+    reference: ''
+  815a8cc2-fa45-4b54-beeb-a5b30f0def48: !Template
+    answer_choices: ''
+    id: 815a8cc2-fa45-4b54-beeb-a5b30f0def48
+    jinja: 'স্নিপেট: {{passage_text}}
+
+      আমি জানি যে "{{question_text}}" এর উত্তরটি {{document_title}} সম্বন্ধে টেক্সট
+      স্নিপেটে কোথাও দেখা যাচ্ছে৷ আপনি প্রশ্নের উত্তর দিতে পারেন?
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_can_you_answer_the_question_bnmt
+    reference: ''
+  a1bc905d-6b97-449b-b959-0668dd653ef2: !Template
+    answer_choices: ''
+    id: a1bc905d-6b97-449b-b959-0668dd653ef2
+    jinja: 'আপনি কি {{document_title}} সম্পর্কে একটি প্রশ্ন তৈরি করতে পারেন এবং যার
+      উত্তর হল {{answers.text | choice}} নিম্নলিখিত প্রসঙ্গের উপর ভিত্তি করে: {{passage_text}}
+
+      |||
+
+      {{question_text}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_end_to_end_question_generation_with_title_bnmt
+    reference: ''
+  c08199c5-a464-4955-9544-d9f51faf270e: !Template
+    answer_choices: ''
+    id: c08199c5-a464-4955-9544-d9f51faf270e
+    jinja: 'আমি সবসময় ভাবতাম: {{question_text}}
+
+      আমি উইকিপিডিয়া অনুসন্ধান করেছি এবং আমি {{document_title}} সম্পর্কে নিম্নলিখিত
+      পাঠ্য স্নিপেট পেয়েছি।
+
+      স্নিপেট: {{passage_text}}
+
+      উত্তর কী?
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_whats_the_answer_bnmt
+    reference: ''
+  d3347076-117f-408d-b887-ee51072377c1: !Template
+    answer_choices: ''
+    id: d3347076-117f-408d-b887-ee51072377c1
+    jinja: 'গুজব আছে যে {{answers.text | choice}} হল {{question_text}} এর উত্তর
+
+      আমি সন্দিহান... আপনি কি {{language}}-এ সর্বাধিক ৮০০০ অক্ষরের উইকিপিডিয়া-স্টাইলের
+      একটি নিবন্ধ লিখে উপরে প্রমাণ করতে পারবেন? ||| {{passage_text[:8000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longwiki_bnmt
+    reference: ''
+  d7077224-6492-49ea-a43a-a7cce7479663: !Template
+    answer_choices: ''
+    id: d7077224-6492-49ea-a43a-a7cce7479663
+    jinja: 'আমি {{document_title}} সম্পর্কে আমার ছাত্রদের জ্ঞান পরীক্ষা করছি৷
+
+      প্রসঙ্গ ({{passage_text}}) এর উপর ভিত্তি করে, এখানে উত্তর দেওয়ার জন্য প্রশ্ন:
+      {{question_text}}। উত্তরটি প্রসঙ্গে।
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_testing_students_bnmt
+    reference: ''
+  e6ba5a92-b56e-4272-91ab-d8f4f01bb1c3: !Template
+    answer_choices: ''
+    id: e6ba5a92-b56e-4272-91ab-d8f4f01bb1c3
+    jinja: 'প্যাসেজে প্রশ্নের উত্তর বের করুন: {{question_text}}
+
+      {{document_title}} সম্পর্কে প্যাসেজ: {{passage_text}}
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_extract_answer_bnmt
+    reference: ''

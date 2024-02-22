@@ -1,0 +1,109 @@
+dataset: GEM/xlsum
+subset: french
+templates:
+  074cb981-66b8-4c84-8a6a-beb552fef60d: !Template
+    answer_choices: ''
+    id: 074cb981-66b8-4c84-8a6a-beb552fef60d
+    jinja: 'Contenu : {{text[:7000]}}\nLe contenu précédent peut être résumé comme
+      suit : ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: prevcontent_frmt
+    reference: ''
+  0b7940e8-49f0-4a1a-8656-eb1ce361d6c4: !Template
+    answer_choices: ''
+    id: 0b7940e8-49f0-4a1a-8656-eb1ce361d6c4
+    jinja: 'Compte tenu du titre et du résumé d''un article ci-dessous, générez un
+      court article ou le début d''un long article pour les accompagner. Titre : {{title}}\nRésumé :
+      {{target}}\nArticle (Max 500 caractères) : ||| {{text[:500]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longgenarticle_frmt
+    reference: ''
+  5ef17f82-24d4-4a4a-8d25-e6a451166ea2: !Template
+    answer_choices: ''
+    id: 5ef17f82-24d4-4a4a-8d25-e6a451166ea2
+    jinja: 'Titre : {{title}}\nÉtant donné le titre ci-dessus d''un article imaginaire,
+      imaginez l''article.\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: imaginearticle_frmt
+    reference: ''
+  62738c0f-8c67-4a74-af6c-8f81c8a5beda: !Template
+    answer_choices: ''
+    id: 62738c0f-8c67-4a74-af6c-8f81c8a5beda
+    jinja: 'Titre : {{title}}\nÉtant donné le titre ci-dessus d''un article imaginaire,
+      imaginez l''article.\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longimaginearticle_frmt
+    reference: ''
+  6c521262-20c8-4d6b-8f24-6b63723d45f8: !Template
+    answer_choices: ''
+    id: 6c521262-20c8-4d6b-8f24-6b63723d45f8
+    jinja: '{{text[:1000]}}... Continuez l''article pour encore 4000 caractères max :
+      ||| {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_frmt
+    reference: ''
+  6dd62770-2650-4851-92a2-992c8f372c68: !Template
+    answer_choices: ''
+    id: 6dd62770-2650-4851-92a2-992c8f372c68
+    jinja: 'Doc à résumer : {{text[:8500]}}\nRésumé dans la même langue que le document :
+      ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: docsummary_frmt
+    reference: ''
+  b4232330-e468-4b58-a38d-bdfde2596af0: !Template
+    answer_choices: ''
+    id: b4232330-e468-4b58-a38d-bdfde2596af0
+    jinja: '...{{text[3000:3500]}}... Écrivez le reste de l''article : ||| {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longrest_frmt
+    reference: ''
+  bcbe321c-bc89-46ca-be98-e15a9becc728: !Template
+    answer_choices: ''
+    id: bcbe321c-bc89-46ca-be98-e15a9becc728
+    jinja: '{{title}}\n{{text[:5000]}}\n\ntl;dr : ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: tldr_frmt
+    reference: ''
+  fa8365bc-626a-4856-898b-f4c23b8a3679: !Template
+    answer_choices: ''
+    id: fa8365bc-626a-4856-898b-f4c23b8a3679
+    jinja: '{{text}} \n\nDonnez-moi un bon titre pour l''article ci-dessus. ||| {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: goodtitle_frmt
+    reference: ''

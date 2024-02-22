@@ -1,0 +1,127 @@
+dataset: mlqa
+subset: mlqa.zh.en
+templates:
+  162a8f4e-8803-4f20-8cd6-8b4a26db7100: !Template
+    answer_choices: ''
+    id: 162a8f4e-8803-4f20-8cd6-8b4a26db7100
+    jinja: '{{ context[:answers.answer_start[0]-5]}}... 继续上述操作，使其回答“{{question}}”：|||
+      {{ context[answers.answer_start[0]-5:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_zhmt
+    reference: ''
+  5b6d880d-bfa1-4aad-a752-b718550f2b59: !Template
+    answer_choices: ''
+    id: 5b6d880d-bfa1-4aad-a752-b718550f2b59
+    jinja: '参考下面的文章，然后用与文章相同的语言回答问题：
+
+
+      段落：{{context}}
+
+
+      问题：{{question}}
+
+      |||
+
+      {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: refercqa_zhmt
+    reference: ''
+  60bebfe7-c5e0-4baf-b13d-7336d817e2f3: !Template
+    answer_choices: ''
+    id: 60bebfe7-c5e0-4baf-b13d-7336d817e2f3
+    jinja: '阅读下面的短文，然后从短文中选出正确的部分来回答下面的问题：
+
+      {{context}}
+
+      {{question}}
+
+      ||| {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: exractingcqa_zhmt
+    reference: ''
+  73643780-0b67-4dc7-bfa8-307e49f6e8b7: !Template
+    answer_choices: ''
+    id: 73643780-0b67-4dc7-bfa8-307e49f6e8b7
+    jinja: 'D：{{context}}
+
+
+      问：{{question}}
+
+
+      答：||| {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: dqa_zhmt
+    reference: ''
+  a5ae3d3f-7b1b-4d75-9eb9-0a1aca64451a: !Template
+    answer_choices: ''
+    id: a5ae3d3f-7b1b-4d75-9eb9-0a1aca64451a
+    jinja: '{{context}}
+
+      问：{{question}}
+
+      参考上面的段落，用该段落的语言对给定问题的正确答案是||| {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: cqreferringa_zhmt
+    reference: ''
+  bea86653-af31-4f52-a8a6-845b4a6d6968: !Template
+    answer_choices: ''
+    id: bea86653-af31-4f52-a8a6-845b4a6d6968
+    jinja: '我找到了一个用 {{answers.text[0]}} 回答“{{answers.text[0]}}”的文本。它以“{{ context[:10]
+      }}”开头。可以继续吗？
+
+      ||| {{ context[10:] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longanswers_zhmt
+    reference: ''
+  c0d720bd-9026-49f2-89ec-19d3548ef515: !Template
+    answer_choices: ''
+    id: c0d720bd-9026-49f2-89ec-19d3548ef515
+    jinja: "问题：{{question}}\n 上下文：{{context}}\n 从上下文中回答：||| {{answers.text[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: qaanswera_zhmt
+    reference: ''
+  e0cd5099-d9ec-490c-95d4-e169445b62cc: !Template
+    answer_choices: ''
+    id: e0cd5099-d9ec-490c-95d4-e169445b62cc
+    jinja: '{{context}}
+
+
+      参考上述上下文，{{question}} |||
+
+
+      {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: creferenceqa_zhmt
+    reference: ''

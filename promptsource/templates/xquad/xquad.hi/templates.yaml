@@ -1,0 +1,146 @@
+dataset: xquad
+subset: xquad.hi
+templates:
+  134496f4-284a-466d-aa11-1f031ed87380: !Template
+    answer_choices: ''
+    id: 134496f4-284a-466d-aa11-1f031ed87380
+    jinja: '{{question}} जाहिर है, यह {{answers.text[0]}} है। क्या आप मुझे कुछ संदर्भ
+      प्रदान कर सकते हैं? ||| {{context}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontext_himt
+    reference: ''
+  36aae871-8a5c-4183-a9cf-248466e5522b: !Template
+    answer_choices: ''
+    id: 36aae871-8a5c-4183-a9cf-248466e5522b
+    jinja: '{{context}}
+
+
+      प्रश्न: {{question}}
+
+
+      ए: ||| {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: given_context_answer_question_variation_himt
+    reference: ''
+  3c15addf-8a02-4465-9acf-7a33829a5726: !Template
+    answer_choices: ''
+    id: 3c15addf-8a02-4465-9acf-7a33829a5726
+    jinja: '{{context}}
+
+
+      उपरोक्त परिच्छेद से, "{{answers["text"][0]}}" के साथ एक उचित प्रश्न का उत्तर
+      होगा: ||| {{question}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: jeopardy_himt
+    reference: ''
+  49f932d9-caca-48d6-aeec-8cd58871df92: !Template
+    answer_choices: ''
+    id: 49f932d9-caca-48d6-aeec-8cd58871df92
+    jinja: '{{context}}
+
+
+      उपरोक्त संदर्भ के संदर्भ में, {{question}} |||
+
+
+      {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer_the_question_himt
+    reference: ''
+  7bb0885f-be8d-4bef-b279-75e1113d722c: !Template
+    answer_choices: ''
+    id: 7bb0885f-be8d-4bef-b279-75e1113d722c
+    jinja: '{{context}}
+
+
+      प्रश्न: {{question}}
+
+
+      उपरोक्त गद्यांश का उल्लेख करते हुए, दिए गए प्रश्न का सही उत्तर है ||| {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer_given_context_and_question_himt
+    reference: ''
+  b71fd80a-3298-4ced-b5f1-82d939c7c1e1: !Template
+    answer_choices: ''
+    id: b71fd80a-3298-4ced-b5f1-82d939c7c1e1
+    jinja: 'नीचे दिए गए गद्यांश का संदर्भ लें और निम्नलिखित प्रश्न का उत्तर दें:
+
+
+      पैसेज: {{context}}
+
+
+      प्रश्न: {{question}}
+
+      |||
+
+      {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer_question_given_context_himt
+    reference: ''
+  bb6c0710-648d-4088-805c-104a34f49902: !Template
+    answer_choices: ''
+    id: bb6c0710-648d-4088-805c-104a34f49902
+    jinja: '{{context}}
+
+
+      उपरोक्त गद्यांश से एक प्रश्न उत्पन्न करें : ||| {{question}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: given_context_generate_question_himt
+    reference: ''
+  e486ca20-37c7-4448-a314-0c4baaae8ddc: !Template
+    answer_choices: ''
+    id: e486ca20-37c7-4448-a314-0c4baaae8ddc
+    jinja: 'निम्नलिखित गद्यांश को पढ़िए और नीचे दिए गए प्रश्न का उत्तर दीजिए:
+
+      {{context}}
+
+      {{question}}
+
+      ||| {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: read_passage_himt
+    reference: ''
+  fc924507-73c2-434b-92b0-f56ed6ec95c8: !Template
+    answer_choices: ''
+    id: fc924507-73c2-434b-92b0-f56ed6ec95c8
+    jinja: '{{answers.text[0]}} के {{question}} के उत्तर को देखते हुए, एक ऐसा टेक्स्ट
+      लिखें जो इसे स्पष्ट करे। उत्तर चार नंबर {{answers.answer_start[0]}} से शुरू
+      होना चाहिए। टेक्स्ट: ||| {{context}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longchar_himt
+    reference: ''

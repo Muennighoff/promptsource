@@ -1,0 +1,176 @@
+dataset: khalidalt/tydiqa-primary
+subset: swahili
+templates:
+  0bd27bcb-deee-4b8d-8611-d32f04dbd88e: !Template
+    answer_choices: Ndiyo ||| Hapana
+    id: 0bd27bcb-deee-4b8d-8611-d32f04dbd88e
+    jinja: "{% if annotations.yes_no_answer[0] == \"YES\" or annotations.yes_no_answer[0]\
+      \ == \"NO\" %}\nKulingana na kijisehemu cha maandishi kifuatacho, {{question_text}}\n\
+      {{document_plaintext}}\n|||\n{{annotations.yes_no_answer[0] | capitalize}}\n\
+      \    {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_based_on_the_text_swmt
+    reference: ''
+  0f043e64-fa7a-40df-9a9b-995b04c9a352: !Template
+    answer_choices: Ndiyo ||| Hapana
+    id: 0f043e64-fa7a-40df-9a9b-995b04c9a352
+    jinja: Je, unakumbuka tulipokuwa tunasoma {{document_url}} juzi? Ilianza kama
+      document_plaintext[:100].. Je, unaweza kuiendeleza hadi herufi nyingine 1000?
+      ||| {{document_plaintext[100:1100]}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_swmt
+    reference: ''
+  12da5770-bac9-4af3-9be6-018c3fb8f00d: !Template
+    answer_choices: Ndiyo ||| Hapana
+    id: 12da5770-bac9-4af3-9be6-018c3fb8f00d
+    jinja: "{% if annotations.yes_no_answer[0] == \"YES\" or annotations.yes_no_answer[0]\
+      \ == \"NO\" %}\nJibu swali kuhusu {{document_title}}. {{question_text}}\n|||\n\
+      {{annotations.yes_no_answer[0] | capitalize}}\n    {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_open_domain_qa_without_choices_swmt
+    reference: ''
+  3917e5b0-1c44-4794-8ec2-4a2b96bf5ce2: !Template
+    answer_choices: Ndiyo ||| Hapana ||| Hakuna
+    id: 3917e5b0-1c44-4794-8ec2-4a2b96bf5ce2
+    jinja: 'Nashangaa {{question_text}}.
+
+      Nisaidie kujibu swali hili kwa "{{answer_choices[0]}}" au "{{answer_choices[1]}}"
+      au "{{answer_choices[2]}}" ikiwa hakuna jibu kati ya mawili ya kwanza litatumika.
+
+      Hivi ndivyo nilivyopata kwenye mtandao:
+
+      Mada: {{document_title}}
+
+      Kifungu: {{document_plaintext}}
+
+      |||
+
+      {{annotations.yes_no_answer[0] | capitalize}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_heres_what_I_found_swmt
+    reference: ''
+  5eab2f36-d538-4087-82e7-df97cf8833e6: !Template
+    answer_choices: Ndiyo ||| Hapana ||| Hakuna
+    id: 5eab2f36-d538-4087-82e7-df97cf8833e6
+    jinja: 'Swali: {{question_text}}
+
+      Jibu swali kwa {{"Yes"}} au {{"No"}}. Ikiwa haiwezekani basi jibu {{"None"}}.
+
+      Kidokezo: {{document_plaintext}}
+
+      |||
+
+      {{annotations.yes_no_answer[0] | capitalize}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_yes_no_none_swmt
+    reference: ''
+  b8094ffd-8aae-4be8-9514-4e3a2914d296: !Template
+    answer_choices: Ndiyo ||| Hapana
+    id: b8094ffd-8aae-4be8-9514-4e3a2914d296
+    jinja: "{% if annotations.yes_no_answer[0] == \"YES\" or annotations.yes_no_answer[0]\
+      \ == \"NO\" %}\nJibu swali kuhusu {{document_title}}.\nSwali: {{question_text}}.\
+      \ Ndiyo au Hapana?\n|||\n{{annotations.yes_no_answer[0] | capitalize}}\n   \
+      \ {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_open_domain_qa_swmt
+    reference: ''
+  d33c324d-af8b-46c0-973f-153596c5fadf: !Template
+    answer_choices: Ndiyo ||| Hapana
+    id: d33c324d-af8b-46c0-973f-153596c5fadf
+    jinja: '{{question_text}}
+
+      Je, hili ni swali la "Ndiyo/Hapana"?
+
+      |||
+
+      {% if annotations. yes_no_answer[0] == "NONE" %}
+
+      Hapana
+
+      {% else %}
+
+      Ndiyo
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_yes_no_question_swmt
+    reference: ''
+  db3fdeeb-26f8-477e-83cd-6fb76afcbc09: !Template
+    answer_choices: Ndiyo ||| Hapana ||| Hakuna
+    id: db3fdeeb-26f8-477e-83cd-6fb76afcbc09
+    jinja: 'Jibu swali lifuatalo kwa kutumia "{{answer_choices[0]}}" au "{{answer_choices[1]}}"
+      au "{{answer_choices[2]}}" ikiwa hakuna jibu kati ya mawili ya kwanza litatumika.
+
+      Swali: {{question_text}}
+
+      Mada: {{document_title}}
+
+      Kifungu: {{document_plaintext}}
+
+      |||
+
+      {{annotations.yes_no_answer[0] | capitalize}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_read_and_answer_swmt
+    reference: ''
+  db707593-8f1c-4370-bab2-225a9a667c39: !Template
+    answer_choices: Ndiyo ||| Hapana
+    id: db707593-8f1c-4370-bab2-225a9a667c39
+    jinja: 'Nashangaa {{question_text}}
+
+
+      Unaweza kunipatia muktadha wa kujibu hili (kwa lugha sawa na swali langu)? |||
+      {{document_plaintext[:10000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontext_swmt
+    reference: ''
+  f05bc19e-0991-45e2-8137-694890a21ac2: !Template
+    answer_choices: Ndiyo ||| Hapana
+    id: f05bc19e-0991-45e2-8137-694890a21ac2
+    jinja: "{% if annotations.yes_no_answer[0] == \"YES\" or annotations.yes_no_answer[0]\
+      \ == \"NO\" %}\nBaada ya kusoma kijisehemu kifuatacho kutoka Wikipedia, tafadhali\
+      \ jibu swali: {{question_text}}\n{{document_plaintext}}\n|||\n{{annotations.yes_no_answer[0]\
+      \ | capitalize}}\n    {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_after_reading_the_text_swmt
+    reference: ''

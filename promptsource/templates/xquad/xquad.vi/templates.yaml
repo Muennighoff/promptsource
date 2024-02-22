@@ -1,0 +1,147 @@
+dataset: xquad
+subset: xquad.vi
+templates:
+  2d0bfe9c-2c0f-4d4a-874a-cce1f3e87432: !Template
+    answer_choices: ''
+    id: 2d0bfe9c-2c0f-4d4a-874a-cce1f3e87432
+    jinja: '{{context}}
+
+
+      Với sự tham chiếu đến ngữ cảnh trên, {{question}} |||
+
+
+      {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer_the_question_vimt
+    reference: ''
+  520fb9c0-34a6-4344-93ab-de57ee925a11: !Template
+    answer_choices: ''
+    id: 520fb9c0-34a6-4344-93ab-de57ee925a11
+    jinja: 'Đưa ra câu trả lời {{answers.text[0]}} cho {{question}}, hãy viết một
+      văn bản giải thích điều này. Câu trả lời phải bắt đầu ở số ký tự {{answers.answer_start[0]}}.
+      Văn bản: ||| {{context}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longchar_vimt
+    reference: ''
+  577d671a-a915-45ea-8f1a-a8c61dcd83be: !Template
+    answer_choices: ''
+    id: 577d671a-a915-45ea-8f1a-a8c61dcd83be
+    jinja: '{{question}} Rõ ràng là {{answers.text[0]}}. Bạn có thể cung cấp cho tôi
+      một số bối cảnh? ||| {{context}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontext_vimt
+    reference: ''
+  661383b5-a59c-418b-9d72-ebd328337654: !Template
+    answer_choices: ''
+    id: 661383b5-a59c-418b-9d72-ebd328337654
+    jinja: '{{context}}
+
+
+      H: {{question}}
+
+
+      Đề cập đến đoạn văn trên, câu trả lời chính xác cho câu hỏi được đưa ra là |||
+      {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer_given_context_and_question_vimt
+    reference: ''
+  7ff428f6-e566-47aa-a3aa-8f0c09b6d1f6: !Template
+    answer_choices: ''
+    id: 7ff428f6-e566-47aa-a3aa-8f0c09b6d1f6
+    jinja: '{{context}}
+
+
+      H: {{question}}
+
+
+      A: ||| {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: given_context_answer_question_variation_vimt
+    reference: ''
+  99204f66-dc97-4baa-b324-645f01c35b5d: !Template
+    answer_choices: ''
+    id: 99204f66-dc97-4baa-b324-645f01c35b5d
+    jinja: 'Đọc đoạn văn sau và trả lời câu hỏi sau:
+
+      {{context}}
+
+      {{question}}
+
+      ||| {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: read_passage_vimt
+    reference: ''
+  ca897707-f7c0-467e-b2e4-f62825597212: !Template
+    answer_choices: ''
+    id: ca897707-f7c0-467e-b2e4-f62825597212
+    jinja: 'Tham khảo đoạn văn dưới đây và trả lời câu hỏi sau:
+
+
+      Đoạn: {{context}}
+
+
+      Câu hỏi: {{question}}
+
+      |||
+
+      {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer_question_given_context_vimt
+    reference: ''
+  f27e17fa-d777-44db-a805-e052b521e8c3: !Template
+    answer_choices: ''
+    id: f27e17fa-d777-44db-a805-e052b521e8c3
+    jinja: '{{context}}
+
+
+      Từ đoạn văn trên, một câu hỏi hợp lý với "{{answers["text"][0]}}" như câu trả
+      lời sẽ là: ||| {{question}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: jeopardy_vimt
+    reference: ''
+  f29b4bb2-5e41-438b-b55c-a06f4a0cba32: !Template
+    answer_choices: ''
+    id: f29b4bb2-5e41-438b-b55c-a06f4a0cba32
+    jinja: '{{context}}
+
+
+      Tạo câu hỏi từ đoạn văn trên: ||| {{question}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: given_context_generate_question_vimt
+    reference: ''

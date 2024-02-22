@@ -1,0 +1,107 @@
+dataset: GEM/xlsum
+subset: yoruba
+templates:
+  2315cfc6-2e2b-4d12-bcc4-81599675f1bc: !Template
+    answer_choices: ''
+    id: 2315cfc6-2e2b-4d12-bcc4-81599675f1bc
+    jinja: 'Dókítà láti ṣàkópọ̀: {{text[:8500]}}\nAkopọ ni ede kanna pẹlu doc: |||
+      {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: docsummary_yomt
+    reference: ''
+  2e247a69-9767-4208-8404-0b6568ca4572: !Template
+    answer_choices: ''
+    id: 2e247a69-9767-4208-8404-0b6568ca4572
+    jinja: '{{title}}\n{{text[:5000]}}\n\ntl;dr: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: tldr_yomt
+    reference: ''
+  31a357bc-e99d-4658-8de9-1681ba3431a9: !Template
+    answer_choices: ''
+    id: 31a357bc-e99d-4658-8de9-1681ba3431a9
+    jinja: 'Akoonu: {{text[:7000]}}\nAkoonu iṣaaju le ṣe akopọ bi wọnyi: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: prevcontent_yomt
+    reference: ''
+  7b3715a3-875f-449d-a459-2a2e71261d1e: !Template
+    answer_choices: ''
+    id: 7b3715a3-875f-449d-a459-2a2e71261d1e
+    jinja: 'Akọle: {{title}}\nFun akọle ti o wa loke ti nkan arosọ, fojuinu nkan naa.\n
+      ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: imaginearticle_yomt
+    reference: ''
+  a25da5e5-7f9e-4ad0-895d-b03f8ca4af13: !Template
+    answer_choices: ''
+    id: a25da5e5-7f9e-4ad0-895d-b03f8ca4af13
+    jinja: '...{{text[3000:3500]}}... Kọ iyoku nkan na: ||| {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longrest_yomt
+    reference: ''
+  ce2464be-965e-4d07-9b06-82e54f1d692d: !Template
+    answer_choices: ''
+    id: ce2464be-965e-4d07-9b06-82e54f1d692d
+    jinja: 'Fi fun akọle isalẹ ati akopọ ti nkan kan, ṣe agbekalẹ nkan kukuru kan
+      tabi ibẹrẹ nkan gigun lati lọ pẹlu wọn. Akọle: {{title}}\nAkopọ: {{target}}\nAkọle
+      (Max 500 characters): ||| {{text[:500]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longgenarticle_yomt
+    reference: ''
+  d11ff462-c976-4fcd-8a66-2a11dbae1f9f: !Template
+    answer_choices: ''
+    id: d11ff462-c976-4fcd-8a66-2a11dbae1f9f
+    jinja: '{{text[:1000]}} ||| {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_yomt
+    reference: ''
+  d9bef738-f336-47c6-bcb8-e987a3a30e56: !Template
+    answer_choices: ''
+    id: d9bef738-f336-47c6-bcb8-e987a3a30e56
+    jinja: 'Akọle: {{title}}\nFun akọle ti o wa loke ti nkan arosọ, fojuinu nkan naa.\n
+      ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longimaginearticle_yomt
+    reference: ''
+  fed24ef5-274c-4409-bb72-22e63b308745: !Template
+    answer_choices: ''
+    id: fed24ef5-274c-4409-bb72-22e63b308745
+    jinja: '{{text}} \n\n Fun mi ni akọle rere fun nkan ti o wa loke. ||| {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: goodtitle_yomt
+    reference: ''

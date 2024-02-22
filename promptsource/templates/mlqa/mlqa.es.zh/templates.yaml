@@ -1,0 +1,131 @@
+dataset: mlqa
+subset: mlqa.es.es
+templates:
+  022c1e32-6bfb-4236-af1a-05c827fc452f: !Template
+    answer_choices: ''
+    id: 022c1e32-6bfb-4236-af1a-05c827fc452f
+    jinja: '{{ context[:answers.answer_start[0]-5]}}... Continúe con lo anterior,
+      de modo que responda "{{question}}": ||| {{ context[answers.answer_start[0]-5:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_esmt
+    reference: ''
+  083a16fa-f0ef-4dfb-901b-b596e34bf22a: !Template
+    answer_choices: ''
+    id: 083a16fa-f0ef-4dfb-901b-b596e34bf22a
+    jinja: 'D: {{context}}
+
+
+      P: {{question}}
+
+
+      R: ||| {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: dqa_esmt
+    reference: ''
+  39582ba1-c714-45e0-a4fa-f04b70c94afc: !Template
+    answer_choices: ''
+    id: 39582ba1-c714-45e0-a4fa-f04b70c94afc
+    jinja: 'Lea el siguiente pasaje y luego responda la pregunta que sigue extrayendo
+      la parte correcta del pasaje:
+
+      {{context}}
+
+      {{question}}
+
+      ||| {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: exractingcqa_esmt
+    reference: ''
+  7be8b3e2-a11b-47e4-bc3f-93855246c3c6: !Template
+    answer_choices: ''
+    id: 7be8b3e2-a11b-47e4-bc3f-93855246c3c6
+    jinja: 'Consulte el pasaje a continuación y luego responda la pregunta en el mismo
+      idioma que el pasaje:
+
+
+      Pasaje: {{context}}
+
+
+      Pregunta: {{question}}
+
+      |||
+
+      {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: refercqa_esmt
+    reference: ''
+  a30143c0-9a06-4d3c-9c07-dae54fe3e1cd: !Template
+    answer_choices: ''
+    id: a30143c0-9a06-4d3c-9c07-dae54fe3e1cd
+    jinja: 'Encontré un texto que responde "{{question}}" con {{answers.text[0]}}.
+      Comienza con "{{ context[:10] }}". ¿Puedes continuarlo?
+
+      ||| {{ context[10:] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longanswers_esmt
+    reference: ''
+  d5ae02c8-835c-4308-9ccc-729d1e78b4ac: !Template
+    answer_choices: ''
+    id: d5ae02c8-835c-4308-9ccc-729d1e78b4ac
+    jinja: '{{context}}
+
+      P: {{question}}
+
+      Haciendo referencia al pasaje anterior, la respuesta correcta a la pregunta
+      dada en el idioma del pasaje es ||| {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: cqreferringa_esmt
+    reference: ''
+  dd974b8f-50bf-4c8a-83d0-e0ad1d1077e0: !Template
+    answer_choices: ''
+    id: dd974b8f-50bf-4c8a-83d0-e0ad1d1077e0
+    jinja: '{{context}}
+
+
+      Con referencia al contexto anterior, {{question}} |||
+
+
+      {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: creferenceqa_esmt
+    reference: ''
+  f5fb7ed7-32b8-4e8f-8ef3-bf5620927e14: !Template
+    answer_choices: ''
+    id: f5fb7ed7-32b8-4e8f-8ef3-bf5620927e14
+    jinja: "Pregunta: {{question}}\n Contexto: {{context}}\n Respuesta del contexto:\
+      \ ||| {{answers.text[0]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: qaanswera_esmt
+    reference: ''

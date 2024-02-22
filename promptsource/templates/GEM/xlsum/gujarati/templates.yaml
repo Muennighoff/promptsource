@@ -1,0 +1,108 @@
+dataset: GEM/xlsum
+subset: gujarati
+templates:
+  011f7996-22d7-421f-ae2a-f772a3148a64: !Template
+    answer_choices: ''
+    id: 011f7996-22d7-421f-ae2a-f772a3148a64
+    jinja: 'સારાંશ માટે દસ્તાવેજ: {{text[:8500]}}\nદસ્તાવેજની સમાન ભાષામાં સારાંશ:
+      ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: docsummary_gumt
+    reference: ''
+  10e141df-f245-4e48-af37-3b22926513bd: !Template
+    answer_choices: ''
+    id: 10e141df-f245-4e48-af37-3b22926513bd
+    jinja: '{{text[:1000]}}... બીજા 4000 અક્ષરો માટે લેખ ચાલુ રાખો: ||| {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_gumt
+    reference: ''
+  1725b897-20b9-46d2-a9ba-1a87507ce474: !Template
+    answer_choices: ''
+    id: 1725b897-20b9-46d2-a9ba-1a87507ce474
+    jinja: 'શીર્ષક: {{title}}\nકાલ્પનિક લેખનું ઉપરનું શીર્ષક જોતાં, લેખની કલ્પના કરો.\n
+      ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longimaginearticle_gumt
+    reference: ''
+  3620ce67-4126-4863-8511-d93503ea40cd: !Template
+    answer_choices: ''
+    id: 3620ce67-4126-4863-8511-d93503ea40cd
+    jinja: 'શીર્ષક: {{title}}\nકાલ્પનિક લેખનું ઉપરનું શીર્ષક જોતાં, લેખની કલ્પના કરો.\n
+      ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: imaginearticle_gumt
+    reference: ''
+  3eca1b7a-9ab4-4306-bce2-eec8aed09250: !Template
+    answer_choices: ''
+    id: 3eca1b7a-9ab4-4306-bce2-eec8aed09250
+    jinja: '...{{text[3000:3500]}}... બાકીનો લેખ લખો: ||| {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longrest_gumt
+    reference: ''
+  4456c3d7-ecf6-486b-a6c5-568dc5b3780c: !Template
+    answer_choices: ''
+    id: 4456c3d7-ecf6-486b-a6c5-568dc5b3780c
+    jinja: 'લેખના નીચેના શીર્ષક અને સારાંશને જોતાં, તેમની સાથે જવા માટે એક નાનો લેખ
+      અથવા લાંબા લેખની શરૂઆત બનાવો. શીર્ષક: {{title}}\nસારાંશ: {{target}}\nલેખ (મહત્તમ
+      500 અક્ષરો): ||| {{text[:500]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longgenarticle_gumt
+    reference: ''
+  61ad4758-74bf-4455-b48c-50e027dbc1d2: !Template
+    answer_choices: ''
+    id: 61ad4758-74bf-4455-b48c-50e027dbc1d2
+    jinja: 'સામગ્રી: {{text[:7000]}}\nઅગાઉની સામગ્રીનો સારાંશ નીચે મુજબ કરી શકાય છે:
+      ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: prevcontent_gumt
+    reference: ''
+  65d609bd-d628-42f3-9423-b6b946bfc03a: !Template
+    answer_choices: ''
+    id: 65d609bd-d628-42f3-9423-b6b946bfc03a
+    jinja: '{{title}}\n{{text[:5000]}}\n\ntl;dr: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: tldr_gumt
+    reference: ''
+  9a3662ea-e84f-4fd2-85e5-8dd4f4d7d27a: !Template
+    answer_choices: ''
+    id: 9a3662ea-e84f-4fd2-85e5-8dd4f4d7d27a
+    jinja: '{{text}} \n\nમને ઉપરના લેખ માટે સારું શીર્ષક આપો. ||| {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: goodtitle_gumt
+    reference: ''

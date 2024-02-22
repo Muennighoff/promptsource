@@ -1,0 +1,147 @@
+dataset: xquad
+subset: xquad.es
+templates:
+  177d013e-fc81-4c15-adb5-88f4e85e628a: !Template
+    answer_choices: ''
+    id: 177d013e-fc81-4c15-adb5-88f4e85e628a
+    jinja: '{{context}}
+
+
+      Del pasaje anterior, una pregunta razonable con "{{answers["text"][0]}}" como
+      respuesta sería: ||| {{question}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: jeopardy_esmt
+    reference: ''
+  2a31bca0-5d89-407a-9385-9c574edbcc55: !Template
+    answer_choices: ''
+    id: 2a31bca0-5d89-407a-9385-9c574edbcc55
+    jinja: '{{question}} Aparentemente, es {{answers.text[0]}}. ¿Puedes darme algo
+      de contexto? ||| {{context}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontext_esmt
+    reference: ''
+  49aa787e-547e-419d-af38-fec80dacaabe: !Template
+    answer_choices: ''
+    id: 49aa787e-547e-419d-af38-fec80dacaabe
+    jinja: 'Lee el siguiente pasaje y contesta la pregunta que sigue:
+
+      {{context}}
+
+      {{question}}
+
+      ||| {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: read_passage_esmt
+    reference: ''
+  60de87b6-e4e4-4ac1-bbd4-55342157cc32: !Template
+    answer_choices: ''
+    id: 60de87b6-e4e4-4ac1-bbd4-55342157cc32
+    jinja: 'Dada la respuesta {{answers.text[0]}} a la {{question}}, escribe un texto
+      que explique esto. La respuesta debe comenzar en el número de char {{answers.answer_start[0]}}.
+      Texto: ||| {{context}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longchar_esmt
+    reference: ''
+  8c81d093-f665-416c-bf00-faddcdce70b1: !Template
+    answer_choices: ''
+    id: 8c81d093-f665-416c-bf00-faddcdce70b1
+    jinja: 'Refiérase al siguiente pasaje y responda la siguiente pregunta:
+
+
+      Pasaje: {{context}}
+
+
+      Pregunta: {{question}}
+
+      |||
+
+      {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer_question_given_context_esmt
+    reference: ''
+  d33c4cd6-c347-4f01-930d-b7f7aa6247cc: !Template
+    answer_choices: ''
+    id: d33c4cd6-c347-4f01-930d-b7f7aa6247cc
+    jinja: '{{context}}
+
+
+      P: {{question}}
+
+
+      R: ||| {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: given_context_answer_question_variation_esmt
+    reference: ''
+  d3ab826c-4640-4895-9554-d278c65c4923: !Template
+    answer_choices: ''
+    id: d3ab826c-4640-4895-9554-d278c65c4923
+    jinja: '{{context}}
+
+
+      Genere una pregunta del pasaje anterior: ||| {{question}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: given_context_generate_question_esmt
+    reference: ''
+  e2a7bb28-bafd-4226-943c-9741f0cabe28: !Template
+    answer_choices: ''
+    id: e2a7bb28-bafd-4226-943c-9741f0cabe28
+    jinja: '{{context}}
+
+
+      P: {{question}}
+
+
+      En referencia al pasaje anterior, la respuesta correcta a la pregunta dada es
+      ||| {{answers["text"][0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer_given_context_and_question_esmt
+    reference: ''
+  eb5c3cd0-0a82-4e66-bf12-a5c98ede331d: !Template
+    answer_choices: ''
+    id: eb5c3cd0-0a82-4e66-bf12-a5c98ede331d
+    jinja: '{{context}}
+
+
+      Con referencia al contexto anterior, {{question}} |||
+
+
+      {{answers.text[0]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer_the_question_esmt
+    reference: ''

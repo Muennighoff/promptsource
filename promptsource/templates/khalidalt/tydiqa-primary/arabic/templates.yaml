@@ -1,0 +1,174 @@
+dataset: khalidalt/tydiqa-primary
+subset: arabic
+templates:
+  02e56dd9-28b6-44ea-b6a5-46522d84979a: !Template
+    answer_choices: نعم ||| رقم
+    id: 02e56dd9-28b6-44ea-b6a5-46522d84979a
+    jinja: 'هل تتذكر عندما كنا نقرأ {{document_url}} ذلك اليوم؟ لقد بدأ شيئًا مثل
+      document_plaintext [: 100] .. هل يمكنك متابعته لما يصل إلى 1000 حرف آخر؟ |||
+      {{document_plaintext[100:1100]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_armt
+    reference: ''
+  11c83fa2-254c-47b8-9908-bd900f13d3ce: !Template
+    answer_choices: نعم ||| رقم ||| لا أحد
+    id: 11c83fa2-254c-47b8-9908-bd900f13d3ce
+    jinja: 'أتساءل {{question_text}}.
+
+      ساعدني في الإجابة على هذا السؤال بـ "{{answer_choices[0]}}" أو "{{answer_choices[1]}}"
+      أو "{{answer_choices[2]}}" إذا لم تنطبق أي من أول إجابتين.
+
+      هذا ما وجدته على الإنترنت:
+
+      الموضوع: {{document_title}}
+
+      مقالة: {{document_plaintext}}
+
+      |||
+
+      {{annotations.yes_no_answer[0] | capitalize}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_heres_what_I_found_armt
+    reference: ''
+  632da328-a9e7-41d0-ac15-44aab10f79c6: !Template
+    answer_choices: نعم ||| رقم
+    id: 632da328-a9e7-41d0-ac15-44aab10f79c6
+    jinja: "{% if annotations.yes_no_answer[0] == \"YES\" or annotations.yes_no_answer[0]\
+      \ == \"NO\" %}\nأجب عن السؤال حول {{document_title}}.\nالسؤال: {{question_text}}.\
+      \ نعم ام لا؟\n|||\n{{annotations.yes_no_answer[0] | capitalize}}\n    {% endif\
+      \ %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_open_domain_qa_armt
+    reference: ''
+  6c3e231f-4f69-4ae4-9302-176a1dddfc0b: !Template
+    answer_choices: نعم ||| رقم ||| لا أحد
+    id: 6c3e231f-4f69-4ae4-9302-176a1dddfc0b
+    jinja: 'أجب عن السؤال التالي بـ "{{answer_choices[0]}}" أو "{{answer_choices[1]}}"
+      أو "{{answer_choices[2]}}" إذا لم تنطبق أي من أول إجابتين.
+
+      السؤال: {{question_text}}
+
+      الموضوع: {{document_title}}
+
+      مقالة: {{document_plaintext}}
+
+      |||
+
+      {{annotations.yes_no_answer[0] | capitalize}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_read_and_answer_armt
+    reference: ''
+  70ccca01-859d-4ecd-8081-121ccf20fb0f: !Template
+    answer_choices: نعم ||| رقم
+    id: 70ccca01-859d-4ecd-8081-121ccf20fb0f
+    jinja: 'أتساءل {{question_text}}
+
+
+      هل يمكنك إعطائي بعض السياق للإجابة على هذا (بنفس لغة سؤالي)؟ ||| {{document_plaintext[:10000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontext_armt
+    reference: ''
+  71804e7a-e278-4311-a18b-823ff0ec3f73: !Template
+    answer_choices: نعم ||| رقم
+    id: 71804e7a-e278-4311-a18b-823ff0ec3f73
+    jinja: "{% if annotations.yes_no_answer[0] == \"YES\" or annotations.yes_no_answer[0]\
+      \ == \"NO\" %}\nبناءً على المقتطف النصي التالي ، {{question_text}}\n{{document_plaintext}}\n\
+      |||\n{{annotations.yes_no_answer[0] | capitalize}}\n    {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_based_on_the_text_armt
+    reference: ''
+  b8dc7dcd-ab0b-40b8-8c48-7186af129861: !Template
+    answer_choices: نعم ||| رقم ||| لا أحد
+    id: b8dc7dcd-ab0b-40b8-8c48-7186af129861
+    jinja: 'السؤال: {{question_text}}
+
+      أجب عن السؤال بـ {{"Yes"}} أو {{"No"}}. إذا لم يكن ذلك ممكنًا ، فأجب بـ {{"None"}}.
+
+      تلميح: {{document_plaintext}}
+
+      |||
+
+      {{annotations.yes_no_answer[0] | capitalize}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_yes_no_none_armt
+    reference: ''
+  c32989cd-a045-4c60-ae8d-1d7033bb8243: !Template
+    answer_choices: نعم ||| رقم
+    id: c32989cd-a045-4c60-ae8d-1d7033bb8243
+    jinja: "{% if annotations.yes_no_answer[0] == \"YES\" or annotations.yes_no_answer[0]\
+      \ == \"NO\" %}\nأجب عن السؤال حول {{document_title}}. {{question_text}}\n|||\n\
+      {{annotations.yes_no_answer[0] | capitalize}}\n    {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_open_domain_qa_without_choices_armt
+    reference: ''
+  cb1f4c55-0120-4a18-87d1-d0cf7bf02650: !Template
+    answer_choices: نعم ||| رقم
+    id: cb1f4c55-0120-4a18-87d1-d0cf7bf02650
+    jinja: '{{question_text}}
+
+      هل هذا سؤال "نعم / لا"؟
+
+      |||
+
+      {% if annotations. yes_no_answer[0] == "NONE" %}
+
+      رقم
+
+      {% else %}
+
+      نعم
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_yes_no_question_armt
+    reference: ''
+  f565cd59-05d3-46ac-a29c-ed3422fc403d: !Template
+    answer_choices: نعم ||| رقم
+    id: f565cd59-05d3-46ac-a29c-ed3422fc403d
+    jinja: "{% if annotations.yes_no_answer[0] == \"YES\" or annotations.yes_no_answer[0]\
+      \ == \"NO\" %}\nبعد قراءة المقتطف النصي التالي من Wikipedia ، الرجاء الإجابة\
+      \ على السؤال: {{question_text}}\n{{document_plaintext}}\n|||\n{{annotations.yes_no_answer[0]\
+      \ | capitalize}}\n    {% endif %}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_after_reading_the_text_armt
+    reference: ''

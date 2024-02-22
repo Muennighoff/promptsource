@@ -1,0 +1,225 @@
+dataset: paws-x
+subset: zh
+templates:
+  0a450b84-66bb-4697-8137-bb223de517e0: !Template
+    answer_choices: 不 ||| 是的
+    id: 0a450b84-66bb-4697-8137-bb223de517e0
+    jinja: '第 1 句：{{sentence1}}
+
+      句子 2：{{sentence2}}
+
+      问题：我们可以将第 1 句改写为第 2 句吗？
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Rewrite-no-label_zhmt
+    reference: ''
+  11b72ab2-3a8f-4d23-b03e-bf75dc82ce77: !Template
+    answer_choices: 不 ||| 是的
+    id: 11b72ab2-3a8f-4d23-b03e-bf75dc82ce77
+    jinja: '{{sentence1}} 问题：{{sentence2}} 转述与否？
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: PAWS-ANLI GPT3-no-label_zhmt
+    reference: ''
+  2e9c15db-fb24-4157-82be-03464ce73479: !Template
+    answer_choices: 不 ||| 是的
+    id: 2e9c15db-fb24-4157-82be-03464ce73479
+    jinja: '第 1 句：{{sentence1}}
+
+      句子 2：{{sentence2}}
+
+      问题：我们可以将第 1 句改写为第 2 句吗？是还是不是？
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Rewrite_zhmt
+    reference: ''
+  3a0714c3-9544-4b1c-b3cb-1e6cbcc3e41d: !Template
+    answer_choices: 不 ||| 是的
+    id: 3a0714c3-9544-4b1c-b3cb-1e6cbcc3e41d
+    jinja: '第 1 句：{{sentence1}}
+
+      句子 2：{{sentence2}}
+
+      问题：第 1 句是否对第 2 句进行了转述？
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Concatenation-no-label_zhmt
+    reference: ''
+  54a8cbde-cc16-4abd-80e6-b7e057a247a1: !Template
+    answer_choices: 不 ||| 是的
+    id: 54a8cbde-cc16-4abd-80e6-b7e057a247a1
+    jinja: '{{sentence1}}
+
+      这是对以下句子的转述吗？
+
+      {{sentence2}}？
+
+      是还是不是。
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: context-question_zhmt
+    reference: ''
+  6c74272e-9df6-4e36-bbe7-61703a68f82b: !Template
+    answer_choices: 不 ||| 是的
+    id: 6c74272e-9df6-4e36-bbe7-61703a68f82b
+    jinja: '第 1 句：{{sentence1}}
+
+      句子 2：{{sentence2}}
+
+      问题：第 1 句是否对第 2 句进行了转述？是还是不是？
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Concatenation_zhmt
+    reference: ''
+  8e3d798a-f886-4291-9fc4-18f43786b84b: !Template
+    answer_choices: 不 ||| 是的
+    id: 8e3d798a-f886-4291-9fc4-18f43786b84b
+    jinja: '第 1 句：{{sentence1}}
+
+      句子 2：{{sentence2}}
+
+      问：第1句和第2句表达的意思一样吗？是还是不是？
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Meaning_zhmt
+    reference: ''
+  a4df0518-d0a1-4092-9217-f0c11cd96ef8: !Template
+    answer_choices: 不 ||| 是的
+    id: a4df0518-d0a1-4092-9217-f0c11cd96ef8
+    jinja: '{{sentence1}}
+
+      这是对以下句子的转述吗？
+
+      {{sentence2}}？
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: context-question-no-label_zhmt
+    reference: ''
+  aeab7810-808d-48ca-9dec-93fc26635991: !Template
+    answer_choices: 不 ||| 是的
+    id: aeab7810-808d-48ca-9dec-93fc26635991
+    jinja: '判断以下两个句子是否相互转述。
+
+      发送 1：{{sentence1}}
+
+      发送 2：{{sentence2}}
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: task_description-no-label_zhmt
+    reference: ''
+  b45b4873-b819-46d1-b9af-c4229eb8dbfd: !Template
+    answer_choices: 错误的 ||| 真的
+    id: b45b4873-b819-46d1-b9af-c4229eb8dbfd
+    jinja: '{{sentence1}} 问题：{{sentence2}} 对还是错？
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: PAWS-ANLI GPT3_zhmt
+    reference: ''
+  e067afb8-5f0f-48d0-b917-92dcfbcc3d9f: !Template
+    answer_choices: 不 ||| 是的
+    id: e067afb8-5f0f-48d0-b917-92dcfbcc3d9f
+    jinja: '第 1 句：{{sentence1}}
+
+      句子 2：{{sentence2}}
+
+      问：第1句和第2句表达的意思一样吗？
+
+      |||
+
+      {{answer_choices[label]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: Meaning-no-label_zhmt
+    reference: ''
+  ec43a8d0-b64a-4066-9f99-f19caa06ff50: !Template
+    answer_choices: ''
+    id: ec43a8d0-b64a-4066-9f99-f19caa06ff50
+    jinja: '{% if label == 1 %}
+
+      转述句子：{{sentence1}}
+
+      |||
+
+      {{sentence2}}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: paraphrase-task_zhmt
+    reference: ''

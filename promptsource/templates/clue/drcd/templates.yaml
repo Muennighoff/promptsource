@@ -1,6 +1,23 @@
 dataset: clue
 subset: drcd
 templates:
+  0051dfc2-101c-4d2f-b33f-213df9da0672: !Template
+    answer_choices: ''
+    id: 0051dfc2-101c-4d2f-b33f-213df9da0672
+    jinja: '{{ context }}
+
+      {{ question }} 的答案在上面的段落中。它是什么？
+
+      |||
+
+      {{ answers[''text''][0] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer_in_the_passage_zhmt
+    reference: ''
   2b2454d1-4375-4fb3-93a5-8c1e4ee605ea: !Template
     answer_choices: null
     id: 2b2454d1-4375-4fb3-93a5-8c1e4ee605ea
@@ -22,6 +39,29 @@ templates:
       original_task: true
     name: answer_following_question
     reference: ''
+  382d0afc-e2cc-4176-8532-1ca201d7ec51: !Template
+    answer_choices: ''
+    id: 382d0afc-e2cc-4176-8532-1ca201d7ec51
+    jinja: '{{context[:answers["answer_start"]-5]}}... 你将如何继续前面的文本来回答“{{ question}}”？ 
+    ||| {{context[answers["answer_start"]-5:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_zhmt
+    reference: ''
+  3c69b5c9-2dc0-463e-8cd2-afd6b6a99a7f: !Template
+    answer_choices: ''
+    id: 3c69b5c9-2dc0-463e-8cd2-afd6b6a99a7f
+    jinja: 在考试中，你被问到 {{ question }}，你的任务是找到回答问题的段落。写这样一段话：||| {{ context }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longpassage_zhmt
+    reference: ''
   41aebf75-a867-455b-a5dc-519ab83cf24f: !Template
     answer_choices: null
     id: 41aebf75-a867-455b-a5dc-519ab83cf24f
@@ -40,6 +80,73 @@ templates:
       - Squad
       original_task: true
     name: answer_in_the_passage
+    reference: ''
+  438b48f0-f548-443f-a737-376cb9e81c39: !Template
+    answer_choices: ''
+    id: 438b48f0-f548-443f-a737-376cb9e81c39
+    jinja: '在考试中，你被问到 {{ question }}，你的任务是从以下段落中找到答案。
+
+      {{ context }}
+
+      答案是什么？
+
+      |||
+
+      {{ answers[''text''][0] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: in_an_exam_zhmt
+    reference: ''
+  529c5e7a-a842-4e93-bd73-3124e0ea2b0e: !Template
+    answer_choices: ''
+    id: 529c5e7a-a842-4e93-bd73-3124e0ea2b0e
+    jinja: '给定这个上下文“{{ context }}”，生成一个返回“{{ answers[''text''][0] }}”答案的问题。
+
+      |||
+
+      {{ question }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: generate_question_zhmt
+    reference: ''
+  9fc35386-814e-419a-b862-2d4e06a58ef6: !Template
+    answer_choices: null
+    id: 9fc35386-814e-419a-b862-2d4e06a58ef6
+    jinja: '{{context[:answers["answer_start"]-5]}}... How would you continue the
+      prior text to answer "{{ question }}"? ||| {{context[answers["answer_start"]-5:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages:
+      - zh
+      metrics:
+      - Squad
+      original_task: true
+    name: xp3longcontinue
+    reference: ''
+  9fff93be-31ff-4517-918b-61ac87adc52b: !Template
+    answer_choices: ''
+    id: 9fff93be-31ff-4517-918b-61ac87adc52b
+    jinja: '使用给定的上下文回答问题。
+
+      问题：{{ question }}
+
+      上下文：{{ context }}
+
+      答案：|||
+
+      {{ answers[''text''][0] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer_following_question_zhmt
     reference: ''
   ac20087c-80a0-4965-8cab-d8cb6f90a555: !Template
     answer_choices: null
@@ -74,27 +181,11 @@ templates:
       original_task: true
     name: in_an_exam
     reference: ''
-  9fc35386-814e-419a-b862-2d4e06a58ef6: !Template
-    answer_choices: null
-    id: 9fc35386-814e-419a-b862-2d4e06a58ef6
-    jinja: '{{context[:answers["answer_start"]-5]}}... How would you 
-    continue the prior text to answer "{{ question }}"?
-    ||| {{context[answers["answer_start"]-5:]}}'
-    metadata: !TemplateMetadata
-      choices_in_prompt: false
-      languages:
-      - zh
-      metrics:
-      - Squad
-      original_task: true
-    name: xp3longcontinue
-    reference: ''
   b4684f23-b191-4e6d-9dc5-12b1d7d4cf49: !Template
     answer_choices: null
     id: b4684f23-b191-4e6d-9dc5-12b1d7d4cf49
-    jinja: "In an exam, you are asked {{ question }}, and you are tasked to find a passage
-    answering the question. Write such a passage: |||
-      {{ context }}"
+    jinja: 'In an exam, you are asked {{ question }}, and you are tasked to find a
+      passage answering the question. Write such a passage: ||| {{ context }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:

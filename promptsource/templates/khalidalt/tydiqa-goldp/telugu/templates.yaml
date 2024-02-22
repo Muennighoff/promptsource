@@ -1,0 +1,209 @@
+dataset: khalidalt/tydiqa-goldp
+subset: telugu
+templates:
+  18465995-dd79-4fed-be9d-060865570e81: !Template
+    answer_choices: ''
+    id: 18465995-dd79-4fed-be9d-060865570e81
+    jinja: 'నేను {{document_title}} గురించి నా విద్యార్థుల జ్ఞానాన్ని పరీక్షిస్తున్నాను.
+
+      సందర్భం ({{passage_text}}) ఆధారంగా, సమాధానం ఇవ్వాల్సిన ప్రశ్న ఇక్కడ ఉంది: {{question_text}}.
+      సమాధానం సందర్భంలో ఉంది.
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_testing_students_temt
+    reference: ''
+  282d6bcf-4f2e-4d31-8210-853a9668cd67: !Template
+    answer_choices: ''
+    id: 282d6bcf-4f2e-4d31-8210-853a9668cd67
+    jinja: నేను {{document_title}} అంశం గురించి నా తరగతికి బోధించాలనుకుంటున్నాను.
+      నేను వారికి హోంవర్క్‌గా చదవడానికి ఇవ్వగల కథనాన్ని మీరు నాకు వ్రాయగలరా? ఇది {{question_text}}కి
+      సమాధానం ఇవ్వాలి, {{language}}లో ఉండాలి మరియు అధికారికంగా ఉండాలి. దయచేసి. |||
+      {{passage_text}}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longarticle_temt
+    reference: ''
+  4b66de82-dc01-468d-a0d2-ab41e186c83a: !Template
+    answer_choices: ''
+    id: 4b66de82-dc01-468d-a0d2-ab41e186c83a
+    jinja: 'స్నిప్పెట్: {{passage_text}}
+
+      "{{question_text}}"కి సమాధానం {{document_title}} గురించిన టెక్స్ట్ స్నిప్పెట్‌లో
+      ఎక్కడో కనిపిస్తుందని నాకు తెలుసు. మీరు ప్రశ్నకు సమాధానం చెప్పగలరా?
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_can_you_answer_the_question_temt
+    reference: ''
+  981093e4-bd0a-48a2-8bfa-2e3b68f0c8df: !Template
+    answer_choices: ''
+    id: 981093e4-bd0a-48a2-8bfa-2e3b68f0c8df
+    jinja: 'నేను "{{question_text}}" ప్రశ్నకు సమాధానాన్ని గుర్తించడానికి ప్రయత్నిస్తున్నాను
+
+      నేను వికీపీడియాలో {{document_title}} గురించిన ఈ వచనాన్ని కనుగొన్నాను మరియు దానిలో
+      సమాధానం ఉందని నేను భావిస్తున్నాను. సమాధానం చెప్పగలరా?
+
+      వచనం: {{passage_text}}
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_can_you_tell_me_the_answer_temt
+    reference: ''
+  e52f747c-15e0-462d-b4fd-93e36648e050: !Template
+    answer_choices: ''
+    id: e52f747c-15e0-462d-b4fd-93e36648e050
+    jinja: '{% set _blank2 = ["title", "context", "topic" ] %}
+
+      {% set _blank1 = ["guess", "generate", "determine"] %}
+
+      {% set _blank=["passage", "text", "text snippet", "info"]|random %}
+
+      {% set _position = ["above", "following"] |random %}
+
+      {% if  _position == "above" %}
+
+      {{passage_text}}{{"\n"}}
+
+      {% endif %}
+
+      మీరు {{_blank1|random}} {{_blank2|random}} ప్రకరణంలోని {{_position}} చేయగలరా.
+
+      {% if  _position == "following" %}
+
+      {{"\n"}}{{passage_text}}
+
+      {% endif %}
+
+      |||
+
+      {{document_title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_title_generation_temt
+    reference: ''
+  ea9064f4-684c-4225-83af-a7fcfacc1dfc: !Template
+    answer_choices: ''
+    id: ea9064f4-684c-4225-83af-a7fcfacc1dfc
+    jinja: 'మీరు {{document_title}} గురించి ప్రశ్నను రూపొందించగలరా మరియు దీని సమాధానం
+      {{answers.text | choice}} కింది సందర్భం ఆధారంగా: {{passage_text}}
+
+      |||
+
+      {{question_text}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_end_to_end_question_generation_with_title_temt
+    reference: ''
+  ee923def-1b95-48ee-992e-2679585a4a44: !Template
+    answer_choices: ''
+    id: ee923def-1b95-48ee-992e-2679585a4a44
+    jinja: '{{question_text}}
+
+      పై ప్రశ్నకు సమాధానమివ్వండి.
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_simple_question_odqa_temt
+    reference: ''
+  f679c8ef-a75b-4b51-a5ef-2248ae2d18ba: !Template
+    answer_choices: ''
+    id: f679c8ef-a75b-4b51-a5ef-2248ae2d18ba
+    jinja: 'పుకారు {{answers.text | choice}} అనేది {{question_text}}కి సమాధానం
+
+      నాకు సందేహం ఉంది... మీరు {{language}}లో గరిష్టంగా 8000 అక్షరాలతో వికీపీడియా
+      తరహా కథనాన్ని రాయడం ద్వారా పై విషయాన్ని నిరూపించగలరా? ||| {{passage_text[:8000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longwiki_temt
+    reference: ''
+  f67b469b-b1f1-4be1-9cec-66a30e2bfb31: !Template
+    answer_choices: ''
+    id: f67b469b-b1f1-4be1-9cec-66a30e2bfb31
+    jinja: 'మీరు {{answers.text | choice}} కింది సందర్భం ఆధారంగా: {{passage_text}}
+
+      |||
+
+      {{question_text}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_end_to_end_question_generation_temt
+    reference: ''
+  f883a766-388c-4351-b1c2-c1e3330a9895: !Template
+    answer_choices: ''
+    id: f883a766-388c-4351-b1c2-c1e3330a9895
+    jinja: 'ప్రశ్నకు సమాధానాన్ని ప్రకరణంలో సంగ్రహించండి: {{question_text}}
+
+      {{document_title}} గురించిన ప్రకరణము: {{passage_text}}
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_extract_answer_temt
+    reference: ''
+  fac7f875-d6fc-42aa-8bf1-1659c4b2c883: !Template
+    answer_choices: ''
+    id: fac7f875-d6fc-42aa-8bf1-1659c4b2c883
+    jinja: 'నేను ఎప్పుడూ ఆశ్చర్యపోతున్నాను: {{question_text}}
+
+      నేను వికీపీడియాలో శోధించాను మరియు {{document_title}} గురించిన క్రింది వచన స్నిప్పెట్‌ని
+      నేను కనుగొన్నాను.
+
+      స్నిప్పెట్: {{passage_text}}
+
+      సమాధానం ఏమిటి?
+
+      |||
+
+      {{answers.text | choice}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: en_whats_the_answer_temt
+    reference: ''

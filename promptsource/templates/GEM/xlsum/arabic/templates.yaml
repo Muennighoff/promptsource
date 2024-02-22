@@ -1,0 +1,107 @@
+dataset: GEM/xlsum
+subset: arabic
+templates:
+  125f3c40-fd13-4fc6-b23d-8b1f50382c6e: !Template
+    answer_choices: ''
+    id: 125f3c40-fd13-4fc6-b23d-8b1f50382c6e
+    jinja: 'العنوان: {{title}} \ n بالنظر إلى العنوان أعلاه لمقال وهمي ، تخيل المقال.
+      \ n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longimaginearticle_armt
+    reference: ''
+  205e9ada-d4b3-44d4-90f4-7dd9b5ca94c2: !Template
+    answer_choices: ''
+    id: 205e9ada-d4b3-44d4-90f4-7dd9b5ca94c2
+    jinja: '... {{text[3000:3500]}} ... اكتب باقي المقال: ||| {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longrest_armt
+    reference: ''
+  6eb29f42-5b93-4a48-9f89-c9b8d8894de3: !Template
+    answer_choices: ''
+    id: 6eb29f42-5b93-4a48-9f89-c9b8d8894de3
+    jinja: 'مستند للتلخيص: {{text[:8500]}} \ n ملخص بنفس لغة المستند: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: docsummary_armt
+    reference: ''
+  7aeb52ee-bd6a-41aa-b5f4-ad903439dcf1: !Template
+    answer_choices: ''
+    id: 7aeb52ee-bd6a-41aa-b5f4-ad903439dcf1
+    jinja: 'العنوان: {{title}} \ n بالنظر إلى العنوان أعلاه لمقال وهمي ، تخيل المقال.
+      \ n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: imaginearticle_armt
+    reference: ''
+  b2993258-4098-421c-bb6d-4cf9cc0a8393: !Template
+    answer_choices: ''
+    id: b2993258-4098-421c-bb6d-4cf9cc0a8393
+    jinja: 'المحتوى: {{text[:7000]}} \ n يمكن تلخيص المحتوى السابق على النحو التالي:
+      ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: prevcontent_armt
+    reference: ''
+  e009b9fb-a5c0-4021-ab4b-bb2a0397ff73: !Template
+    answer_choices: ''
+    id: e009b9fb-a5c0-4021-ab4b-bb2a0397ff73
+    jinja: 'بالنظر إلى العنوان أدناه وملخص للمقال ، قم بإنشاء مقالة قصيرة أو بداية
+      مقالة طويلة لتتماشى معها. العنوان: {{title}} \ n الملخص: {{target}} \ n المقالة
+      (بحد أقصى 500 حرف): ||| {{text[:500]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longgenarticle_armt
+    reference: ''
+  e483dbb8-23a4-4ce3-a1b9-f7bc61205e72: !Template
+    answer_choices: ''
+    id: e483dbb8-23a4-4ce3-a1b9-f7bc61205e72
+    jinja: '{{text[:1000]}} ... متابعة المقالة حتى 4000 حرف آخر كحد أقصى: ||| {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_armt
+    reference: ''
+  e9823253-3d2c-4784-a72f-1cb2d8b2740d: !Template
+    answer_choices: ''
+    id: e9823253-3d2c-4784-a72f-1cb2d8b2740d
+    jinja: '{{title}} \ n {{text[:5000]}} \ n \ ntl؛ dr: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: tldr_armt
+    reference: ''
+  ee5877b2-25e8-4803-8f07-f7228124c7d5: !Template
+    answer_choices: ''
+    id: ee5877b2-25e8-4803-8f07-f7228124c7d5
+    jinja: '{{text}} \ n \ n أعطني عنوانًا جيدًا للمقالة أعلاه. ||| {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: goodtitle_armt
+    reference: ''

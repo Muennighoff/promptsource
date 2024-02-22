@@ -1,0 +1,108 @@
+dataset: GEM/xlsum
+subset: bengali
+templates:
+  32d502bb-aa65-4bf5-b1ff-d3d746a642cc: !Template
+    answer_choices: ''
+    id: 32d502bb-aa65-4bf5-b1ff-d3d746a642cc
+    jinja: 'একটি নিবন্ধের নীচের শিরোনাম এবং সারাংশ দেওয়া, একটি ছোট নিবন্ধ তৈরি করুন
+      বা তাদের সাথে যেতে একটি দীর্ঘ নিবন্ধের শুরু করুন। শিরোনাম: {{title}}\nসারাংশ:
+      {{target}}\nনিবন্ধ (সর্বোচ্চ ৫০০ অক্ষর): ||| {{text[:500]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longgenarticle_bnmt
+    reference: ''
+  5204605e-e172-48b9-8745-84ab37125d25: !Template
+    answer_choices: ''
+    id: 5204605e-e172-48b9-8745-84ab37125d25
+    jinja: 'বিষয়বস্তু: {{text[:7000]}}\nপূর্ববর্তী বিষয়বস্তুকে নিম্নরূপ সংক্ষিপ্ত
+      করা যেতে পারে: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: prevcontent_bnmt
+    reference: ''
+  658f69f9-c24c-43d3-a5a4-2654d71cc3d4: !Template
+    answer_choices: ''
+    id: 658f69f9-c24c-43d3-a5a4-2654d71cc3d4
+    jinja: 'ডক সংক্ষিপ্ত করার জন্য: {{text[:8500]}}\nডক হিসাবে একই ভাষায় সারাংশ:
+      ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: docsummary_bnmt
+    reference: ''
+  6fc67282-44a2-42e5-b5af-ed00a8e7c13f: !Template
+    answer_choices: ''
+    id: 6fc67282-44a2-42e5-b5af-ed00a8e7c13f
+    jinja: '...{{text[3000:3500]}}... বাকি নিবন্ধটি লিখুন: ||| {{text[5000:]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longrest_bnmt
+    reference: ''
+  8302891e-ed75-4594-8a50-f77f6d77ebe1: !Template
+    answer_choices: ''
+    id: 8302891e-ed75-4594-8a50-f77f6d77ebe1
+    jinja: 'শিরোনাম: {{title}}\nএকটি কাল্পনিক নিবন্ধের উপরের শিরোনাম দেওয়া, নিবন্ধটি
+      কল্পনা করুন।\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: imaginearticle_bnmt
+    reference: ''
+  c815e336-c345-4b3d-ab48-4fb4e26b4adf: !Template
+    answer_choices: ''
+    id: c815e336-c345-4b3d-ab48-4fb4e26b4adf
+    jinja: '{{text}} \n\nউপরের নিবন্ধটির জন্য আমাকে একটি ভাল শিরোনাম দিন। ||| {{title}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: goodtitle_bnmt
+    reference: ''
+  e3e84eec-cde9-4e01-9a07-602f9e640593: !Template
+    answer_choices: ''
+    id: e3e84eec-cde9-4e01-9a07-602f9e640593
+    jinja: 'শিরোনাম: {{title}}\nএকটি কাল্পনিক নিবন্ধের উপরের শিরোনাম দেওয়া, নিবন্ধটি
+      কল্পনা করুন।\n ||| {{text[:7000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longimaginearticle_bnmt
+    reference: ''
+  f93857d4-4326-46ad-96f2-595cc287a977: !Template
+    answer_choices: ''
+    id: f93857d4-4326-46ad-96f2-595cc287a977
+    jinja: '{{title}}\n{{text[:5000]}}\n\ntl;dr: ||| {{target}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: tldr_bnmt
+    reference: ''
+  fc663e18-3655-47db-90f4-93b1a9992044: !Template
+    answer_choices: ''
+    id: fc663e18-3655-47db-90f4-93b1a9992044
+    jinja: '{{text[:1000]}}... আরও 4000 অক্ষরের জন্য নিবন্ধটি চালিয়ে যান: ||| {{text[1000:5000]}}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_bnmt
+    reference: ''
