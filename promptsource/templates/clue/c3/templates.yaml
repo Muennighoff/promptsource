@@ -1,6 +1,48 @@
 dataset: clue
 subset: c3
 templates:
+  28fc1d2b-30e5-4c37-9c87-14aa837df15e: !Template
+    answer_choices: ''
+    id: 28fc1d2b-30e5-4c37-9c87-14aa837df15e
+    jinja: '{% for statement in context %}
+
+      {{ statement }}
+
+      {% endfor %}
+
+      鉴于上面的对话/段落，问题“{{question}}”的答案是什么
+
+      |||
+
+      {{ answer }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer-question-interrogative-no-choices_zhmt
+    reference: ''
+  4d6c5a6c-b693-4118-8495-800b97500bf9: !Template
+    answer_choices: ''
+    id: 4d6c5a6c-b693-4118-8495-800b97500bf9
+    jinja: '段落：{% for statement in context %}
+
+      {{ statement }}
+
+      {% endfor %}
+
+      什么样的问题会引起 {{ answer }} 的回答响应？
+
+      |||
+
+      {{ question }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: generate_question_zhmt
+    reference: ''
   51b3c3fe-2fa2-474a-81f9-5b421c884109: !Template
     answer_choices: '{{ choice | join(" ||| ") }}'
     id: 51b3c3fe-2fa2-474a-81f9-5b421c884109
@@ -16,6 +58,31 @@ templates:
       - Accuracy
       original_task: true
     name: answer-question-affirmative
+    reference: ''
+  51f68e4d-1440-4512-8f16-09c232085029: !Template
+    answer_choices: '{{ choice | join(" ||| ") }}'
+    id: 51f68e4d-1440-4512-8f16-09c232085029
+    jinja: "{% for statement in context %}
+
+      {{ statement }}
+
+      {% endfor %}
+
+      鉴于上面的对话/段落，使用以下选项回答问题“{{question}}”。
+
+      选项：
+
+      - {{ answer_choices | join('\n- ') }}
+
+      |||
+
+      {{ answer }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer-question-affirmative_zhmt
     reference: ''
   5e06f05f-d7dd-4329-b6d8-3a62dcdba838: !Template
     answer_choices: '{{ choice | join(" ||| ") }}'
@@ -47,6 +114,29 @@ templates:
       original_task: false
     name: generate_question
     reference: ''
+  6fb601d3-16b4-4cc3-b1af-f653cb6df46f: !Template
+    answer_choices: '{{ choice | join('' ||| '') }}'
+    id: 6fb601d3-16b4-4cc3-b1af-f653cb6df46f
+    jinja: "段落：{% for statement in context %}
+
+      {{ statement }}
+
+      {% endfor %}
+
+      问题：“{{question}}”
+
+      答案选择：{{ answer_choices[:-1] | join(', ') }} 还是 {{ answer_choices[-1] }}？
+
+      |||
+
+      {{ answer }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: question_choices_context_zhmt
+    reference: ''
   a5820d05-a8df-4e31-a284-6969e478174b: !Template
     answer_choices: '{{ choice | join('' ||| '') }}'
     id: a5820d05-a8df-4e31-a284-6969e478174b
@@ -62,6 +152,29 @@ templates:
       - Accuracy
       original_task: true
     name: answer-question-interrogative
+    reference: ''
+  c0dc3493-f8ef-4c3b-9b30-8dcca5626fd6: !Template
+    answer_choices: '{{ choice | join('' ||| '') }}'
+    id: c0dc3493-f8ef-4c3b-9b30-8dcca5626fd6
+    jinja: "{% for statement in context %}
+
+      {{ statement }}
+
+      {% endfor %}
+
+      鉴于上面的对话/段落，问题“{{question}}”的答案是什么
+
+      答案选择：{{ answer_choices[:-1] | join(', ') }} 还是 {{ answer_choices[-1] }}？
+
+      |||
+
+      {{ answer }}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer-question-interrogative_zhmt
     reference: ''
   f15acc3f-e067-488f-b426-f65aa604da55: !Template
     answer_choices: null

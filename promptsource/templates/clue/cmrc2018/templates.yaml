@@ -1,6 +1,17 @@
 dataset: clue
 subset: cmrc2018
 templates:
+  378f10bc-8e4f-492f-b581-625f221f1cdb: !Template
+    answer_choices: ''
+    id: 378f10bc-8e4f-492f-b581-625f221f1cdb
+    jinja: 问：{{ question }}你能写一些上下文来回答这个问题吗？ ||| {{ context }}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longctxt_zhmt
+    reference: ''
   3bba02e6-9266-418b-9ba0-4f71755cf3b6: !Template
     answer_choices: null
     id: 3bba02e6-9266-418b-9ba0-4f71755cf3b6
@@ -18,6 +29,23 @@ templates:
       - ROUGE
       original_task: false
     name: generate_question
+    reference: ''
+  552242d1-9ca7-4487-848c-1891f4e0c955: !Template
+    answer_choices: ''
+    id: 552242d1-9ca7-4487-848c-1891f4e0c955
+    jinja: '{{ context }}
+
+      {{ question }} 的答案在上面的段落中。它是什么？
+
+      |||
+
+      {{ answers[''text''][0] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer_in_the_passage_zhmt
     reference: ''
   8fe02215-7881-4a61-a6e7-579680e40b9b: !Template
     answer_choices: null
@@ -77,8 +105,8 @@ templates:
   9fc15385-814e-419a-b862-2d4e06a58ef6: !Template
     answer_choices: null
     id: 9fc15385-814e-419a-b862-2d4e06a58ef6
-    jinja: 'Q: {{ question }}
-      Can you write some context to answer the question? ||| {{ context }}'
+    jinja: 'Q: {{ question }} Can you write some context to answer the question? |||
+      {{ context }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -91,9 +119,9 @@ templates:
   9fc25385-814e-419a-b862-2d4e06a58ef6: !Template
     answer_choices: null
     id: 9fc25385-814e-419a-b862-2d4e06a58ef6
-    jinja: '{{ context[:answers["answer_start"][0]-5] }}... How would you 
-    continue the prior text to answer "{{ question }}"?
-    ||| {{ context[answers["answer_start"][0]-5:] }}'
+    jinja: '{{ context[:answers["answer_start"][0]-5] }}... How would you continue
+      the prior text to answer "{{ question }}"? ||| {{ context[answers["answer_start"][0]-5:]
+      }}'
     metadata: !TemplateMetadata
       choices_in_prompt: false
       languages:
@@ -102,4 +130,69 @@ templates:
       - Squad
       original_task: true
     name: xp3longcontinue
+    reference: ''
+  da67ca89-a235-49b5-8e1a-db521910917c: !Template
+    answer_choices: ''
+    id: da67ca89-a235-49b5-8e1a-db521910917c
+    jinja: '{{ context[:answers["answer_start"][0]-5] }}... 你将如何继续前面的文本来回答“{{ question
+      }}”？ ||| {{ context[answers["answer_start"][0]-5:] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longcontinue_zhmt
+    reference: ''
+  f9f87de0-0f6d-475e-9bf9-40fe1e37569f: !Template
+    answer_choices: ''
+    id: f9f87de0-0f6d-475e-9bf9-40fe1e37569f
+    jinja: '使用给定的上下文回答问题。
+
+      问题：{{ question }}
+
+      上下文：{{ context }}
+
+      答案：|||
+
+      {{ answers[''text''][0] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: answer_following_question_zhmt
+    reference: ''
+  fe61c617-1fee-4ccd-8082-c42437e62832: !Template
+    answer_choices: ''
+    id: fe61c617-1fee-4ccd-8082-c42437e62832
+    jinja: '在考试中，你被问到 {{ question }}，你的任务是从以下段落中找到答案。
+
+      {{ context }}
+
+      答案是什么？
+
+      |||
+
+      {{ answers[''text''][0] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: in_an_exam_zhmt
+    reference: ''
+  ffb82913-abf7-4eec-b565-86497cd10448: !Template
+    answer_choices: ''
+    id: ffb82913-abf7-4eec-b565-86497cd10448
+    jinja: '给定这个上下文“{{ context }}”，生成一个返回“{{ answers[''text''][0] }}”答案的问题。
+
+      |||
+
+      {{ question }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: generate_question_zhmt
     reference: ''

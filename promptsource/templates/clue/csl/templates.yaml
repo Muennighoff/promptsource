@@ -66,6 +66,84 @@ templates:
       original_task: false
     name: generate_keywords
     reference: ''
+  4216973d-8f07-477d-a0d9-75fbc03f14be: !Template
+    answer_choices: 不 ||| 是的
+    id: 4216973d-8f07-477d-a0d9-75fbc03f14be
+    jinja: '一位学者使用“{{ keyword | join('', '') }}”作为搜索词。你认为搜索引擎会返回摘要“{{abst}}”吗？回答 {{
+      answer_choices[1] }} 或 {{ answer_choices[0] }}。
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: search_terms_zhmt
+    reference: ''
+  65f16551-9794-44f5-bb16-4d97df0251ef: !Template
+    answer_choices: ''
+    id: 65f16551-9794-44f5-bb16-4d97df0251ef
+    jinja: '给定抽象{{abst}}，列出{{ keyword | length }} 关键字。
+
+      |||
+
+      {% if label == 1 %}
+
+      {{ keyword | join('', '') }}
+
+      {% endif %}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: generate_keywords_zhmt
+    reference: ''
+  72cf15e7-e163-40bc-b391-beb2b3b1a3f5: !Template
+    answer_choices: 不 ||| 是的
+    id: 72cf15e7-e163-40bc-b391-beb2b3b1a3f5
+    jinja: 写一篇关于“{{ keyword | join(', ') }}”的摘要：||| {% if label == 1 %} {{abst}} {%
+      endif %}
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: xp3longabst_zhmt
+    reference: ''
+  89851e70-f78d-4127-bdae-c39f1914d16f: !Template
+    answer_choices: 不 ||| 是的
+    id: 89851e70-f78d-4127-bdae-c39f1914d16f
+    jinja: '在约翰写完摘要“{{abst}}”之后，他写了这些关键字“{{ keyword | join('', '') }}”。你认为他选择的关键词是正确的吗？回答
+      {{ answer_choices[1]}} 或 {{ answer_choices[0]}}。
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: write_keywords_after_abstract_zhmt
+    reference: ''
+  a77f23b8-de58-4475-9daf-8992108041b1: !Template
+    answer_choices: 不 ||| 是的
+    id: a77f23b8-de58-4475-9daf-8992108041b1
+    jinja: '这些关键字“{{ keyword | join('', '') }}”是否代表抽象“{{ abst }}”中的关键概念？
+
+      |||
+
+      {{ answer_choices[label] }}'
+    metadata: !TemplateMetadata
+      choices_in_prompt: null
+      languages: null
+      metrics: null
+      original_task: null
+    name: do_represent_zhmt
+    reference: ''
   aaf47f6f-fd8f-4180-8d85-e4c7df088ac6: !Template
     answer_choices: no ||| yes
     id: aaf47f6f-fd8f-4180-8d85-e4c7df088ac6
@@ -91,11 +169,8 @@ templates:
   aff47f6f-fd8f-4180-8d85-e4c7df088ac6: !Template
     answer_choices: no ||| yes
     id: aff47f6f-fd8f-4180-8d85-e4c7df088ac6
-    jinja: 'Write an abstract about "{{ keyword | join('', '') }}":
-      |||
-      {% if label == 1 %}
-      {{abst}}
-      {% endif %}'
+    jinja: 'Write an abstract about "{{ keyword | join('', '') }}": ||| {% if label
+      == 1 %} {{abst}} {% endif %}'
     metadata: !TemplateMetadata
       choices_in_prompt: true
       languages:

@@ -71,3 +71,30 @@ templates:
       original_task: true
     name: summarize_above_zh
     reference: xsum templates
+  dfa7b514-7385-4855-bb90-253073a34fde: !Template
+    answer_choices: null
+    id: dfa7b514-7385-4855-bb90-253073a34fde
+    jinja: "{{target}}\n\n鉴于上述总结，为它写一个详细的文本。||| {{source}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages: []
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: xp3longwritearticle_zhmt
+    reference: ''
+  dff8b414-7485-4855-bb90-253073a34fde: !Template
+    answer_choices: null
+    id: dff8b414-7485-4855-bb90-253073a34fde
+    jinja: "{{target}}\n\n我对此很感兴趣，但我只有几分钟的时间。
+    你能不能给我最多前500个字符的详细解释关于那个？ ||| {{source[:500]}}"
+    metadata: !TemplateMetadata
+      choices_in_prompt: false
+      languages: []
+      metrics:
+      - ROUGE
+      - BLEU
+      original_task: true
+    name: xp3longchars_zhmt
+    reference: ''
